@@ -80,5 +80,26 @@ data-asset-path="{{ asset('/')}}">
       }
     })
   </script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+        
+        new google.translate.TranslateElement({pageLanguage: jQuery('.goog-te-combo').val(), layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+    }
+    jQuery('.lang-select').click(function(e) {
+        var theLang = jQuery(this).attr('data-language');
+      
+        jQuery('.goog-te-combo').val(theLang);
+        //alert(jQuery(this).attr('href'));
+        
+        fetch("{{url('lang')}}/"+theLang)
+        .then(response => response.json())
+        .then(data => {
+          window.location = jQuery(this).attr('href');
+          location.reload();
+        })
+        .catch(function(error) {
+          console.log('Hubo un problema con la petición Fetch:' + error.message);
+        });
+    });</script>
 </body>
 </html>
