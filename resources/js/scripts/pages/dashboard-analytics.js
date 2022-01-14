@@ -186,7 +186,7 @@ $(window).on('load', function () {
   avgSessionsChartOptions = {
     chart: {
       type: 'bar',
-      height: 200,
+      height: 100,
       sparkline: { enabled: true },
       toolbar: { show: false }
     },

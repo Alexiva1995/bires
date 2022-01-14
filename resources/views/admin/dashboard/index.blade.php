@@ -20,23 +20,69 @@
 @section('content')
 <!-- Dashboard Analytics Start -->
 <section id="dashboard-analytics">
+
+<div class="">
+    <h2>Hola bienvenido</h2>
+</div>
 <div class="row">
     <div class="col-9">
+
+        <div class="row">
+            <div class="col-5 align-self-center">
+                <span>Wilmar Cardona a Generacion Zoe</span>
+            </div>
+            <div class="col-2 align-self-center">
+                <span class="" >Tu link de referido</span>
+            </div>
+            <div class="col-2">
+                <div class="btn-group">
+                    <button
+                      class="btn btn-flat-primary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton100"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Ver todos
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton100">
+                      <a class="dropdown-item" href="#">Option 1</a>
+                      <a class="dropdown-item" href="#">Option 2</a>
+                      <a class="dropdown-item" href="#">Option 3</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-secondary btn-sm rounded-pill"><i data-feather='copy'></i> Copiar enlace</button>
+                </div>
+            </div>
+        </div>
 
         @include('components.tranding-view')
 
         <div class="row match-height">
             <!-- Greetings Card starts -->
             <div class="col-xl-4 col-md-6 col-12">
-                <div class="card card-congratulation-medal">
+                <div class="card card-dark">
                   <div class="card-body">
-                    <h5>Congratulations 🎉 John!</h5>
-                    <p class="card-text font-small-3">You have won gold medal</p>
-                    <h3 class="mb-75 mt-2 pt-50">
-                      <a href="#">$48.9k</a>
-                    </h3>
-                    <button type="button" class="btn btn-primary">View Sales</button>
-                    <img src="{{asset('images/illustration/badge.svg')}}" class="congratulation-medal" alt="Medal Pic" />
+                    <div class="row">
+                        <div class="col-4 align-self-center">
+                            <img class="img" style="width: 100%;" src="{{asset('images/illustration/badge.svg')}}" />
+                        </div>
+                        <div class="col-4">
+                            <h5>Balance</h5>
+                            <h2 class="fw-bolder mt-1">1.200</h2>
+                            <span class="card-text font-small-3">Comprar</span>
+                        </div>
+                        <div class="col-4 align-self-center">
+                            <h5>ZOEC</h5>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
                   </div>
                 </div>
             </div>
@@ -44,15 +90,17 @@
 
             <!-- Subscribers Chart Card starts -->
             <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-header flex-column align-items-start pb-0">
-                    <div class="avatar bg-light-primary p-50 m-0">
-                        <div class="avatar-content">
-                        <i data-feather="users" class="font-medium-5"></i>
+                <div class="card card-dark">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5>Ganancias</h5>
+                                <h2 class="fw-bolder mt-1">$682.5</h2>
+                            </div>
+                            <div class="col-6">
+                                <div id="avg-sessions-chart"></div>
+                            </div>
                         </div>
-                    </div>
-                    <h2 class="fw-bolder mt-1">92.6k</h2>
-                    <p class="card-text">Subscribers Gained</p>
                     </div>
                 </div>
             </div>
@@ -61,17 +109,27 @@
             <!-- Orders Chart Card starts -->
             <div class="col-lg-4 col-sm-6 col-12">
                 <div class="card">
-                    <div class="card-header flex-column align-items-start pb-0">
-                    <div class="avatar bg-light-warning p-50 m-0">
-                        <div class="avatar-content">
-                        <i data-feather="package" class="font-medium-5"></i>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4 align-self-center">
+                                <div class="avatar bg-light-warning p-50 m-0">
+                                    <div class="avatar-content">
+                                    <i data-feather="package" class="font-medium-5"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <h5>Referidos</h5>
+                                <h5 class="fw-bolder mt-1">25</h5>
+                                <span class="card-text font-small-3">Ver todos</span>
+                            </div>
+                            <div class="col-3 align-self-center">
+                            </div>
                         </div>
-                    </div>
-                    <h2 class="fw-bolder mt-1">38.4K</h2>
-                    <p class="card-text">Orders Received</p>
                     </div>
                 </div>
             </div>
+            
             <!-- Orders Chart Card ends -->
         </div>
 
@@ -110,7 +168,7 @@
                         <a class="dropdown-item" href="#">Last Year</a>
                         </div>
                     </div>
-                    <div id="avg-sessions-chart"></div>
+                    
                     </div>
                 </div>
                 <hr />
