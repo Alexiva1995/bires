@@ -29,10 +29,13 @@ use App\Http\Controllers\ChartsController;
 */
 
 // Main Page Route
+Auth::routes(['verify' => true]);
+
 // Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
+Route::middleware('auth')->group(function () {
+
 Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
 
-Auth::routes(['verify' => true]);
 
 /* Route Dashboards */
 Route::group(['prefix' => 'dashboard'], function () {
@@ -40,6 +43,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
 });
 /* Route Dashboards */
+});
 
 /* Route Apps */
 Route::group(['prefix' => 'app'], function () {

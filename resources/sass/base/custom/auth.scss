@@ -1,0 +1,106 @@
+// Auth styles
+body{
+    background-color: #032D52 !important;
+}
+
+
+.auth-wrapper.auth-v1 .auth-inner {
+    max-width: 1050px !important;
+}
+
+.card-auth {
+    background: linear-gradient(90deg, rgba(1, 64, 120, 0.95) 52.6%, rgba(77, 72, 140, 0.76) 100%) !important;
+    mix-blend-mode: normal !important;
+    border-radius: 50px !important;
+    color: #fff;
+}
+
+.btn-f{
+    border-color: #294FD7 !important;
+    background-color: #294FD7 !important;
+    color: #fff !important;
+}
+
+.btn-g{
+    border-color: #0F528C !important;
+    background-color: #0F528C !important;
+    color: #fff !important;
+}
+
+.btn-is{
+    border-color: #F5A707 !important;
+    background-color: #F5A707 !important;
+    color: #fff !important;
+}
+
+// css inputs
+input[type=text], 
+input[type=text]:focus, 
+input[type=text]:active, 
+input[type=text]:read-only, 
+input[type=text]::placeholder, 
+input[type=text]:hover:not([disabled]),
+
+input[type=email], 
+input[type=email]:focus, 
+input[type=email]:active, 
+input[type=email]:read-only, 
+input[type=email]::placeholder, 
+input[type=email]:hover:not([disabled]),
+
+input[type=number], 
+input[type=number]:focus, 
+input[type=number]:active, 
+input[type=number]:read-only, 
+input[type=number]::placeholder, 
+input[type=number]:hover:not([disabled]),
+
+input[type=password],
+input[type=password]:focus,
+input[type=password]:active,
+input[type=password]:read-only,
+input[type=password]::placeholder, 
+input[type=password]:hover:not([disabled]),
+
+input[type=textarea],
+input[type=textarea]:focus,
+input[type=textarea]:active,
+input[type=textarea]:read-only,
+input[type=textarea]::placeholder, 
+input[type=textarea]:hover:not([disabled]), 
+
+input[type=search],
+input[type=search]:focus,
+input[type=search]:active,
+input[type=search]:read-only,
+input[type=search]::placeholder, 
+input[type=search]:hover:not([disabled]),
+
+.input-group-text
+{
+background: #2986D7;
+border-color: #2986D7 !important;
+color: #ffffff !important;
+}
+
+.form-check-input:checked{
+    border-color: #2986D7 !important;
+color: #ffffff !important;
+}
+
+// css scroll 
+body::-webkit-scrollbar {
+    width: 7px !important;
+    height: 7px !important;
+    overflow: visible !important;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #0F528C !important;
+    border-radius: 7px !important;
+}
+
+body::-webkit-scrollbar-thumb:horizontal {
+    background: #0F528C !important;
+    border-radius: 7px !important;
+}
