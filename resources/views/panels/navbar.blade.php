@@ -38,162 +38,14 @@
     @endif
     <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">
-          <ul class="nav navbar-nav d-xl-none">
-            <li class="nav-item"><a class="nav-link menu-toggle" href="javascript:void(0);"><i class="ficon" data-feather="menu"></i></a></li>
-          </ul>
-          <ul class="nav navbar-nav bookmark-icons">
-            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{url('app/email')}}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
-            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{url('app/chat')}}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
-            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{url('app/calendar')}}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
-            <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{url('app/todo')}}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
-          </ul>
-          <ul class="nav navbar-nav">
-            <li class="nav-item d-none d-lg-block">
-              <a class="nav-link bookmark-star">
-                <i class="ficon text-warning" data-feather="star"></i>
-              </a>
-              <div class="bookmark-input search-input">
-                <div class="bookmark-input-icon">
-                  <i data-feather="search"></i>
-                </div>
-                <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
-                <ul class="search-list search-list-bookmark"></ul>
-              </div>
-            </li>
-          </ul>
+          
+          
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
-          <li class="nav-item dropdown dropdown-language">
-            <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
-              <i class="flag-icon flag-icon-us"></i>
-              <span class="selected-language">English</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
-              <a class="dropdown-item" href="{{url('lang/en')}}" data-language="en">
-                <i class="flag-icon flag-icon-us"></i> English
-              </a>
-              <a class="dropdown-item" href="{{url('lang/fr')}}" data-language="fr">
-                <i class="flag-icon flag-icon-fr"></i> French
-              </a>
-              <a class="dropdown-item" href="{{url('lang/de')}}" data-language="de">
-                <i class="flag-icon flag-icon-de"></i> German
-              </a>
-              <a class="dropdown-item" href="{{url('lang/pt')}}" data-language="pt">
-                <i class="flag-icon flag-icon-pt"></i> Portuguese
-              </a>
-            </div>
-          </li>
-          <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="{{($configData['theme'] === 'dark') ? 'sun' : 'moon' }}"></i></a></li>
-          <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
-            <div class="search-input">
-              <div class="search-input-icon"><i data-feather="search"></i></div>
-              <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
-              <div class="search-input-close"><i data-feather="x"></i></div>
-              <ul class="search-list search-list-main"></ul>
-            </div>
-          </li>
-          <li class="nav-item dropdown dropdown-cart me-25">
-            <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
-              <i class="ficon" data-feather="shopping-cart"></i>
-              <span class="badge rounded-pill bg-primary badge-up cart-item-count">6</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
-              <li class="dropdown-menu-header">
-                <div class="dropdown-header d-flex">
-                  <h4 class="notification-title mb-0 me-auto">My Cart</h4>
-                  <div class="badge rounded-pill badge-light-primary">4 Items</div>
-                </div>
-              </li>
-              <li class="scrollable-container media-list">
-                <div class="list-item align-items-center">
-                  <img class="d-block rounded me-1" src="{{asset('images/pages/eCommerce/1.png')}}" alt="donuts" width="62">
-                  <div class="list-item-body flex-grow-1">
-                    <i class="ficon cart-item-remove" data-feather="x"></i>
-                    <div class="media-heading">
-                      <h6 class="cart-item-title"><a class="text-body" href="{{url('app/ecommerce/details')}}"> Apple watch 5</a></h6><small class="cart-item-by">By Apple</small>
-                    </div>
-                    <div class="cart-item-qty">
-                      <div class="input-group">
-                        <input class="touchspin-cart" type="number" value="1">
-                      </div>
-                    </div>
-                    <h5 class="cart-item-price">$374.90</h5>
-                  </div>
-                </div>
-                <div class="list-item align-items-center">
-                  <img class="d-block rounded me-1" src="{{asset('images/pages/eCommerce/7.png')}}" alt="donuts" width="62">
-                  <div class="list-item-body flex-grow-1">
-                    <i class="ficon cart-item-remove" data-feather="x"></i>
-                    <div class="media-heading">
-                      <h6 class="cart-item-title"><a class="text-body" href="{{url('app/ecommerce/details')}}"> Google Home Mini</a></h6><small class="cart-item-by">By Google</small>
-                    </div>
-                    <div class="cart-item-qty">
-                      <div class="input-group">
-                        <input class="touchspin-cart" type="number" value="3">
-                      </div>
-                    </div>
-                    <h5 class="cart-item-price">$129.40</h5>
-                  </div>
-                </div>
-                <div class="list-item align-items-center">
-                  <img class="d-block rounded me-1" src="{{asset('images/pages/eCommerce/2.png')}}" alt="donuts" width="62">
-                  <div class="list-item-body flex-grow-1">
-                    <i class="ficon cart-item-remove" data-feather="x"></i>
-                    <div class="media-heading">
-                      <h6 class="cart-item-title"><a class="text-body" href="{{url('app/ecommerce/details')}}"> iPhone 11 Pro</a></h6><small class="cart-item-by">By Apple</small>
-                    </div>
-                    <div class="cart-item-qty">
-                      <div class="input-group">
-                        <input class="touchspin-cart" type="number" value="2">
-                      </div>
-                    </div>
-                    <h5 class="cart-item-price">$699.00</h5>
-                  </div>
-                </div>
-                <div class="list-item align-items-center">
-                  <img class="d-block rounded me-1" src="{{asset('images/pages/eCommerce/3.png')}}" alt="donuts" width="62">
-                  <div class="list-item-body flex-grow-1">
-                    <i class="ficon cart-item-remove" data-feather="x"></i>
-                    <div class="media-heading">
-                      <h6 class="cart-item-title"><a class="text-body" href="{{url('app/ecommerce/details')}}"> iMac Pro</a></h6><small class="cart-item-by">By Apple</small>
-                    </div>
-                    <div class="cart-item-qty">
-                      <div class="input-group">
-                        <input class="touchspin-cart" type="number" value="1">
-                      </div>
-                    </div>
-                    <h5 class="cart-item-price">$4,999.00</h5>
-                  </div>
-                </div>
-                <div class="list-item align-items-center">
-                  <img class="d-block rounded me-1" src="{{asset('images/pages/eCommerce/5.png')}}" alt="donuts" width="62">
-                  <div class="list-item-body flex-grow-1">
-                    <i class="ficon cart-item-remove" data-feather="x"></i>
-                    <div class="media-heading">
-                      <h6 class="cart-item-title"><a class="text-body" href="{{url('app/ecommerce/details')}}"> MacBook Pro</a></h6><small class="cart-item-by">By Apple</small>
-                    </div>
-                    <div class="cart-item-qty">
-                      <div class="input-group">
-                        <input class="touchspin-cart" type="number" value="1">
-                      </div>
-                    </div>
-                    <h5 class="cart-item-price">$2,999.00</h5>
-                  </div>
-                </div>
-              </li>
-              <li class="dropdown-menu-footer">
-                <div class="d-flex justify-content-between mb-1">
-                  <h6 class="fw-bolder mb-0">Total:</h6>
-                  <h6 class="text-primary fw-bolder mb-0">$10,999.00</h6>
-                </div>
-                <a class="btn btn-primary w-100" href="{{url('app/ecommerce/checkout')}}">Checkout</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown dropdown-notification me-25">
-            <a class="nav-link" href="javascript:void(0);" data-bs-toggle="dropdown">
+          <li class="nav-item dropdown dropdown-notification me-25 mx-2">
+            <a class="btn btn-sm btn-secondary mx-1" href="javascript:void(0);" data-bs-toggle="dropdown">
               <i class="ficon" data-feather="bell"></i>
-              <span class="badge rounded-pill bg-danger badge-up">5</span>
+              <span class="badge">5</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
               <li class="dropdown-menu-header">
@@ -290,18 +142,55 @@
               <li class="dropdown-menu-footer">
                 <a class="btn btn-primary w-100" href="javascript:void(0)">Read all notifications</a>
               </li>
-          </ul>
-        </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown mx-1">
+            <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="dropdown">Referir</a>
+          </li>
+          <li class="nav-item dropdown mx-1">
+            <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
+          </li>
+          <li class="nav-item dropdown dropdown-language">
+            <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
+              <i class="flag-icon flag-icon-mx"></i>
+              <span class="selected-language">
+                @if(session()->has('locale'))
+                  {{session()->get('locale')}}
+                @else
+                  ESPAÑOL
+                @endif
+              </span>
+            </a>
+            {{----}}
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
+              <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es" alt="ESPAÑOL">
+                <i class="flag-icon flag-icon-mx"></i> ESPAÑOL
+              </a>
+              <a href="#googtrans(es|en)" class="dropdown-item lang-select"  data-language="en" alt="INGLES">
+                <i class="flag-icon flag-icon-us"></i> INGLES
+              </a>
+              <a href="#googtrans(es|fr)" class="dropdown-item lang-select"  data-language="fr"  alt="FRANCÉS">
+                <i class="flag-icon flag-icon-fr"></i> FRANCÉS
+              </a>
+              <a href="#googtrans(es|de)" class="dropdown-item lang-select"  data-language="de" alt="ALEMÁN">
+                <i class="flag-icon flag-icon-de"></i> ALEMÁN
+              </a>
+              <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt" alt="PORTUGUÉS">
+                <i class="flag-icon flag-icon-pt"></i> PORTUGUÉS
+              </a>
+            </div>
+          </li>
+          
         <li class="nav-item dropdown dropdown-user">
           <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
+            <span class="avatar mx-1">
+              <img class="round" src="{{asset('images/portrait/small/avatar-s-11.jpg')}}" alt="avatar" height="40" width="40">
+              <span class="avatar-status-online"></span>
+            </span>
             <div class="user-nav d-sm-flex d-none">
               <span class="user-name fw-bolder">John Doe</span>
               <span class="user-status">Admin</span>
             </div>
-            <span class="avatar">
-              <img class="round" src="{{asset('images/portrait/small/avatar-s-11.jpg')}}" alt="avatar" height="40" width="40">
-              <span class="avatar-status-online"></span>
-            </span>
           </a>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
             <a class="dropdown-item" href="{{url('page/profile')}}">

@@ -198,10 +198,10 @@
       @if ($color_name != 'light' and $color_name != 'black' and $color_name != 'white') {
         .btn-flat-#{$color-name} {
           background-color: transparent;
-          color: $color-value;
+          color: $white;
 
           &:hover {
-            color: $color-value;
+            color: $white;
           }
 
           &:hover:not(.disabled):not(:disabled) {
@@ -216,7 +216,7 @@
           }
 
           &.dropdown-toggle::after {
-            background-image: url(str-replace(str-replace($chevron-down, 'currentColor', $color_value), '#', '%23'));
+            background-image: url(str-replace(str-replace($chevron-down, 'currentColor', $white), '#', '%23'));
           }
         }
       }
