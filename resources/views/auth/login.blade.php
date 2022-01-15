@@ -17,14 +17,14 @@
                     <h2 class="brand-text text-primary ms-1">Vuexy</h2>
                 </a>
 
-                <p class="card-text mb-2 text-white">Bienvenido de nuevo</p>
-                <h4 class="card-title mb-1 text-white">Iniciar sesión</h4>
+                <p class="card-text mb-2">Bienvenido de nuevo</p>
+                <h4 class="card-title mb-1">Iniciar sesión</h4>
 
                 <div class="row">
                     <form class="auth-login-form col-6" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-1">
-                            <label for="login-email" class="form-label text-white">Correo electronico</label>
+                            <label for="login-email" class="form-label">Correo electronico</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror"
                                 id="login-email" name="email" placeholder="john@example.com"
                                 aria-describedby="login-email" tabindex="1" autofocus value="{{ old('email') }}" />
@@ -37,7 +37,7 @@
 
                         <div class="mb-1">
                             <div class="d-flex justify-content-between">
-                                <label class="form-label text-white" for="login-password">Contraseña</label>
+                                <label class="form-label" for="login-password">Contraseña</label>
                                 @if (Route::has('password.request'))
                                 <a href="{{ route('password.request') }}">
                                     <small>Forgot Password?</small>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-is w-100" tabindex="4">Iniciar sesión</button>
+                        <button type="submit" class="btn btn-secondary w-100" tabindex="4">Iniciar sesión</button>
 
 
                         <div class="row mt-2 d-flex justify-content-between">
@@ -84,7 +84,7 @@
                             @endif
                         </p>
 
-                        <h2 class="text-center text-white mt-1">|</h1>
+                        <h2 class="text-center mt-1">|</h1>
 
                         <p class="text-center mt-2">
                           @if (Route::has('register'))

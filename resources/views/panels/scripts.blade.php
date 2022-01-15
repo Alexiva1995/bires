@@ -8,7 +8,8 @@
 <!-- BEGIN: Theme JS-->
 <script src="{{ asset(mix('js/core/app-menu.js')) }}"></script>
 <script src="{{ asset(mix('js/core/app.js')) }}"></script>
-
+<script src="{{ asset(mix('vendors/js/forms/select/select2.full.min.js')) }}"></script>
+<script src="{{ asset(mix('js/scripts/forms/form-select2.js')) }}"></script>
 <!-- custome scripts file for user -->
 <script src="{{ asset(mix('js/core/scripts.js')) }}"></script>
 

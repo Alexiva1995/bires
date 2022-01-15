@@ -31,7 +31,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 */
 
 // Main Page Route
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 // Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
 Route::middleware('auth')->group(function () {
