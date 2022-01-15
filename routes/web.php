@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\AppsController;
 use App\Http\Controllers\UserInterfaceController;
 use App\Http\Controllers\CardsController;
@@ -221,3 +222,7 @@ Route::get('/maps/leaflet', [ChartsController::class, 'maps_leaflet'])->name('ma
 
 // locale Route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
+
+Route::group(['prefix' => 'plans'], function () {
+    Route::get('', [PlanController::class, 'index'])->name('plans.index');
+});
