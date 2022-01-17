@@ -181,45 +181,31 @@
             </div>
           </li>
           
-        <li class="nav-item dropdown dropdown-user">
-          <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
-            <span class="avatar mx-1">
-              <img class="round" src="{{asset('images/portrait/small/avatar-s-11.jpg')}}" alt="avatar" height="40" width="40">
-              <span class="avatar-status-online"></span>
-            </span>
-            <div class="user-nav d-sm-flex d-none">
-              <span class="user-name fw-bolder">John Doe</span>
-              <span class="user-status">Admin</span>
+          <li class="nav-item dropdown dropdown-user">
+            <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
+              <div class="user-nav d-sm-flex d-none">
+                <span class="user-name fw-bolder"> {{ Auth::user()->name }} {{ Auth::user()->last_name }} </span>
+                <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span>
+              </div>
+              <span class="avatar">
+                <img class="round" src="{{asset('images/logo/logo-toffle.png')}}" alt="avatar" height="40" width="40">
+                <span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span>
+              </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
+              <a class="dropdown-item" href="{{url('page/profile')}}">
+                <i class="me-50" data-feather="user"></i> Profile
+              </a>
+              <div class="dropdown-divider"></div>
+              <form method="POST" class="" action="{{ route('logout') }}">
+                @csrf
+                <button class="dropdown-item w-100" href="{{ route('logout') }}" onclick="event.preventDefault();
+                          this.closest('form').submit();">
+                    <i class="mr-50" data-feather="power"></i> Cerrar Sesion
+                </button>
+              </form>
             </div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-            <a class="dropdown-item" href="{{url('page/profile')}}">
-              <i class="me-50" data-feather="user"></i> Profile
-            </a>
-            <a class="dropdown-item" href="{{url('app/email')}}">
-              <i class="me-50" data-feather="mail"></i> Inbox
-            </a>
-            <a class="dropdown-item" href="{{url('app/todo')}}">
-              <i class="me-50" data-feather="check-square"></i> Task
-            </a>
-            <a class="dropdown-item" href="{{url('app/chat')}}">
-              <i class="me-50" data-feather="message-square"></i> Chats
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{url('page/account-settings')}}">
-              <i class="me-50" data-feather="settings"></i> Settings
-            </a>
-            <a class="dropdown-item" href="{{url('page/pricing')}}">
-              <i class="me-50" data-feather="credit-card"></i> Pricing
-            </a>
-            <a class="dropdown-item" href="{{url('page/faq')}}">
-              <i class="me-50" data-feather="help-circle"></i> FAQ
-            </a>
-            <a class="dropdown-item" href="{{url('auth/login-v2')}}">
-              <i class="me-50" data-feather="power"></i> Logout
-            </a>
-          </div>
-        </li>
+          </li>
       </ul>
     </div>
   </nav>

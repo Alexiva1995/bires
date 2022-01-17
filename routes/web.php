@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AppsController;
@@ -16,7 +17,7 @@ use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\IntercambiosController;
-
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,10 +30,14 @@ use App\Http\Controllers\IntercambiosController;
 */
 
 // Main Page Route
-// Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
-Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+Auth::routes();
 
-Auth::routes(['verify' => true]);
+// Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
+Route::middleware('auth')->group(function () {
+
+// Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard.index');
+
 
 /* Route Dashboards */
 Route::group(['prefix' => 'dashboard'], function () {
@@ -40,6 +45,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
 });
 /* Route Dashboards */
+});
 
 /* Route Apps */
 Route::group(['prefix' => 'app'], function () {
@@ -178,8 +184,8 @@ Route::group(['prefix' => 'page'], function () {
     Route::get('profile', [PagesController::class, 'profile'])->name('page-profile');
     Route::get('faq', [PagesController::class, 'faq'])->name('page-faq');
     Route::get('knowledge-base', [PagesController::class, 'knowledge_base'])->name('page-knowledge-base');
-    Route::get('knowledge-base/category', [PagesController::class, 'kb_category'])->name('page-knowledge-base');
-    Route::get('knowledge-base/category/question', [PagesController::class, 'kb_question'])->name('page-knowledge-base');
+    Route::get('knowledge-base/category', [PagesController::class, 'kb_category']);
+    Route::get('knowledge-base/category/question', [PagesController::class, 'kb_question']);
     Route::get('pricing', [PagesController::class, 'pricing'])->name('page-pricing');
     Route::get('blog/list', [PagesController::class, 'blog_list'])->name('page-blog-list');
     Route::get('blog/detail', [PagesController::class, 'blog_detail'])->name('page-blog-detail');

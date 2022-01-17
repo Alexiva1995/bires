@@ -1,0 +1,37 @@
+/* color del auth: */
+{
+    background: linear-gradient(90deg, rgba(1, 64, 120, 0.95) 52.6%, rgba(77, 72, 140, 0.76) 100%), url(brooke-cagle-tLG2hcpITZE-unsplash 1.png);
+    mix-blend-mode: normal;
+    border-radius: 50px;
+}
+
+
+primary (azul): #043D70
+
+secondary (amarillo): #F5A707
+
+/* degradado del sidebard:  */
+{
+    background: linear-gradient(180deg, #043D70 0%, #043B6C 57.44%, #054176 100%);
+}
+
+/* degradado del fondo: */
+{
+    background: radial-gradient(50% 50% at 50% 50%, #05457D 0%, #032D52 100%);
+}
+
+/* degradado del fondo de las card */
+{
+    background: rgba(2, 29, 73, 0.1);
+    border: 1px solid #378AD4;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+/* degradado del home: */
+{
+    background: linear-gradient(180deg, rgba(15, 111, 195, 0.7) 50.52%, rgba(245, 205, 14, 0.7) 98.96%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 31.77%, rgba(0, 0, 0, 0.2) 59.9%);
+}
+
