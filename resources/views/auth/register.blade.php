@@ -16,15 +16,13 @@ $country = DB::select('SELECT * FROM `countries` WHERE 1');
 <div class="auth-wrapper auth-v1 px-2">
     <div class="auth-inner py-2">
         <!-- Register v1 -->
-        <div class="card mb-0">
+        <div class="card-auth mb-0 p-2">
             <div class="card-body">
-
-                <a href="#" class="brand-logo">
-                    <h2 class="brand-text text-primary ms-1">Vuexy</h2>
+                <a href="#" class="card-text">
+                    <img src="{{ asset('images/zoe/logo/icon.png') }}" class="logo" width="40px" alt="">
                 </a>
-
-                <h4 class="card-title mb-1">Adventure starts here 🚀</h4>
-                <p class="card-text mb-2">Make your app management easy and fun!</p>
+                <h5 class="card-text mb-2 mt-2">Bienvenido a zor</h5>
+                <h1 class="card-title mb-1" style="font-weight: bold; font-size: 35px;">Registrate</h1>
 
                 <form class="auth-register-form mt-2" method="POST" action="{{ route('register') }}">
                     @csrf
@@ -148,39 +146,21 @@ $country = DB::select('SELECT * FROM `countries` WHERE 1');
                         </div>
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-secondary w-100">Sign up</button>
+                            <button type="submit" class="btn btn-secondary w-100">Registrar</button>
                         </div>
 
                     </div>
                 </form>
 
                 <p class="text-center mt-2">
-                    <span>Already have an account?</span>
                     @if (Route::has('login'))
                     <a href="{{ route('login') }}">
-                        <span>Sign in instead</span>
+                    <span>Ya tienes una cuenta?</span>
+                        <span>Iniciar sesión</span>
                     </a>
                     @endif
                 </p>
 
-                <div class="divider my-2">
-                    <div class="divider-text">or</div>
-                </div>
-
-                <div class="auth-footer-btn d-flex justify-content-center">
-                    <a href="#" class="btn btn-facebook">
-                        <i data-feather="facebook"></i>
-                    </a>
-                    <a href="#" class="btn btn-twitter white">
-                        <i data-feather="twitter"></i>
-                    </a>
-                    <a href="#" class="btn btn-google">
-                        <i data-feather="mail"></i>
-                    </a>
-                    <a href="#" class="btn btn-github">
-                        <i data-feather="github"></i>
-                    </a>
-                </div>
             </div>
         </div>
         <!-- /Register v1 -->

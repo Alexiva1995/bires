@@ -21,7 +21,8 @@ span,
 }
 
 .card-auth {
-    background: linear-gradient(90deg, rgba(1, 64, 120, 0.95) 52.6%, rgba(77, 72, 140, 0.76) 100%) !important;
+    background: linear-gradient(90deg, rgb(1, 65, 120) 52.6%, rgba(76, 72, 140, 0.907) 100%), url(./img/auth.png) no-repeat !important;
+    background-position: right !important;
     mix-blend-mode: normal !important;
     border-radius: 50px !important;
     color: #fff;
