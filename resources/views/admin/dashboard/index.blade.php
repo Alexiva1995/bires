@@ -32,7 +32,7 @@
                 <span>Wilmar Cardona a Generacion Zoe</span>
             </div>
             <div class="col-2 align-self-center">
-                <span class="" >Tu link de referido</span>
+                <span class="" ><i data-feather='arrow-up-right'></i> Tu link de referido</span>
             </div>
             <div class="col-2">
                 <div class="btn-group">
@@ -73,7 +73,7 @@
                         <div class="col-4">
                             <h5>Balance</h5>
                             <h2 class="fw-bolder mt-1">1.200</h2>
-                            <span class="card-text font-small-3">Comprar</span>
+                            <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Comprar</span>
                         </div>
                         <div class="col-4 align-self-center">
                             <h5>ZOEC</h5>
@@ -121,7 +121,7 @@
                             <div class="col-5">
                                 <h5>Referidos</h5>
                                 <h5 class="fw-bolder mt-1">25</h5>
-                                <span class="card-text font-small-3">Ver todos</span>
+                                <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Ver todos</span>
                             </div>
                             <div class="col-3 align-self-center">
                             </div>
@@ -133,412 +133,63 @@
             <!-- Orders Chart Card ends -->
         </div>
 
-        <div class="row match-height">
-            <!-- Avg Sessions Chart Card starts -->
-            <div class="col-lg-6 col-12">
-            <div class="card">
-                <div class="card-body">
-                <div class="row pb-50">
-                    <div class="col-sm-6 col-12 d-flex justify-content-between flex-column order-sm-1 order-2 mt-1 mt-sm-0">
-                    <div class="mb-1 mb-sm-0">
-                        <h2 class="fw-bolder mb-25">2.7K</h2>
-                        <p class="card-text fw-bold mb-2">Avg Sessions</p>
-                        <div class="font-medium-2">
-                        <span class="text-success me-25">+5.2%</span>
-                        <span>vs last 7 days</span>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-primary">View Details</button>
-                    </div>
-                    <div class="col-sm-6 col-12 d-flex justify-content-between flex-column text-end order-sm-2 order-1">
-                    <div class="dropdown chart-dropdown">
-                        <button
-                        class="btn btn-sm border-0 dropdown-toggle p-50"
-                        type="button"
-                        id="dropdownItem5"
-                        data-bs-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        >
-                        Last 7 Days
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownItem5">
-                        <a class="dropdown-item" href="#">Last 28 Days</a>
-                        <a class="dropdown-item" href="#">Last Month</a>
-                        <a class="dropdown-item" href="#">Last Year</a>
-                        </div>
-                    </div>
-                    
-                    </div>
-                </div>
-                <hr />
-                <div class="row avg-sessions pt-50">
-                    <div class="col-6 mb-2">
-                    <p class="mb-50">Goal: $100000</p>
-                    <div class="progress progress-bar-primary" style="height: 6px">
-                        <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="50"
-                        aria-valuemin="50"
-                        aria-valuemax="100"
-                        style="width: 50%"
-                        ></div>
-                    </div>
-                    </div>
-                    <div class="col-6 mb-2">
-                    <p class="mb-50">Users: 100K</p>
-                    <div class="progress progress-bar-warning" style="height: 6px">
-                        <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="60"
-                        aria-valuemin="60"
-                        aria-valuemax="100"
-                        style="width: 60%"
-                        ></div>
-                    </div>
-                    </div>
-                    <div class="col-6">
-                    <p class="mb-50">Retention: 90%</p>
-                    <div class="progress progress-bar-danger" style="height: 6px">
-                        <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="70"
-                        aria-valuemin="70"
-                        aria-valuemax="100"
-                        style="width: 70%"
-                        ></div>
-                    </div>
-                    </div>
-                    <div class="col-6">
-                    <p class="mb-50">Duration: 1yr</p>
-                    <div class="progress progress-bar-success" style="height: 6px">
-                        <div
-                        class="progress-bar"
-                        role="progressbar"
-                        aria-valuenow="90"
-                        aria-valuemin="90"
-                        aria-valuemax="100"
-                        style="width: 90%"
-                        ></div>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-            <!-- Avg Sessions Chart Card ends -->
-
-            <!-- Support Tracker Chart Card starts -->
-            <div class="col-lg-6 col-12">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between pb-0">
-                <h4 class="card-title">Support Tracker</h4>
-                <div class="dropdown chart-dropdown">
-                    <button
-                    class="btn btn-sm border-0 dropdown-toggle p-50"
-                    type="button"
-                    id="dropdownItem4"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >
-                    Last 7 Days
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownItem4">
-                    <a class="dropdown-item" href="#">Last 28 Days</a>
-                    <a class="dropdown-item" href="#">Last Month</a>
-                    <a class="dropdown-item" href="#">Last Year</a>
-                    </div>
-                </div>
-                </div>
-                <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-2 col-12 d-flex flex-column flex-wrap text-center">
-                    <h1 class="font-large-2 fw-bolder mt-2 mb-0">163</h1>
-                    <p class="card-text">Tickets</p>
-                    </div>
-                    <div class="col-sm-10 col-12 d-flex justify-content-center">
-                    <div id="support-trackers-chart"></div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between mt-1">
-                    <div class="text-center">
-                    <p class="card-text mb-50">New Tickets</p>
-                    <span class="font-large-1 fw-bold">29</span>
-                    </div>
-                    <div class="text-center">
-                    <p class="card-text mb-50">Open Tickets</p>
-                    <span class="font-large-1 fw-bold">63</span>
-                    </div>
-                    <div class="text-center">
-                    <p class="card-text mb-50">Response Time</p>
-                    <span class="font-large-1 fw-bold">1d</span>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-            <!-- Support Tracker Chart Card ends -->
-        </div>
-
-        <div class="row match-height">
-            <!-- Timeline Card -->
-            <div class="col-lg-4 col-12">
-            <div class="card card-user-timeline">
-                <div class="card-header">
-                <div class="d-flex align-items-center">
-                    <i data-feather="list" class="user-timeline-title-icon"></i>
-                    <h4 class="card-title">User Timeline</h4>
-                </div>
-                </div>
-                <div class="card-body">
-                <ul class="timeline ms-50">
-                    <li class="timeline-item">
-                    <span class="timeline-point timeline-point-indicator"></span>
-                    <div class="timeline-event">
-                        <h6>12 Invoices have been paid</h6>
-                        <p>Invoices are paid to the company</p>
-                        <div class="d-flex align-items-center">
-                        <img class="me-1" src="{{asset('images/icons/json.png')}}" alt="data.json" height="23" />
-                        <h6 class="more-info mb-0">data.json</h6>
-                        </div>
-                    </div>
-                    </li>
-                    <li class="timeline-item">
-                    <span class="timeline-point timeline-point-warning timeline-point-indicator"></span>
-                    <div class="timeline-event">
-                        <h6>Client Meeting</h6>
-                        <p>Project meeting with Carl</p>
-                        <div class="d-flex align-items-center">
-                        <div class="avatar me-50">
-                            <img
-                            src="{{asset('images/portrait/small/avatar-s-9.jpg')}}"
-                            alt="Avatar"
-                            width="38"
-                            height="38"
-                            />
-                        </div>
-                        <div class="more-info">
-                            <h6 class="mb-0">Carl Roy (Client)</h6>
-                            <p class="mb-0">CEO of Infibeam</p>
-                        </div>
-                        </div>
-                    </div>
-                    </li>
-                    <li class="timeline-item">
-                    <span class="timeline-point timeline-point-info timeline-point-indicator"></span>
-                    <div class="timeline-event">
-                        <h6>Create a new project</h6>
-                        <p>Add files to new design folder</p>
-                        <div class="avatar-group">
-                        <div
-                            data-bs-toggle="tooltip"
-                            data-popup="tooltip-custom"
-                            data-bs-placement="bottom"
-                            title="Billy Hopkins"
-                            class="avatar pull-up"
-                        >
-                            <img
-                            src="{{asset('images/portrait/small/avatar-s-9.jpg')}}"
-                            alt="Avatar"
-                            width="33"
-                            height="33"
-                            />
-                        </div>
-                        <div
-                            data-bs-toggle="tooltip"
-                            data-popup="tooltip-custom"
-                            data-bs-placement="bottom"
-                            title="Amy Carson"
-                            class="avatar pull-up"
-                        >
-                            <img
-                            src="{{asset('images/portrait/small/avatar-s-6.jpg')}}"
-                            alt="Avatar"
-                            width="33"
-                            height="33"
-                            />
-                        </div>
-                        <div
-                            data-bs-toggle="tooltip"
-                            data-popup="tooltip-custom"
-                            data-bs-placement="bottom"
-                            title="Brandon Miles"
-                            class="avatar pull-up"
-                        >
-                            <img
-                            src="{{asset('images/portrait/small/avatar-s-8.jpg')}}"
-                            alt="Avatar"
-                            width="33"
-                            height="33"
-                            />
-                        </div>
-                        <div
-                            data-bs-toggle="tooltip"
-                            data-popup="tooltip-custom"
-                            data-bs-placement="bottom"
-                            title="Daisy Weber"
-                            class="avatar pull-up"
-                        >
-                            <img
-                            src="{{asset('images/portrait/small/avatar-s-7.jpg')}}"
-                            alt="Avatar"
-                            width="33"
-                            height="33"
-                            />
-                        </div>
-                        <div
-                            data-bs-toggle="tooltip"
-                            data-popup="tooltip-custom"
-                            data-bs-placement="bottom"
-                            title="Jenny Looper"
-                            class="avatar pull-up"
-                        >
-                            <img
-                            src="{{asset('images/portrait/small/avatar-s-20.jpg')}}"
-                            alt="Avatar"
-                            width="33"
-                            height="33"
-                            />
-                        </div>
-                        </div>
-                    </div>
-                    </li>
-                    <li class="timeline-item">
-                    <span class="timeline-point timeline-point-danger timeline-point-indicator"></span>
-                    <div class="timeline-event">
-                        <h6>Update project for client</h6>
-                        <p class="mb-0">Update files as per new design</p>
-                    </div>
-                    </li>
-                </ul>
-                </div>
-            </div>
-            </div>
-            <!--/ Timeline Card -->
-
-            <!-- Sales Stats Chart Card starts -->
-            <div class="col-lg-4 col-md-6 col-12">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-start pb-1">
-                <div>
-                    <h4 class="card-title mb-25">Sales</h4>
-                    <p class="card-text">Last 6 months</p>
-                </div>
-                <div class="dropdown chart-dropdown">
-                    <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
-                    <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="#">Last 28 Days</a>
-                    <a class="dropdown-item" href="#">Last Month</a>
-                    <a class="dropdown-item" href="#">Last Year</a>
-                    </div>
-                </div>
-                </div>
-                <div class="card-body">
-                <div class="d-inline-block me-1">
-                    <div class="d-flex align-items-center">
-                    <i data-feather="circle" class="font-small-3 text-primary me-50"></i>
-                    <h6 class="mb-0">Sales</h6>
-                    </div>
-                </div>
-                <div class="d-inline-block">
-                    <div class="d-flex align-items-center">
-                    <i data-feather="circle" class="font-small-3 text-info me-50"></i>
-                    <h6 class="mb-0">Visits</h6>
-                    </div>
-                </div>
-                <div id="sales-visit-chart" class="mt-50"></div>
-                </div>
-            </div>
-            </div>
-            <!-- Sales Stats Chart Card ends -->
-
-            <!-- App Design Card -->
-            <div class="col-lg-4 col-md-6 col-12">
-            <div class="card card-app-design">
-                <div class="card-body">
-                <span class="badge badge-light-primary">03 Sep, 20</span>
-                <h4 class="card-title mt-1 mb-75 pt-25">App design</h4>
-                <p class="card-text font-small-2 mb-2">
-                    You can Find Only Post and Quotes Related to IOS like ipad app design, iphone app design
-                </p>
-                <div class="design-group mb-2 pt-50">
-                    <h6 class="section-label">Team</h6>
-                    <span class="badge badge-light-warning me-1">Figma</span>
-                    <span class="badge badge-light-primary">Wireframe</span>
-                </div>
-                <div class="design-group pt-25">
-                    <h6 class="section-label">Members</h6>
-                    <div class="avatar">
-                    <img src="{{asset('images/portrait/small/avatar-s-9.jpg')}}" width="34" height="34" alt="Avatar" />
-                    </div>
-                    <div class="avatar bg-light-danger">
-                    <div class="avatar-content">PI</div>
-                    </div>
-                    <div class="avatar">
-                    <img
-                        src="{{asset('images/portrait/small/avatar-s-14.jpg')}}"
-                        width="34"
-                        height="34"
-                        alt="Avatar"
-                    />
-                    </div>
-                    <div class="avatar">
-                    <img src="{{asset('images/portrait/small/avatar-s-7.jpg')}}" width="34" height="34" alt="Avatar" />
-                    </div>
-                    <div class="avatar bg-light-secondary">
-                    <div class="avatar-content">AL</div>
-                    </div>
-                </div>
-                <div class="design-planning-wrapper mb-2 py-75">
-                    <div class="design-planning">
-                    <p class="card-text mb-25">Due Date</p>
-                    <h6 class="mb-0">12 Apr, 21</h6>
-                    </div>
-                    <div class="design-planning">
-                    <p class="card-text mb-25">Budget</p>
-                    <h6 class="mb-0">$49251.91</h6>
-                    </div>
-                    <div class="design-planning">
-                    <p class="card-text mb-25">Cost</p>
-                    <h6 class="mb-0">$840.99</h6>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-primary w-100">Join Team</button>
-                </div>
-            </div>
-            </div>
-            <!--/ App Design Card -->
-        </div>
-
-        <!-- List DataTable -->
         <div class="row">
-            <div class="col-12">
-            <div class="card invoice-list-wrapper">
-                <div class="card-datatable table-responsive">
-                <table class="invoice-list-table table">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>#</th>
-                        <th><i data-feather="trending-up"></i></th>
-                        <th>Client</th>
-                        <th>Total</th>
-                        <th class="text-truncate">Issued Date</th>
-                        <th>Balance</th>
-                        <th>Invoice Status</th>
-                        <th class="cell-fit">Actions</th>
-                    </tr>
-                    </thead>
-                </table>
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Depositos</h5>
+                        <h5 class="fw-bolder mt-1 text-white-50">Sin depositos recientes</h5>
+                        <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Realizar deposito</span>
+                    </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Retiros</h5>
+                        <h5 class="fw-bolder mt-1 text-white-50">Sin retiros recientes</h5>
+                        <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Ver retiros</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Plan activo</h5>
+                        <h5 class="fw-bolder mt-1 text-white-50">No posees plan activo</h5>
+                        <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Comprar plan educativo</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <!--/ List DataTable -->
+
+        <div class="col-12">
+            <div class="card">
+              <div
+                class="
+                  card-header
+                  d-flex
+                  flex-md-row flex-column
+                  justify-content-md-between justify-content-start
+                  align-items-md-center align-items-start
+                "
+              >
+                <h4 class="card-title">Data Science</h4>
+                <div class="d-flex align-items-center mt-md-0 mt-1">
+                  <i class="font-medium-2" data-feather="calendar"></i>
+                  <input
+                    type="text"
+                    class="form-control flat-picker bg-transparent border-0 shadow-none"
+                    placeholder="YYYY-MM-DD"
+                  />
+                </div>
+              </div>
+              <div class="card-body">
+                <div id="column-chart"></div>
+              </div>
+            </div>
+        </div>
+
     </div>
     <div class="col-3">
         <div class="card">
@@ -562,6 +213,7 @@
 @section('vendor-script')
   <!-- vendor files -->
   <script src="{{ asset(mix('vendors/js/charts/apexcharts.min.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/pickers/flatpickr/flatpickr.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/extensions/toastr.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/extensions/moment.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/tables/datatable/jquery.dataTables.min.js')) }}"></script>
@@ -574,4 +226,105 @@
   <!-- Page js files -->
   <script src="{{ asset(mix('js/scripts/pages/dashboard-analytics.js')) }}"></script>
   <script src="{{ asset(mix('js/scripts/pages/app-invoice-list.js')) }}"></script>
+
+  <script>
+      // Column Chart
+    // --------------------------------------------------------------------
+    var flatPicker = $('.flat-picker'),
+    isRtl = $('html').attr('data-textdirection') === 'rtl',
+    chartColors = {
+      column: {
+        series1: '#826af9',
+        series2: '#d2b0ff',
+        bg: '#f8d3ff'
+      },
+      success: {
+        shade_100: '#7eefc7',
+        shade_200: '#06774f'
+      },
+      donut: {
+        series1: '#ffe700',
+        series2: '#00d4bd',
+        series3: '#826bf8',
+        series4: '#2b9bf4',
+        series5: '#FFA1A1'
+      },
+      area: {
+        series3: '#a4f8cd',
+        series2: '#60f2ca',
+        series1: '#2bdac7'
+      }
+    };
+    
+    var columnChartEl = document.querySelector('#column-chart'),
+        columnChartConfig = {
+        chart: {
+            height: 400,
+            type: 'bar',
+            stacked: true,
+            parentHeightOffset: 0,
+            toolbar: {
+            show: false
+            }
+        },
+        plotOptions: {
+            bar: {
+            columnWidth: '15%',
+            colors: {
+                backgroundBarColors: [
+                chartColors.column.bg,
+                chartColors.column.bg,
+                chartColors.column.bg,
+                chartColors.column.bg,
+                chartColors.column.bg
+                ],
+                backgroundBarRadius: 10
+            }
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        legend: {
+            show: true,
+            position: 'top',
+            horizontalAlign: 'start'
+        },
+        colors: [chartColors.column.series1, chartColors.column.series2],
+        stroke: {
+            show: true,
+            colors: ['transparent']
+        },
+        grid: {
+            xaxis: {
+            lines: {
+                show: true
+            }
+            }
+        },
+        series: [
+            {
+            name: 'Apple',
+            data: [90, 120, 55, 100, 80, 125, 175, 70, 88, 180]
+            },
+            {
+            name: 'Samsung',
+            data: [85, 100, 30, 40, 95, 90, 30, 110, 62, 20]
+            }
+        ],
+        xaxis: {
+            categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12', '16/12']
+        },
+        fill: {
+            opacity: 1
+        },
+        yaxis: {
+            opposite: isRtl
+        }
+        };
+    if (typeof columnChartEl !== undefined && columnChartEl !== null) {
+        var columnChart = new ApexCharts(columnChartEl, columnChartConfig);
+        columnChart.render();
+    }
+  </script>
 @endsection
