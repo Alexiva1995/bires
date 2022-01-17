@@ -68,25 +68,16 @@
             </div>
             <hr class="text-white ms-0 col-12" style="width: 100% !important">
             <div class="col-12">
-              <form action={{route('intercambios.payment-methods')}}>
-                <div class="row d-flex">
-                  <div class="mb-3 ps-2 col col-sm-5 flex-start input-container">
-                    <label for="cantidad" class="form-label text-white form-label-text-size">Cantidad</label>
-                    <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="emailHelp">
-                    <span class="permanent-placeholder">USD</span>
-                    <div class="form-text secondary"  >Comisión: 1 USD</div>
-                  </div>
-                  <div class="col-sm-2"></div>
-                  <div class="mb-3 ps-2 col col-sm-5 flex-end input-container">
-                    <label for="recibido" class="form-label text-white form-label-text-size">Recibo</label>
-                    <input type="number" class="form-control" id="recibido" name="recibido">
-                    <span class="permanent-placeholder">ZOEC</span>
-                    <div class="form-text secondary"  >Cantidad recibida en ZOEC</div>
-                  </div>
+              <form action={{route('intercambios.payment-aproved')}}>
+                <div class="row d-flex mx-auto mb-1 mt-2">
+
+                    <h4 class="text-white text-center font-bold d-block mx-auto">Método vía {}</h4>
+                    <h5 class="text-white text-center d-block mx-auto">Completa tu pago ahora!</h5>
+
                 </div>
                 <div class="row mx-auto">
                   <div class="col-6 mx-auto">
-                    <button type="submit" class="btn btn-yellow w-100 text-white lead" >Continuar</button>
+                    <button type="submit" class="btn btn-yellow w-100 text-white" >Comprar {} ZOEC</button>
                     <div class="mx-auto">
                       <p class="text-white text-center f-little fw-lighter mt-1 mb-0">Pagar 1 USD. Comisión incluida. </p>
                       <p class="text-white text-center f-little fw-lighter mt-0 mb-3" >Tiempo de ingreso ~ 20 minutos.</p>

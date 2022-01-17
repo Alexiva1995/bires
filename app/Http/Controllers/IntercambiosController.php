@@ -13,4 +13,12 @@ class IntercambiosController extends Controller
     public function paymentMethods(){
         return view('intercambios.paymentMethods');
     }
+
+    public function confirmPayment(){
+        return view('intercambios.confirmPayment');
+    }
+
+    public function paymentAproved(){
+        return view('intercambios.paymentAproved');
+    }
 }
