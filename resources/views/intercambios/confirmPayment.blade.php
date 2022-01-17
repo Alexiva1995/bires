@@ -60,7 +60,7 @@
           <div class="border border-info border-5 rounded-1 container-fluid" style="background: #032351">
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="text-white ms-2 mt-1 ">Comprando ZOEC</h3>
+                <h3 class="text-white ms-2 mt-1 ">Método de pago</h3>
               </div>
               <div class="col-sm-6">
                 <h6 class="text-white ps-5 mt-2 f-little fw-lighter"> Datos protegidos por el estándar PCI DSS </h6>
