@@ -21,7 +21,13 @@
         }
       ]
     },
+    {
+        "name": "Intercambios",
+        "url": "intercambios/index",
+        "icon": "circle",
+        "slug": "dashboard-analytics"
 
+    },
     {
       "navheader": "Apps & Pages",
       "slug": ""
