@@ -1,5 +1,6 @@
 <!-- BEGIN: Vendor JS-->
 <script src="{{ asset(mix('vendors/js/vendors.min.js')) }}"></script>
+<script src="{{ asset('vendors/js/extensions/sweetalert2.all.min.js') }}"></script>
 <!-- BEGIN Vendor JS-->
 <!-- BEGIN: Page Vendor JS-->
 <script src="{{asset(mix('vendors/js/ui/jquery.sticky.js'))}}"></script>
@@ -22,3 +23,24 @@
 <!-- END: Page JS-->
 <!-- CDN JS-->
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+    function getlink() {
+        var aux = document.createElement("input");
+        aux.setAttribute("value", "{{route('register')}}?referred_id={{Auth::id()}}");
+        document.body.appendChild(aux);
+        aux.select();
+        document.execCommand("copy");
+        document.body.removeChild(aux);
+        
+        Swal.fire({
+        title: "Link Copiado",
+        icon: 'success',
+        color: '#716add',
+        text: "Ya puedes pegarlo en su navegador",
+        type: "success",
+        background:'#043D70',
+        confirmButtonClass: 'btn btn-secondary',
+        })
+    }
+</script>
