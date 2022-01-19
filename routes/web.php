@@ -34,6 +34,9 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 Auth::routes();
 
 // Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
+Route::get('/test', function(){
+    return view('index');
+});
 Route::middleware('auth')->group(function () {
 
 // Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');

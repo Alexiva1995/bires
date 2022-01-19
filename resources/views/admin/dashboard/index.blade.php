@@ -15,6 +15,47 @@
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/charts/chart-apex.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-toastr.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-invoice-list.css')) }}">
+    <style>
+        #card-verificar-cuenta{
+            /*
+            position: absolute;
+            width: 224px;
+            height: 261px;
+            left: 1222px;
+            top: 163px;
+            */
+            background: linear-gradient(180deg, rgba(22, 78, 186, 0) 8.33%, #0472D1 54.69%, rgba(26, 76, 120, 0.994764) 92.19%), url('images/zoe/universe/brechas-seguridad-lector-huellas-reconocimiento-facial.jpg');
+            /*mix-blend-mode: normal;
+            border-radius: 10px;*/
+        }
+
+        #card-desarrolloPersonal{
+            background: url('images/zoe/academy/desarrollo-personal.png');
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100% ;
+        }
+
+        #card-inteligenciaEmocional{
+            background: url('images/zoe/academy/inteligencia-emocional.png');
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100% ;
+        }
+
+        #card-habilidadesBlandas{
+            background: url('images/zoe/academy/habilidades-blandas.png');
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100% ;
+        }
+    </style>
   @endsection
 
 @section('content')
@@ -32,12 +73,12 @@
                 <span>Wilmar Cardona a Generacion Zoe</span>
             </div>
             <div class="col-2 align-self-center">
-                <span class="" ><i data-feather='arrow-up-right'></i> Tu link de referido</span>
+                <span class="small" ><i data-feather='arrow-up-right'></i> Tu link de referido</span>
             </div>
             <div class="col-2">
                 <div class="btn-group">
                     <button
-                      class="btn btn-flat-primary dropdown-toggle"
+                      class="btn btn-flat-primary dropdown-toggle small"
                       type="button"
                       id="dropdownMenuButton100"
                       data-bs-toggle="dropdown"
@@ -66,14 +107,20 @@
             <div class="col-xl-4 col-md-6 col-12">
                 <div class="card card-dark">
                   <div class="card-body">
-                    <div class="row">
+                    <div class="row g-0">
                         <div class="col-4 align-self-center">
-                            <img class="img" style="width: 100%;" src="{{asset('images/illustration/badge.svg')}}" />
+                            
+                            <div class="avatar avatar-lg bg-secondary p-50 m-0">
+                                <div class="avatar-content">
+                                    <img class="img" src="{{asset('images/zoe/svg/puerta.svg')}}" />
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="col-4">
                             <h5>Balance</h5>
-                            <h2 class="fw-bolder mt-1">1.200</h2>
-                            <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Comprar</span>
+                            <h2 class="fw-bolder">1.200</h2>
+                            <span class="card-text font-small-1"><i data-feather='arrow-up-right'></i> Comprar</span>
                         </div>
                         <div class="col-4 align-self-center">
                             <h5>ZOEC</h5>
@@ -112,16 +159,16 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4 align-self-center">
-                                <div class="avatar bg-light-warning p-50 m-0">
+                                <div class="avatar avatar-lg bg-secondary p-50 m-0">
                                     <div class="avatar-content">
-                                    <i data-feather="package" class="font-medium-5"></i>
+                                        <img class="img" src="{{asset('images/zoe/svg/user.svg')}}" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-5">
                                 <h5>Referidos</h5>
                                 <h5 class="fw-bolder mt-1">25</h5>
-                                <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Ver todos</span>
+                                <span class="card-text font-small-1"><i data-feather='arrow-up-right'></i> Ver todos</span>
                             </div>
                             <div class="col-3 align-self-center">
                             </div>
@@ -192,18 +239,64 @@
 
     </div>
     <div class="col-3">
-        <div class="card">
-            <div class="card-header flex-column align-items-start pb-0">
-              <div class="avatar bg-light-primary p-50 m-0">
-                <div class="avatar-content">
-                  <i data-feather="users" class="font-medium-5"></i>
+        <div class="card" id="card-verificar-cuenta" style="border: none;">
+        
+            <div class="card-body">
+                <div class="m-2">
+                    <img class="img" src="{{asset('images/zoe/svg/huella.svg')}}" />
                 </div>
-              </div>
-              <h2 class="fw-bolder mt-1">92.6k</h2>
-              <p class="card-text">Subscribers Gained</p>
+
+                <p>Verifica tu cuenta</p>
+                
+                <span class="card-text">Necesitamos verificar</span>
+                <br>
+                <span>tu cuenta para mayor seguridad</span>
             </div>
-            <div id="gained-chart"></div>
+            <div class="card-footer">
+                <div class="container">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-secondary rounded">Verificar</button>    
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="card card-dark" style="border: none;">
+            <div class="card-header flex-column align-items-start pb-0 mb-2">
+              <h5>Cursos recientes</h5>
+            </div>
+
+            <div class="card mx-1" id="card-desarrolloPersonal" style="border: none; width: 90%;"> 
+                <div class="card-body">
+                    <span class="badge bg-secondary mb-2">Nuevo</span>
+                    <h3 class="text-center">Desarrollo Personal y Profesional</h3>
+                    <div class="text-center">
+                        <button class="btn btn-primary">Ver curso</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mx-1" id="card-inteligenciaEmocional" style="border: none; width: 90%;">
+                <div class="card-body">
+                    <span class="badge bg-secondary mb-2">Nuevo</span>
+                    <h3 class="text-center">Inteligencia emocional</h3>
+                    <div class="text-center">
+                        <button class="btn btn-primary">Ver curso</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mx-1" id="card-habilidadesBlandas"  style="border: none; width: 90%;">
+                <div class="card-body">
+                    <span class="badge bg-secondary mb-2">Nuevo</span>
+                    <h3 class="text-center">Habilidades blandas para liderez</h3>
+                    <div class="text-center">
+                        <button class="btn btn-primary">Ver curso</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 </section>
