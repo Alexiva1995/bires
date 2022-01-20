@@ -48,6 +48,10 @@
       border-color: #ffa956 !important;
     }
 
+    .primary-background{
+        background: #032351;
+    }
+
   </style>
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/dataTables.bootstrap5.min.css')) }}">
@@ -57,7 +61,7 @@
 
     <section>
         <div class="d-flex p-2 bd-highlight">
-          <div class="border border-info border-5 rounded-1 container-fluid" style="background: #032351">
+          <div class="border border-info border-5 rounded-1 container-fluid primary-background" >
             <div class="row">
               <div class="col-sm-6">
                 <h3 class="text-white ms-2 mt-1 ">Comprando ZOEC</h3>
@@ -68,7 +72,13 @@
             </div>
             <hr class="text-white ms-0 col-12" style="width: 100% !important">
             <div class="col-12">
-              <form action={{route('intercambios.payment-methods')}}>
+                @if (session('status'))
+                    <div class="alert alert-danger">
+                        {{ session('status') }}
+                    </div>
+                @endif
+              <form action={{route('intercambios.payment-methods')}} method="get">
+                @csrf
                 <div class="row d-flex">
                   <div class="mb-3 ps-2 col col-sm-5 flex-start input-container">
                     <label for="cantidad" class="form-label text-white form-label-text-size">Cantidad</label>
@@ -110,5 +120,24 @@
   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.responsive.min.js')) }}"></script>
 @endsection
 @section('page-script')
+
+    <script>
+        document.getElementById("cantidad").onchange = function() {updateValues()};
+
+        function updateValues() {
+            let cantidad = document.getElementById("cantidad");
+            recibido.value = cantidad.value - 1;
+        }
+
+        document.getElementById("recibido").onchange = function() {updateValuesRecibidos()};
+
+        function updateValuesRecibidos() {
+            let recibido = document.getElementById("recibido");
+
+            cantidad.value = parseFloat(recibido.value) + parseFloat(1);
+        }
+
+
+    </script>
 
 @endsection

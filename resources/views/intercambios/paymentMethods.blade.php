@@ -18,7 +18,7 @@
     }
 
     .permanent-placeholder{
-      
+
       position: absolute;
       display: block;
       top: 3.2rem;
@@ -48,6 +48,10 @@
       border-color: #ffa956 !important;
     }
 
+    .primary-background{
+        background: #032351;
+    }
+
   </style>
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/dataTables.bootstrap5.min.css')) }}">
@@ -57,19 +61,25 @@
 
     <section>
         <div class="d-flex p-2 bd-highlight">
-          <div class="border border-info border-5 rounded-1 container-fluid" style="background: #032351">
+          <div class="border border-info border-5 rounded-1 container-fluid primary-background" >
             <div class="row">
               <div class="col-sm-6">
                 <h3 class="text-white ms-2 mt-1 ">Método de pago</h3>
               </div>
               <div class="col-sm-6">
                 <h6 class="text-white ps-5 mt-2 f-little fw-lighter"> Datos protegidos por el estándar PCI DSS </h6>
-                <i class="bi bi-shield-fill-check"></i><i class="fas fa-shield-check"></i> 
+                <i class="bi bi-shield-fill-check"></i><i class="fas fa-shield-check"></i>
             </div>
-            <hr class="text-white ms-0 col-12" style="width: 100% !important">  
-              @include('intercambios.components.paymentCards')
+            <hr class="text-white ms-0 col-12" style="width: 100% !important">
+                {{-- <form action={{route('settlement.aprobarRetiro')}} method="POST"> --}}
+                  {{--   @csrf --}}
+                    @include('intercambios.components.paymentCards')
+                    <input type="hidden" name="cantidad" value={{$data['cantidad']}} id="cantidad" >
+                    <input type="hidden" name="recibido" value={{$data['recibido']}} id="recibido" >
+               {{--  </form> --}}
           </div>
         </div>
+        @include('intercambios.components.modalCoinPaymentsWallet')
     </section>
 
 
@@ -83,5 +93,5 @@
   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.responsive.min.js')) }}"></script>
 @endsection
 @section('page-script')
- 
+
 @endsection
