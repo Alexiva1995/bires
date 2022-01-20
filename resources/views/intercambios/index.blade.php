@@ -77,7 +77,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-              <form action={{route('intercambios.payment-methods')}} method="get">
+              <form action={{route('intercambios.payment-methods')}} method="post">
                 @csrf
                 <div class="row d-flex">
                   <div class="mb-3 ps-2 col col-sm-5 flex-start input-container">

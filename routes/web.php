@@ -231,7 +231,7 @@ Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 //Intercambios
 
 Route::get('/intercambios/index', [IntercambiosController::class, 'index'])->name('intercambios.index');
-Route::get('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
+Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
 Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
 Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
 Route::group(['prefix' => 'plans'], function () {
