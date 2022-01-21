@@ -31,15 +31,18 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 */
 
 // Main Page Route
-Auth::routes();
 
-// Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
+Route::get('/', [DashboardController::class, 'landing'])->name('landing');
+
+Auth::routes(['verify' => true]);
+
 Route::middleware('auth')->group(function () {
 
-// Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
-Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard.index');
+    Route::middleware('admin')->group(function () {
 
+Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
 
+});
 /* Route Dashboards */
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
@@ -231,9 +234,16 @@ Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 //Intercambios
 
 Route::get('/intercambios/index', [IntercambiosController::class, 'index'])->name('intercambios.index');
-Route::get('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
-Route::get('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
+Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
+Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
 Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
 Route::group(['prefix' => 'plans'], function () {
     Route::get('', [PlanController::class, 'index'])->name('plans.index');
 });
+
+
+//Settlement
+
+Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
+Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
+

@@ -145,7 +145,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown mx-1">
-            <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="dropdown">Referir</a>
+            <a class="btn btn-primary" href="#" id="referred" data-bs-toggle="dropdown">Referir</a> 
           </li>
           <li class="nav-item dropdown mx-1">
             <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>

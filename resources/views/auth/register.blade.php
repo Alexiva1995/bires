@@ -11,7 +11,19 @@
 
 @php
 $country = DB::select('SELECT * FROM `countries` WHERE 1');
+
+$referred = null;
 @endphp
+
+@if (request()->referred_id != null)
+@php
+$referred = DB::table('users')
+->select('username')
+->where('id', '=', request()->referred_id)
+->first();
+
+@endphp
+@endif
 
 <div class="auth-wrapper auth-v1 px-2">
     <div class="auth-inner py-2">
@@ -23,11 +35,20 @@ $country = DB::select('SELECT * FROM `countries` WHERE 1');
                 </a>
                 <h5 class="card-text mb-2 mt-2">Bienvenido a zoe</h5>
                 <h1 class="card-title mb-1" style="font-weight: bold; font-size: 35px;">Registrate</h1>
-
+                @if (!empty($referred))
+                <h4 class="mt-1 text-white">Referido por: <b class="text-secondary"> {{$referred->username}}</b></h4>
+                @endif
                 <form class="auth-register-form mt-2" method="POST" action="{{ route('register') }}">
                     @csrf
 
                     <div class="row">
+
+                        {{-- id del referido --}}
+                        @if (!empty($referred))
+                        <input class="hidden" type="text" name="referred_id" value="{{request()->referred_id}}" />
+                        @else
+                        <input class="hidden" type="text" name="referred_id" value="1" />
+                        @endif
 
                         <div class="col-6 mb-1">
                             <label for="username" class="form-label">Usuario</label>
@@ -80,7 +101,8 @@ $country = DB::select('SELECT * FROM `countries` WHERE 1');
                                 id="country" required>
                                 <option disabled selected value="">Selecciona un pais</option>
                                 @foreach ($country as $item)
-                                <option value="{{ $country[$loop->index]->id }}">{{ $country[$loop->index]->name }}</option>
+                                <option value="{{ $country[$loop->index]->id }}">{{ $country[$loop->index]->name }}
+                                </option>
                                 @endforeach
                             </select>
                             @error('country')
@@ -114,7 +136,8 @@ $country = DB::select('SELECT * FROM `countries` WHERE 1');
 
                         <div class="col-6 mb-1">
                             <label for="password" class="form-label">Contraseña</label>
-                            <div class="input-group input-group-merge form-password-toggle @error('password') is-invalid @enderror">
+                            <div
+                                class="input-group input-group-merge form-password-toggle @error('password') is-invalid @enderror">
                                 <input type="password"
                                     class="form-control form-control-merge @error('password') is-invalid @enderror"
                                     id="password" name="password" placeholder="**********" />
@@ -138,9 +161,10 @@ $country = DB::select('SELECT * FROM `countries` WHERE 1');
 
                         <div class="col-12 mb-1">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="privacy-policy" name="terms"/>
+                                <input class="form-check-input" type="checkbox" id="privacy-policy" name="terms" required />
                                 <label class="form-check-label" for="privacy-policy">
-                                  Acepto la política de <a href="#" class="text-secondary">privacidad y los términos</a>
+                                    Acepto la política de <a href="#" class="text-secondary">privacidad y los
+                                        términos</a>
                                 </label>
                             </div>
                         </div>
@@ -155,7 +179,7 @@ $country = DB::select('SELECT * FROM `countries` WHERE 1');
                 <p class="text-center mt-2">
                     @if (Route::has('login'))
                     <a href="{{ route('login') }}">
-                    <span>Ya tienes una cuenta?</span>
+                        <span>Ya tienes una cuenta?</span>
                         <span>Iniciar sesión</span>
                     </a>
                     @endif
