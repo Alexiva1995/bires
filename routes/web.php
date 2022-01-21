@@ -38,9 +38,11 @@ Auth::routes(['verify' => true]);
 Route::middleware('auth')->group(function () {
 
 // Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+Route::middleware('admin')->group(function () {
+
 Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard.index');
 
-
+});
 /* Route Dashboards */
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');

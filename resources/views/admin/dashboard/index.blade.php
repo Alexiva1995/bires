@@ -9,15 +9,19 @@
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.min.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/dataTables.bootstrap5.min.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/responsive.bootstrap4.min.css')) }}">
+  <link rel="stylesheet" href="{{ asset(mix('vendors/css/animate/animate.min.css')) }}">
+  <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/sweetalert2.min.css')) }}">
 @endsection
 @section('page-style')
   <!-- Page css files -->
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/charts/chart-apex.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-toastr.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-invoice-list.css')) }}">
+<link rel="stylesheet" href="{{asset(mix('css/base/plugins/extensions/ext-component-sweet-alerts.css'))}}">
+
   @endsection
 
-@section('content')
+  @section('content')
 <!-- Dashboard Analytics Start -->
 <section id="dashboard-analytics">
 
@@ -124,6 +128,7 @@
                                 <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Ver todos</span>
                             </div>
                             <div class="col-3 align-self-center">
+                                <button class="btn-darks btn-block mt-4 rounded" style="boder-color=#66FFCC; position: //" onclick="getlink()">
                             </div>
                         </div>
                     </div>
@@ -221,12 +226,17 @@
   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.bootstrap5.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.responsive.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/tables/datatable/responsive.bootstrap4.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
+  <script src="{{ asset(mix('vendors/js/extensions/polyfill.min.js')) }}"></script>
 @endsection
 @section('page-script')
   <!-- Page js files -->
   <script src="{{ asset(mix('js/scripts/pages/dashboard-analytics.js')) }}"></script>
   <script src="{{ asset(mix('js/scripts/pages/app-invoice-list.js')) }}"></script>
+  <script src="{{ asset(mix('js/scripts/extensions/ext-component-sweet-alerts.min.js')) }}"></script>
 
+
+  @include('panels.linkReferido')
   <script>
       // Column Chart
     // --------------------------------------------------------------------

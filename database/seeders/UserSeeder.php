@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
             'lastname'=> Str::random(5),
             'phone'=> Str::random(5),
             'country_id'=> '1',
+            'referred_id'=> '1',
             'email'=> 'admin@zoe.com',
             'email_verified_at'=> Carbon::now(),
             'password' => Hash::make('12345678'),
