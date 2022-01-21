@@ -75,6 +75,7 @@ class IntercambiosController extends Controller
                 $correo_code = $validate['correo_code'];
                 $idliquidation = $request->idLiquidation;
                 $liquidation = Liquidaction::find($idliquidation);
+
                 $user = Auth::user();
                 /* $accion = 'No Procesada';
                  if ($this->reversarRetiro30Min()) {
@@ -103,13 +104,15 @@ class IntercambiosController extends Controller
                          $accion = 'Aprobada';
                          $request->comentario= "Aprobada";
 
-                        /*  $comisiones = Wallet::where([
-                            ['user_id', '=', $user->id],
-                            ['status', '=', 0],
-                            ['liquidado','=', 0],
-                            ['tipo_transaction', '=', 0],
-                            ['type', '!=' , 5]
-                            ])->get(); */
+                          $wallet = Wallet::create([
+                            'user_id' => $user->id,
+                            'status' => 1,
+                            'amount' => $liquidation->total,
+                            'origen' => 'CoinPayments',
+
+                            ]);
+
+                            $wallet->save();
 
                          if (!empty($idliquidation)) {
                             /* $listComi = $comisiones->pluck('id');
@@ -167,7 +170,7 @@ class IntercambiosController extends Controller
                 'wallet_used' => $billetera
             ]);
 
-            Wallet::where('liquidation_id', $idliquidation)->update(['liquidado' => 1, 'status' => 1]);
+            /* Wallet::where('liquidation_id', $idliquidation)->update(['liquidado' => 1, 'status' => 1]); */
         }else{
             $result2 = 'Error -> '.$result['error'];
         }
@@ -179,10 +182,10 @@ class IntercambiosController extends Controller
     {
         $liquidacion = Liquidaction::find($idliquidation);
 
-        Wallet::where('liquidation_id', $idliquidation)->update([
+        /* Wallet::where('liquidation_id', $idliquidation)->update([
             'status' => 2,
             'liquidation_id' => null,
-        ]);
+        ]); */
 
         // $concepto = 'Liquidacion Reservada - Motivo: '.$comentario;
         // $arrayWallet =[
@@ -250,7 +253,7 @@ class IntercambiosController extends Controller
         } else {
             return array('error' => 'cURL error: '.curl_error($ch));
         }
-        // dd($this->coinpayments_api_call('rates'));
+
     }
 
     public function saveLiquidation(array $data): int
