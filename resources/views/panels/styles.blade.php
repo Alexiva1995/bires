@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="{{ asset(mix('css/base/core/menu/menu-types/vertical-menu.css')) }}" />
 @endif
 
+<link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/extensions/sweetalert2.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/base/plugins/extensions/ext-component-sweet-alerts.css') }}">
 {{-- Page Styles --}}
 @yield('page-style')
 
@@ -36,4 +38,13 @@
 @else
 {{-- user custom styles --}}
 <link rel="stylesheet" href="{{ asset(mix('css/style.css')) }}" />
+<style>
+    .swal2-html-container{
+        color: #fff !important;
+    }
+
+    .swal2-title{
+        color: #fff !important;
+    }
+</style>
 @endif

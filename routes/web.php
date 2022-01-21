@@ -35,6 +35,9 @@ Auth::routes(['verify' => true]);
 
 
 // Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
+Route::get('/test', function(){
+    return view('index');
+});
 Route::middleware('auth')->group(function () {
 
 // Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
@@ -234,9 +237,16 @@ Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 //Intercambios
 
 Route::get('/intercambios/index', [IntercambiosController::class, 'index'])->name('intercambios.index');
-Route::get('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
-Route::get('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
+Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
+Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
 Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
 Route::group(['prefix' => 'plans'], function () {
     Route::get('', [PlanController::class, 'index'])->name('plans.index');
 });
+
+
+//Settlement
+
+Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
+Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
+

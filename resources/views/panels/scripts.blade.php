@@ -1,5 +1,6 @@
 <!-- BEGIN: Vendor JS-->
 <script src="{{ asset(mix('vendors/js/vendors.min.js')) }}"></script>
+<script src="{{ asset('vendors/js/extensions/sweetalert2.all.min.js') }}"></script>
 <!-- BEGIN Vendor JS-->
 <!-- BEGIN: Page Vendor JS-->
 <script src="{{asset(mix('vendors/js/ui/jquery.sticky.js'))}}"></script>
