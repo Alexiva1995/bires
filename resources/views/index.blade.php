@@ -1,43 +1,127 @@
+@isset($pageConfigs)
+{!! Helper::updatePageConfig($pageConfigs) !!}
+@endisset
 
-@extends('layouts/contentLayoutMaster')
+<!DOCTYPE html>
+@php $configData = Helper::applClasses(); @endphp
 
-@section('title', 'Dashboard Analytics')
+<html class="loading {{($configData['theme'] === 'light') ? '' : $configData['layoutTheme'] }}"
+    lang="@if(session()->has('locale')){{session()->get('locale')}}@else{{$configData['defaultLanguage']}}@endif"
+    data-textdirection="{{ env('MIX_CONTENT_DIRECTION') === 'rtl' ? 'rtl' : 'ltr' }}" @if($configData['theme']==='dark'
+    ) data-layout="dark-layout" @endif>
 
-@section('vendor-style')
-  <!-- vendor css files -->
-  <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
-  <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/toastr.min.css')) }}">
-  <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/dataTables.bootstrap5.min.css')) }}">
-  <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/responsive.bootstrap4.min.css')) }}">
-@endsection
-@section('page-style')
-  <!-- Page css files -->
-  <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/charts/chart-apex.css')) }}">
-  <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-toastr.css')) }}">
-  <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-invoice-list.css')) }}">
-  @endsection
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Zoe</title>
+    <link rel="apple-touch-icon" href="{{asset('images/ico/apple-icon-120.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/logo/favicon.ico')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+        rel="stylesheet">
 
-@section('content')
+    @include('panels/styles')
 
-    <img src="{{asset('images/zoe/svg/check.svg')}}" alt="">
+</head>
 
-@endsection
+<style>
+    .bg-zoe {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 31.77%, rgba(0, 0, 0, 0.2) 59.9%), linear-gradient(180deg, rgba(15, 111, 195, 0.5) 0%, rgba(15, 111, 195, 0.5) 100%), url('{{ url('images/zoe/home/home-1.png')}}') no-repeat !important;
+        mix-blend-mode: normal !important;
+    }
 
-@section('vendor-script')
-  <!-- vendor files -->
-  <script src="{{ asset(mix('vendors/js/charts/apexcharts.min.js')) }}"></script>
-  <script src="{{ asset(mix('vendors/js/pickers/flatpickr/flatpickr.min.js')) }}"></script>
-  <script src="{{ asset(mix('vendors/js/extensions/toastr.min.js')) }}"></script>
-  <script src="{{ asset(mix('vendors/js/extensions/moment.min.js')) }}"></script>
-  <script src="{{ asset(mix('vendors/js/tables/datatable/jquery.dataTables.min.js')) }}"></script>
-  <script src="{{ asset(mix('vendors/js/tables/datatable/datatables.buttons.min.js')) }}"></script>
-  <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.bootstrap5.min.js')) }}"></script>
-  <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.responsive.min.js')) }}"></script>
-  <script src="{{ asset(mix('vendors/js/tables/datatable/responsive.bootstrap4.js')) }}"></script>
-@endsection
-@section('page-script')
-  <!-- Page js files -->
-  <script src="{{ asset(mix('js/scripts/pages/dashboard-analytics.js')) }}"></script>
-  <script src="{{ asset(mix('js/scripts/pages/app-invoice-list.js')) }}"></script>
+</style>
 
-@endsection
+<body class="d-flex h-100 text-center text-white bg-zoe">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <a href="{{ route('landing') }}" class="float-md-start mb-0"><img
+                        src="{{ asset('images/zoe/logo/logo.svg') }}" alt="logo" width="70%"></a>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link text-white active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link text-white" href="#">PMI</a>
+                    <a class="nav-link text-white" href="#">Oficinas</a>
+                    <a class="nav-link text-white" href="#">Testimonios</a>
+                    <a class="nav-link text-white" href="#">Novedades</a>
+                    <li class="nav-item dropdown dropdown-language">
+                        <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown"
+                            aria-haspopup="true">
+                            <i class="flag-icon flag-icon-mx"></i>
+                            <span class="selected-language">
+                                @if(session()->has('locale'))
+                                {{session()->get('locale')}}
+                                @else
+                                ES
+                                @endif
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
+                            <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es"
+                                alt="ESPAÑOL">
+                                <i class="flag-icon flag-icon-mx"></i> ES
+                            </a>
+                            <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en"
+                                alt="INGLES">
+                                <i class="flag-icon flag-icon-us"></i> EN
+                            </a>
+                            <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr"
+                                alt="FRANCÉS">
+                                <i class="flag-icon flag-icon-fr"></i> FR
+                            </a>
+                            <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de"
+                                alt="ALEMÁN">
+                                <i class="flag-icon flag-icon-de"></i> AL
+                            </a>
+                            <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt"
+                                alt="PORTUGUÉS">
+                                <i class="flag-icon flag-icon-pt"></i> PT
+                            </a>
+                        </div>
+                    </li>
+                    <a href="{{ route('login') }}" class="btn btn-outline-secondary fw-bold text-white">Ingresar</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="mb-auto row">
+            <div class="col-6 text-left">
+                <h1 style="font-family: Poppins;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 60px;
+                line-height: 111.5%; text-align: left;">¡Somos la Nueva Generación!</h1>
+                <p style="font-family: Poppins;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 145.5%; text-align: left;">Desarrolla habilidades de liderazgo, comunicación asertiva,
+                    aprende a crear equipos de
+                    alto desempeño, a gestionar tus estados emocionales, a identificar y romper con las creencias
+                    limitantes.
+                </p>
+                <p class="lead d-flex justify-content-left">
+                    <a href="#" class="btn btn-outline-secondary fw-bold text-white">Conoce más</a>
+                </p>
+            </div>
+
+            <div class="col-6">
+              <img src="{{ asset('images/zoe/svg/home.png') }}" alt="" width="350px">
+            </div>
+        </main>
+
+    </div>
+
+    <div id="gtx-trans" style="position: absolute; left: 196px; top: 219.094px;">
+        <div class="gtx-trans-icon"></div>
+    </div>
+</body>
+
+</html>

@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+
+  public function landing()
+  {
+    return view('index');
+  }
+
   // Dashboard - Analytics
   public function dashboardAnalytics()
   {
