@@ -38,8 +38,8 @@
     @endif
     <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">
-          
-          
+
+
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
           <li class="nav-item dropdown dropdown-notification me-25 mx-2">
@@ -180,11 +180,11 @@
               </a>
             </div>
           </li>
-          
+
           <li class="nav-item dropdown dropdown-user">
             <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
               <div class="user-nav d-sm-flex d-none">
-                <span class="user-name fw-bolder"> {{ Auth::user()->name }} {{ Auth::user()->last_name }} </span>
+                <span class="user-name fw-bolder"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} </span>
                 <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span>
               </div>
               <span class="avatar">

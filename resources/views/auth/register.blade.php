@@ -21,7 +21,7 @@ $country = DB::select('SELECT * FROM `countries` WHERE 1');
                 <a href="#" class="card-text">
                     <img src="{{ asset('images/zoe/logo/icon.png') }}" class="logo" width="40px" alt="">
                 </a>
-                <h5 class="card-text mb-2 mt-2">Bienvenido a zor</h5>
+                <h5 class="card-text mb-2 mt-2">Bienvenido a zoe</h5>
                 <h1 class="card-title mb-1" style="font-weight: bold; font-size: 35px;">Registrate</h1>
 
                 <form class="auth-register-form mt-2" method="POST" action="{{ route('register') }}">
