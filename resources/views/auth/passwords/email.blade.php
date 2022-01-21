@@ -3,14 +3,12 @@
 @section('title', 'Restablecer la contraseña')
 
 @section('page-style')
-{{-- Page Css files --}}
 <link rel="stylesheet" href="{{ asset(mix('css/base/pages/page-auth.css')) }}">
 @endsection
 
 @section('content')
 <div class="auth-wrapper auth-v1 px-2">
     <div class="auth-inner py-2">
-        <!-- Forgot Password v1 -->
         <div class="card-auth mb-0">
             <div class="card-body">
                 <a href="#" class="card-text">
@@ -42,12 +40,14 @@
                 <p class="text-center mt-2 ">
                     @if (Route::has('login'))
                     <a href="{{ route('login') }}" class="text-white font-weight-bold"> <i
-                            data-feather="chevron-left"></i>Iniciar sesión</a>
+                            data-feather="chevron-left"></i>Iniciar
+                        sesión</a>
                     @endif
                 </p>
             </div>
         </div>
-        <!-- /Forgot Password v1 -->
     </div>
 </div>
+
+
 @endsection
