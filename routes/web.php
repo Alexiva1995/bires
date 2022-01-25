@@ -50,7 +50,7 @@ Route::middleware('auth')->group(function () {
         Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
     });
     /* Route Dashboards */
-    //PASARELA 
+    //PASARELA
     //STRIPE
     Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
     Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
@@ -242,6 +242,8 @@ Route::get('/intercambios/index', [IntercambiosController::class, 'index'])->nam
 Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
 Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
 Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
+
+//RUTAS PARA LOS PLANES
 Route::group(['prefix' => 'plans'], function () {
     Route::get('', [PlanController::class, 'index'])->name('plans.index');
 });
