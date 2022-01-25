@@ -19,6 +19,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\IntercambiosController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\StripeCtrl;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,15 +41,19 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('admin')->group(function () {
 
-Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
+        Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
 
-});
-/* Route Dashboards */
-Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
-    Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
-});
-/* Route Dashboards */
+    });
+    /* Route Dashboards */
+    Route::group(['prefix' => 'dashboard'], function () {
+        Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
+        Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+    });
+    /* Route Dashboards */
+    //PASARELA 
+    //STRIPE
+    Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
+    Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
 });
 
 /* Route Apps */

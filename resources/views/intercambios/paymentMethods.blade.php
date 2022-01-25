@@ -80,6 +80,7 @@
           </div>
         </div>
         @include('intercambios.components.modalCoinPaymentsWallet')
+        @include('intercambios.components.modalStripe')
     </section>
 
 
@@ -91,7 +92,18 @@
   <script src="{{ asset(mix('vendors/js/tables/datatable/jquery.dataTables.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.bootstrap5.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.responsive.min.js')) }}"></script>
+  
 @endsection
 @section('page-script')
+    <script>
+      function traerData(){
+        var cantidad = document.getElementById('cantidad').value;
+        //let inputCantidad = document.querySelector('.cantidad');
+        $('.cantidad').val(cantidad);     
 
+        var recibido = document.getElementById('recibido').value;
+        $('.recibido').val(recibido);
+        
+      }
+    </script>
 @endsection

@@ -170,7 +170,7 @@
                                 <span class="card-text font-small-1"><i data-feather='arrow-up-right'></i> Ver todos</span>
                             </div>
                             <div class="col-3 align-self-center">
-                                <button class="btn-darks btn-block mt-4 rounded" style="boder-color=#66FFCC; position: //" onclick="getlink()">
+                                <button class="btn-darks btn-block mt-4 rounded" style="boder-color=#66FFCC; position: //" >
                             </div>
                         </div>
                     </div>
@@ -323,9 +323,23 @@
   <script src="{{ asset(mix('js/scripts/pages/app-invoice-list.js')) }}"></script>
   <script src="{{ asset(mix('js/scripts/extensions/ext-component-sweet-alerts.min.js')) }}"></script>
 
-
-  @include('panels.linkReferido')
   <script>
+    function getlink() {
+        var aux = document.createElement("input");
+        aux.setAttribute("value", "{{route('register')}}?referred_id={{Auth::id()}}");
+        document.body.appendChild(aux);
+        aux.select();
+        document.execCommand("copy");
+        document.body.removeChild(aux);
+
+        Swal.fire({
+            title: "Link Copiado",
+            icon: 'success',
+            text: "Ya puedes pegarlo en su navegador",
+            type: "success",
+            confirmButtonClass: 'btn btn-secondary',
+        })
+    }
       // Column Chart
     // --------------------------------------------------------------------
     var flatPicker = $('.flat-picker'),

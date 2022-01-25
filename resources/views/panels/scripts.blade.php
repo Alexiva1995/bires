@@ -20,6 +20,7 @@
 <!-- END: Theme JS-->
 <!-- BEGIN: Page JS-->
 @yield('page-script')
+@stack('scripts')
 <!-- END: Page JS-->
 <!-- CDN JS-->
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
