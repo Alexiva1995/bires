@@ -28,6 +28,12 @@ span,
     color: #fff;
 }
 
+.dropdown-toggle::after {
+    left: 0 !important;
+}
+
+
+
 .btn-f {
     border-color: #294FD7 !important;
     background-color: #294FD7 !important;
@@ -35,8 +41,8 @@ span,
 }
 
 .btn-g {
-    border-color: #0F528C !important;
-    background-color: #0F528C !important;
+    border-color: #D95969 !important;
+    background-color: #D95969 !important;
     color: #fff !important;
 }
 
@@ -44,6 +50,12 @@ span,
     border-color: #F5A707 !important;
     background-color: #F5A707 !important;
     color: #fff !important;
+}
+
+.btn-outline-secondary {
+    border: 1px solid #F5A707 !important;
+    background-color: rgba(0, 0, 0, 0.226);
+    color: #F5A707;
 }
 
 // css inputs
@@ -88,6 +100,8 @@ input[type=search]:active,
 input[type=search]:read-only,
 input[type=search]::placeholder,
 input[type=search]:hover:not([disabled]),
+
+input:-internal-autofill-selected,
 
 .input-group-text {
     background: #2986D7;

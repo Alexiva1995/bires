@@ -19,6 +19,21 @@
                 <p class="card-text mb-2">Ingrese su correo electrónico y le enviaremos instrucciones para restablecer
                     su contraseña</p>
 
+                @if (session('status'))
+                <div class="alert" role="alert">
+                    <p class="text-secondary">{{ session('status') }}</p>
+                </div>
+                @endif
+
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form class="auth-forgot-password-form mt-2" method="POST" action="{{ route('password.email') }}">
                     @csrf
                     <div class="mb-1">

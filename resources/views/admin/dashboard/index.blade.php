@@ -97,7 +97,7 @@
             </div>
             <div class="col-3">
                 <div class="d-grid gap-2">
-                    <button class="btn btn-secondary btn-sm rounded-pill" onclick="getlink()"><i data-feather='copy'></i> Copiar enlace</button>
+                    <button class="btn btn-secondary btn-sm rounded-pill" id="referred"><i data-feather='copy'></i> Copiar enlace</button>
                 </div>
             </div>
         </div>

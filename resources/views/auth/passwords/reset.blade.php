@@ -24,7 +24,7 @@
                     @csrf
                     <input type="hidden" name="token" value="{{ $token }}">
 
-                    <div class="mb-1">
+                    <div class="mb-1 hidden">
                         <label for="email" class="form-label">Correo electronico</label>
                         <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
                             name="email" placeholder="tucorreo@gmail.com" aria-describedby="email" tabindex="1"

@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="d-flex justify-content-around">
-                            <p class="text-center mt-2" style="font-size: 0.8rem">
+                            <p class="text-center mt-2" style="font-size: 0.8rem; font-weight: bold;">
                                 @if (Route::has('register'))
                                 <a href="{{ route('register') }}">
                                     <span>¿No tienes una cuenta?</span>
@@ -79,7 +79,7 @@
 
                             <h2 class="text-center mt-1">|</h1>
 
-                                <p class="text-center mt-2" style="font-size: 0.8rem">
+                                <p class="text-center mt-2" style="font-size: 0.8rem; font-weight: bold;">
                                     @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">
                                         <span>¿Olvidaste tu contraseña?</span>

@@ -145,7 +145,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown mx-1">
-            <a class="btn btn-primary" href="#" id="referred" data-bs-toggle="dropdown">Referir</a> 
+            <a class="btn btn-primary" href="#" data-bs-toggle="dropdown">Referir</a> 
           </li>
           <li class="nav-item dropdown mx-1">
             <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
@@ -188,7 +188,7 @@
                 <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span>
               </div>
               <span class="avatar">
-                <img class="round" src="{{asset('images/logo/logo-toffle.png')}}" alt="avatar" height="40" width="40">
+                <img class="round" src="{{asset('images/zoe/logo/icon.png')}}" alt="avatar" height="40" width="40">
                 <span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span>
               </span>
             </a>
