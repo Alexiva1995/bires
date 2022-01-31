@@ -45,7 +45,7 @@ span,
 
 
 .navbar-dark .navbar-toggler {
-    color: rgba(255, 0, 0, 0.902) !important;
+    color: rgba(255, 255, 255, 0.863) !important;
     border-color: rgba(255, 255, 255, 0.863) !important ;
 }
 
@@ -74,6 +74,17 @@ span,
     color: #F5A707;
 }
 
+.img-auth-1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.img-auth-2 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
 // css inputs
 input[type=text],
 input[type=text]:focus,

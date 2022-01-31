@@ -34,6 +34,10 @@
 
 
 <style>
+
+    *{
+        overflow-x: hidden;
+    }
     .bg-zoe {
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 31.77%, rgba(255, 255, 255, 0.098) 59.9%),
         linear-gradient(180deg, rgba(0, 0, 0, 0) 31.77%, rgba(0, 0, 0, 0.2) 59.9%),

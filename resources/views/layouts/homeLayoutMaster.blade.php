@@ -29,23 +29,122 @@
     {{-- Include core + vendor Styles --}}
     @include('panels/styles')
 
+    <style>
+        .navbar-dark .navbar-nav li {
+            margin-right: 30px !important;
+        }
+
+    </style>
 </head>
 
-
-
-<body class="vertical-layout vertical-menu-modern {{ $configData['bodyClass'] }} {{($configData['theme'] === 'dark') ? 'dark-layout' : ''}} {{ $configData['blankPageClass'] }} blank-page"
+<body
+    class="vertical-layout vertical-menu-modern {{ $configData['bodyClass'] }} {{($configData['theme'] === 'dark') ? 'dark-layout' : ''}} {{ $configData['blankPageClass'] }} blank-page"
     data-menu="vertical-menu-modern" data-col="blank-page" data-framework="laravel" data-asset-path="{{ asset('/')}}">
 
     <!-- BEGIN: Content-->
     <div class="app-content content {{ $configData['pageClass'] }}">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
 
         <div class="content-wrapper">
             <div class="content-body">
-                {{-- Include Startkit Content --}}
-                @yield('content')
+
+                <div class="d-flex h-100 text-white bg-zoe">
+
+                    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                        <header class="mb-5">
+
+                            <nav class="navbar navbar-expand-md navbar-dark">
+                                <a href="{{ route('landing') }}" class="navbar-brand"><img
+                                        src="{{ asset('images/zoe/logo/logo.svg') }}" alt="logo" width="70%"></a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse flex-row-reverse" id="navbarCollapse">
+                                    @if (Route::has('login'))
+                                    <a href="{{ route('register') }}"
+                                        class="btn btn-sm btn-secondary fw-bold text-white">Registrarse</a>
+                                    @else
+                                    <a href="{{ route('login') }}"
+                                        class="btn btn-sm btn-secondary fw-bold text-white">Ingresar</a>
+                                    @endif
+                                    <ul class="nav navbar-nav pr-5">
+                                        <li class="nav-item dropdown dropdown-language">
+                                            <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#"
+                                                data-bs-toggle="dropdown" aria-haspopup="true">
+                                                <i class="flag-icon flag-icon-mx"></i>
+                                                <span class="selected-language">
+                                                    @if(session()->has('locale'))
+                                                    {{session()->get('locale')}}
+                                                    @else
+                                                    Es
+                                                    @endif
+                                                </span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end"
+                                                aria-labelledby="dropdown-flag">
+                                                <a href="#googtrans(es|es)" class="dropdown-item lang-select"
+                                                    data-language="es" alt="ESPAÑOL">
+                                                    <i class="flag-icon flag-icon-mx"></i> ESPAÑOL
+                                                </a>
+                                                <a href="#googtrans(es|en)" class="dropdown-item lang-select"
+                                                    data-language="en" alt="INGLES">
+                                                    <i class="flag-icon flag-icon-us"></i> INGLES
+                                                </a>
+                                                <a href="#googtrans(es|fr)" class="dropdown-item lang-select"
+                                                    data-language="fr" alt="FRANCÉS">
+                                                    <i class="flag-icon flag-icon-fr"></i> FRANCÉS
+                                                </a>
+                                                <a href="#googtrans(es|de)" class="dropdown-item lang-select"
+                                                    data-language="de" alt="ALEMÁN">
+                                                    <i class="flag-icon flag-icon-de"></i> ALEMÁN
+                                                </a>
+                                                <a href="#googtrans(es|pt)" class="dropdown-item lang-select"
+                                                    data-language="pt" alt="PORTUGUÉS">
+                                                    <i class="flag-icon flag-icon-pt"></i> PORTUGUÉS
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+
+                                    <ul class="navbar-nav m-auto">
+                                        <li class="nav-item active mr-md-5">
+                                            <a class="nav-link text-white" style="font-weight: bold;"
+                                                href="#">Inicio</a>
+                                        </li>
+                                        <li class="nav-item mr-md-5">
+                                            <a class="nav-link text-white" style="font-weight: bold;" href="#">PMI</a>
+                                        </li>
+                                        <li class="nav-item mr-md-5">
+                                            <a class="nav-link text-white" style="font-weight: bold;"
+                                                href="#">Oficinas</a>
+                                        </li>
+                                        <li class="nav-item mr-md-5">
+                                            <a class="nav-link text-white" style="font-weight: bold;"
+                                                href="#">Testimonios</a>
+                                        </li>
+                                        <li class="nav-item mr-md-5">
+                                            <a class="nav-link text-white" style="font-weight: bold;"
+                                                href="#">Novedades</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </nav>
+                        </header>
+
+                        <div style="z-index: 3">
+                            @yield('content')
+
+                        </div>
+                    </div>
+                </div>
             </div>
+            <img class="img-auth-1" width="750px" height="600px" style="z-index: 2;" src="{{ asset('images/zoe/svg/Vector-2.svg') }}" />
+            <img class="img-auth-2" width="750px" height="600px" style="z-index: 2;" src="{{ asset('images/zoe/svg/Vector-1.svg') }}" />
+
         </div>
     </div>
     <!-- End: Content-->
@@ -57,14 +156,13 @@
     @include('panels/scripts')
 
     <script>
-
         function resetF() {
-          var x = document.getElementById("forgot-password-email");
-          var email = x.value;
-          
-          window.localStorage.setItem('email_token', email);
-          
-          console.log(email);
+            var x = document.getElementById("forgot-password-email");
+            var email = x.value;
+
+            window.localStorage.setItem('email_token', email);
+
+            console.log(email);
         }
 
     </script>

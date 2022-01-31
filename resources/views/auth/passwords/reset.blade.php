@@ -8,10 +8,10 @@
 @endsection
 
 @section('content')
-<div class="auth-wrapper auth-v1 px-2">
+<div class="auth-v1 px-2">
     <div class="auth-inner py-2">
         <!-- Reset Password v1 -->
-        <div class="card-auth mb-0">
+        <div class="card-auth p-1 mb-0">
             <div class="card-body">
                 <a href="#" class="card-text">
                     <img src="{{ asset('images/zoe/logo/icon.png') }}" class="logo" width="40px" alt="">

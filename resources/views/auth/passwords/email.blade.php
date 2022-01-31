@@ -7,9 +7,9 @@
 @endsection
 
 @section('content')
-<div class="auth-wrapper auth-v1 px-2">
-    <div class="auth-inner py-2">
-        <div class="card-auth mb-0">
+<div class="auth-v1 px-2">
+    <div class="auth-inner d-flex justify-content-center">
+        <div class="card-auth mt-md-5 w-90 p-1">
             <div class="card-body">
                 <a href="#" class="card-text">
                     <img src="{{ asset('images/zoe/logo/icon.png') }}" class="logo" width="40px" alt="">

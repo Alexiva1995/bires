@@ -19,10 +19,10 @@
 
 <footer
     class="site-footer {{($configData['footerType'] === 'footer-hidden') ? 'd-none':''}} {{$configData['footerType']}}">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
-                <a class="text-white" style="vertical-align: sub;" href="#" target="_blank">iuyr
+            <div class="d-flex justify-content-center col-md-8 col-sm-6 col-xs-12">
+                <a class="text-white" style="vertical-align: sub;" href="#" target="_blank">
                     <script>
                         document.write(new Date().getFullYear())
  
@@ -30,7 +30,7 @@
                 </a>
             </div>
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="d-flex justify-content-center col-md-4 col-sm-6 col-xs-12">
                 <ul class="social-icons">
                     <li><a href="#" class=""> <img src="{{ asset('images/zoe/svg/facebook.svg') }}" width="28px"
                                 alt=""></a></li>
