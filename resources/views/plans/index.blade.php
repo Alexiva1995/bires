@@ -26,7 +26,7 @@
     -moz-transform: scale(1.12,1.12);
     -moz-transition-timing-function: ease-out;
     -moz-transition-duration: 100ms;
-  } 
+  }
 </style>
 
 @section('content')
@@ -36,20 +36,21 @@
             <div class="row">
                 @foreach ($plans as $item)
                     <div class="card container-fluid" style="width: 17rem;">
-                        <div class="text-center mt-1"><font size="4"><strong>{{$item->name}}</strong></font></div>
-                            <div class="card-body">
-                                <p class="text-center">{{$item->Description}}</p>
-                            
-                                <div>Retorno: <strong style="color: #F5A707;">7.5% por mes</strong></div>
-                                <br>
-                                <div class="d-grid gap-4 col-20 mx-auto">
-                                    <a href="#" target="_blank" class="btn btn-secondary">
-                                        {{ $item->price }} ZOEC
-                                    </a>
-                                </div>
+                        <div class="text-center mt-1">
+                            <font size="4"><strong>{{$item->name}}</strong></font>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-center">{{$item->Description}}</p>
+
+                            <div>Retorno: <strong style="color: #F5A707;">7.5% por mes</strong></div>
+                            <br>
+                            <div class="d-grid gap-4 col-20 mx-auto">
+                                <a href="#" target="_blank" class="btn btn-secondary">
+                                    {{ $item->price }} ZOEC
+                                </a>
                             </div>
                         </div>
-                    {{-- </div> --}}
+                    </div>
                 @endforeach
             </div>
         </div>

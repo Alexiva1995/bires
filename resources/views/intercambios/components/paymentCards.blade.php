@@ -26,7 +26,7 @@
 
         <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" ><img class="img-fluid card-img-size " src={{asset('img/paymentLogos/wompii.png')}} alt="Wompi"></button>
 
-        <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" ><img class="img-fluid card-img-size " src={{asset('img/paymentLogos/stripe_logo.png')}} alt="Stripe"></button>
+        <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#modalstripe" onclick="traerData()" ><img class="img-fluid card-img-size " src={{asset('img/paymentLogos/stripe_logo.png')}} alt="Stripe"></button>
 
 
     </div>

@@ -29,6 +29,13 @@
 
     },
     {
+        "name": "Planes",
+        "url": "plans",
+        "icon": "shopping-bag",
+        "slug": "plans.index"
+
+    },
+    {
       "navheader": "Apps & Pages",
       "slug": ""
     },

@@ -33,7 +33,7 @@ $referred = DB::table('users')
                 <a href="#" class="card-text">
                     <img src="{{ asset('images/zoe/logo/icon.png') }}" class="logo" width="40px" alt="">
                 </a>
-                <h5 class="card-text mb-2 mt-2">Bienvenido a zor</h5>
+                <h5 class="card-text mb-2 mt-2">Bienvenido a zoe</h5>
                 <h1 class="card-title mb-1" style="font-weight: bold; font-size: 35px;">Registrate</h1>
                 @if (!empty($referred))
                 <h4 class="mt-1 text-white">Referido por: <b class="text-secondary"> {{$referred->username}}</b></h4>
