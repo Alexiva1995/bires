@@ -1,24 +1,48 @@
 <!-- BEGIN: Footer-->
-<footer class="footer footer-light {{($configData['footerType'] === 'footer-hidden') ? 'd-none':''}} {{$configData['footerType']}}">
-    <div class="clearfix row">
-        <div
-            class="float-md-start d-block d-md-inline-block text-white pt-2 col-12 col-sm-12 col-md-8 d-flex justify-content-center text-ms-center">
-            <a class="text-white" href="#" target="_blank">
-                <script>
-                    document.write(new Date().getFullYear())
-                </script> Copyright &copy; Generación Zoe, Todos los Derechos Reservados
-            </a>
-        </div>
 
-        <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center mt-3 mt-sm-1">
-            <a href="#" class="rounded-circle border-light text-primary bg-light" style="margin-right: 0.6rem;"><i
-                    style="margin-right: 0.5rem; margin-left: 0.5rem" data-feather="linkedin"></i></a>
-            <a href="#" class="rounded-circle border-light text-primary bg-light" style="margin-right: 0.6rem;"><i
-                    style="margin-right: 0.5rem; margin-left: 0.5rem" data-feather="instagram"></i></a>
-            <a href="#" class="rounded-circle border-light text-primary bg-light" style="margin-right: 0.6rem;"><i
-                    style="margin-right: 0.5rem; margin-left: 0.5rem" data-feather="facebook"></i></a>
+<style>
+    .site-footer .social-icons {
+        text-align: right
+    }
+  
+    .social-icons li {
+        display: inline-block;
+    }
+
+    .social-icons a {
+        text-align: center;
+        margin-right: 8px;
+    }
+ 
+</style>
+
+
+<footer
+    class="site-footer {{($configData['footerType'] === 'footer-hidden') ? 'd-none':''}} {{$configData['footerType']}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <a class="text-white" style="vertical-align: sub;" href="#" target="_blank">iuyr
+                    <script>
+                        document.write(new Date().getFullYear())
+ 
+                    </script> Copyright &copy; Generación Zoe, Todos los Derechos Reservados
+                </a>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a href="#" class=""> <img src="{{ asset('images/zoe/svg/facebook.svg') }}" width="28px"
+                                alt=""></a></li>
+                    <li><a href="#" class=""> <img src="{{ asset('images/zoe/svg/instagram.svg') }}" width="30px"
+                                alt=""></a></li>
+                    <li><a href="#" class=""> <img src="{{ asset('images/zoe/svg/linkedin.svg') }}" width="30px"
+                                alt=""></a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </footer>
+
 <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
 <!-- END: Footer-->

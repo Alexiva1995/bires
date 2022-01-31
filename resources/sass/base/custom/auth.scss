@@ -20,6 +20,17 @@ span,
     max-width: 1050px !important;
 }
 
+
+.auth-wrapper.auth-v1 .auth-inner::before {
+    width: 244px;
+    height: 243px;
+    content: " ";
+    position: absolute;
+    top: -54px;
+    left: -46px;
+    background-image: url(./img/Vector-1.svg) !important;
+}
+
 .card-auth {
     background: linear-gradient(90deg, rgb(1, 65, 120) 52.6%, rgba(76, 72, 140, 0.907) 100%), url(./img/auth.png) no-repeat !important;
     background-position: right !important;
@@ -32,6 +43,11 @@ span,
     left: 0 !important;
 }
 
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255, 0, 0, 0.902) !important;
+    border-color: rgba(255, 255, 255, 0.863) !important ;
+}
 
 
 .btn-f {

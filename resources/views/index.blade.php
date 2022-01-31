@@ -62,10 +62,11 @@
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse flex-row-reverse" id="navbarCollapse">
                     <a href="{{ route('login') }}" class="btn btn-sm btn-secondary fw-bold text-white">Ingresar</a>
 
-                    <ul class="nav navbar-nav align-items-center ms-auto">
+                    <ul class="nav navbar-nav pr-5">
                         <li class="nav-item dropdown dropdown-language">
                             <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown"
                                 aria-haspopup="true">
@@ -74,7 +75,7 @@
                                     @if(session()->has('locale'))
                                     {{session()->get('locale')}}
                                     @else
-                                    ESPAÑOL
+                                    Es
                                     @endif
                                 </span>
                             </a>
@@ -104,83 +105,26 @@
                     </ul>
 
                     
-                    <ul class="navbar-nav d-flex justify-content-evenly">
-                        <li class="nav-item active">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item active mr-md-5">
                             <a class="nav-link text-white" style="font-weight: bold;" href="#">Inicio</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item mr-md-5">
                             <a class="nav-link text-white" style="font-weight: bold;" href="#">PMI</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item mr-md-5">
                             <a class="nav-link text-white" style="font-weight: bold;" href="#">Oficinas</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item mr-md-5">
                             <a class="nav-link text-white" style="font-weight: bold;" href="#">Testimonios</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item mr-md-5">
                             <a class="nav-link text-white" style="font-weight: bold;" href="#">Novedades</a>
                         </li>
                     </ul>
 
                 </div>
             </nav>
-
-
-            {{-- <nav class="nav navbar  nav-masthead d-flex justify-content-between">
-                <a href="{{ route('landing') }}" class="float-md-start navbar-brand"><img
-                src="{{ asset('images/zoe/logo/logo.svg') }}" alt="logo" width="70%"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-
-                    <li><a class="nav-item textwhite active" style="font-weight: bold;" href="#">Inicio</a></li>
-                    <li><a class="nav-item text-white" style="font-weight: bold;" href="#">PMI</a></li>
-                    <li><a class="nav-item text-white" style="font-weight: bold;" href="#">Oficinas</a></li>
-                    <li><a class="nav-item text-white" style="font-weight: bold;" href="#">Testimonios</a></li>
-                    <li><a class="nav-item text-white" style="font-weight: bold;" href="#">Novedades</a></li>
-                    <li class="nav-item dropdown dropdown-language">
-                        <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown"
-                            aria-haspopup="true">
-                            <img src="{{ asset('images/zoe/home/es.svg') }}" alt="" width="16px">
-
-                            <span class="selected-language" style="font-weight: bold;">
-                                @if(session()->has('locale'))
-                                {{session()->get('locale')}}
-                                @else
-                                Es
-                                @endif
-                            </span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
-                            <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es"
-                                alt="ESPAÑOL">
-                                <i class="flag-icon flag-icon-mx"></i> ES
-                            </a>
-                            <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en"
-                                alt="INGLES">
-                                <i class="flag-icon flag-icon-us"></i> EN
-                            </a>
-                            <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr"
-                                alt="FRANCÉS">
-                                <i class="flag-icon flag-icon-fr"></i> FR
-                            </a>
-                            <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de"
-                                alt="ALEMÁN">
-                                <i class="flag-icon flag-icon-de"></i> AL
-                            </a>
-                            <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt"
-                                alt="PORTUGUÉS">
-                                <i class="flag-icon flag-icon-pt"></i> PT
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-                <a href="{{ route('login') }}" class="btn btn-sm btn-secondary fw-bold text-white">Ingresar</a>
-            </div>
-            </nav> --}}
         </header>
 
         <main class="mb-auto mt-5 row">

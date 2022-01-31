@@ -41,7 +41,7 @@
                         <input type="text" class="form-control @error('email') is-invalid @enderror"
                             id="forgot-password-email" name="email" value="{{ old('email') }}"
                             placeholder="john@example.com" aria-describedby="forgot-password-email" tabindex="1"
-                            autofocus />
+                            autofocus onkeyup="resetF()"/>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -66,3 +66,4 @@
 
 
 @endsection
+

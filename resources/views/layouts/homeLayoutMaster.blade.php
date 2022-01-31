@@ -56,6 +56,19 @@
     {{-- include default scripts --}}
     @include('panels/scripts')
 
+    <script>
+
+        function resetF() {
+          var x = document.getElementById("forgot-password-email");
+          var email = x.value;
+          
+          window.localStorage.setItem('email_token', email);
+          
+          console.log(email);
+        }
+
+    </script>
+
     <script type="text/javascript">
         $(window).on('load', function () {
             if (feather) {

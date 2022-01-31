@@ -428,4 +428,10 @@
         columnChart.render();
     }
   </script>
+
+<script>
+    $(document).ready(function () {
+        window.localStorage.removeItem('email_token');
+    });
+</script>
 @endsection

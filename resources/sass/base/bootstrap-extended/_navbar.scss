@@ -424,7 +424,8 @@
 }
 
 .navbar-dark {
-  background: $gray-600;
+  background: transparent;
+  // background: $gray-600;
 
   .navbar-brand {
     color: $white !important;

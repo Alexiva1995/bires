@@ -1,4 +1,4 @@
-@extends('layouts/fullLayoutMaster')
+@extends('layouts.homeLayoutMaster')
 
 @section('title', 'Reset Password')
 
@@ -18,7 +18,7 @@
                 </a>
 
                 <h4 class="card-title mb-1 mt-2">Cambia tu contraseña 🔒</h4>
-                <p class="card-text mb-2">Ingrese su correo electrónico y su nueva contraseña</p>
+                <p class="card-text mb-2">Ingrese su nueva contraseña</p>
 
                 <form class="auth-reset-password-form mt-2" method="POST" action="{{ route('password.update') }}">
                     @csrf
@@ -81,4 +81,20 @@
         <!-- /Reset Password v1 -->
     </div>
 </div>
+
+
+@php
+    
+@endphp
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+    a = $('#email').val(window.localStorage.getItem('email_token'));
+
+    });
+</script>
+
 @endsection
