@@ -29,7 +29,7 @@
                 <h1 class="card-title mb-1 font-weight-bold" style="font-size: 50px;">Iniciar sesión</h1>
 
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <form class="auth-login-form" method="POST" action="{{ route('login') }}">
                             @csrf
 
@@ -102,7 +102,7 @@
                         </form>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-md-6 d-sm-none d-md-flex">
                         <div class="text-center mt-3">
                             <h1>Tu mejor oportunidad esta aqui!</h1>
                             <h4>Gana dinero y aprende tranding con nosotros!.</h4>

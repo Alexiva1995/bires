@@ -21,23 +21,16 @@
         content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Zoe</title>
-    {{-- <link rel="apple-touch-icon" href="{{asset('images/ico/apple-icon-120.png')}}"> --}}
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/zoe/logo/logo.svg')}}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
         rel="stylesheet">
 
-    @include('panels/styles')
+    @include('panels.styles')
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 
 </head>
 
-
 <style>
-
-    *{
-        overflow-x: hidden;
-    }
     .bg-zoe {
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 31.77%, rgba(255, 255, 255, 0.098) 59.9%),
         linear-gradient(180deg, rgba(0, 0, 0, 0) 31.77%, rgba(0, 0, 0, 0.2) 59.9%),
@@ -48,124 +41,128 @@
     }
 
     .btn {
-        padding: 1px 20px 1px 20px !important;
+        padding: 7px 20px 7px 20px !important;
 
     }
 
 </style>
 
-<body class="d-flex h-100 text-center text-white bg-zoe">
+<body>
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-5">
+            <div class="d-flex h-100 text-white bg-zoe">
 
-            <nav class="navbar navbar-expand-md navbar-dark">
-                <a href="{{ route('landing') }}" class="navbar-brand"><img src="{{ asset('images/zoe/logo/logo.svg') }}"
-                        alt="logo" width="70%"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                    <header class="mb-5" style="z-index: 4">
 
-                <div class="collapse navbar-collapse flex-row-reverse" id="navbarCollapse">
-                    <a href="{{ route('login') }}" class="btn btn-sm btn-secondary fw-bold text-white">Ingresar</a>
+                        <nav class="header-navbar navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center navbar-expand-md navbar-dark"
+                            data-nav="brand-center">
+                            <a href="{{ route('landing') }}" class="navbar-brand"><img
+                                    src="{{ asset('images/zoe/logo/logo.svg') }}" alt="logo" width="70%"></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
 
-                    <ul class="nav navbar-nav pr-5">
-                        <li class="nav-item dropdown dropdown-language">
-                            <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown"
-                                aria-haspopup="true">
-                                <i class="flag-icon flag-icon-mx"></i>
-                                <span class="selected-language">
-                                    @if(session()->has('locale'))
-                                    {{session()->get('locale')}}
-                                    @else
-                                    Es
-                                    @endif
-                                </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
-                                <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es"
-                                    alt="ESPAÑOL">
-                                    <i class="flag-icon flag-icon-mx"></i> ESPAÑOL
-                                </a>
-                                <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en"
-                                    alt="INGLES">
-                                    <i class="flag-icon flag-icon-us"></i> INGLES
-                                </a>
-                                <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr"
-                                    alt="FRANCÉS">
-                                    <i class="flag-icon flag-icon-fr"></i> FRANCÉS
-                                </a>
-                                <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de"
-                                    alt="ALEMÁN">
-                                    <i class="flag-icon flag-icon-de"></i> ALEMÁN
-                                </a>
-                                <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt"
-                                    alt="PORTUGUÉS">
-                                    <i class="flag-icon flag-icon-pt"></i> PORTUGUÉS
-                                </a>
+                            <div class="collapse navbar-collapse flex-row-reverse" id="navbarCollapse">
+                                <a href="{{ route('login') }}"
+                                    class="btn btn-sm btn-secondary fw-bold text-white">Ingresar</a>
+                                <ul class="nav navbar-nav mx-auto">
+                                    <li class="nav-item dropdown dropdown-language">
+                                        <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#"
+                                            data-bs-toggle="dropdown" aria-haspopup="true">
+                                            <i class="flag-icon flag-icon-mx"></i>
+                                            <span class="selected-language">
+                                                @if(session()->has('locale'))
+                                                {{session()->get('locale')}}
+                                                @else
+                                                ESPAÑOL
+                                                @endif
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
+                                            <a href="#googtrans(es|es)" class="dropdown-item lang-select"
+                                                data-language="es" alt="ESPAÑOL">
+                                                <i class="flag-icon flag-icon-mx"></i> ESPAÑOL
+                                            </a>
+                                            <a href="#googtrans(es|en)" class="dropdown-item lang-select"
+                                                data-language="en" alt="INGLES">
+                                                <i class="flag-icon flag-icon-us"></i> INGLES
+                                            </a>
+                                            <a href="#googtrans(es|fr)" class="dropdown-item lang-select"
+                                                data-language="fr" alt="FRANCÉS">
+                                                <i class="flag-icon flag-icon-fr"></i> FRANCÉS
+                                            </a>
+                                            <a href="#googtrans(es|de)" class="dropdown-item lang-select"
+                                                data-language="de" alt="ALEMÁN">
+                                                <i class="flag-icon flag-icon-de"></i> ALEMÁN
+                                            </a>
+                                            <a href="#googtrans(es|pt)" class="dropdown-item lang-select"
+                                                data-language="pt" alt="PORTUGUÉS">
+                                                <i class="flag-icon flag-icon-pt"></i> PORTUGUÉS
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                                <ul class="navbar-nav mx-auto">
+                                    <li class="nav-item active mx-auto">
+                                        <a class="nav-link text-white" style="font-weight: bold;" href="#">Inicio</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link text-white" style="font-weight: bold;" href="#">PMI</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link text-white" style="font-weight: bold;" href="#">Oficinas</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link text-white" style="font-weight: bold;"
+                                            href="#">Testimonios</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link text-white" style="font-weight: bold;" href="#">Novedades</a>
+                                    </li>
+                                </ul>
+
                             </div>
-                        </li>
-                    </ul>
+                        </nav>
+                    </header>
 
-                    
-                    <ul class="navbar-nav m-auto">
-                        <li class="nav-item active mr-md-5">
-                            <a class="nav-link text-white" style="font-weight: bold;" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item mr-md-5">
-                            <a class="nav-link text-white" style="font-weight: bold;" href="#">PMI</a>
-                        </li>
-                        <li class="nav-item mr-md-5">
-                            <a class="nav-link text-white" style="font-weight: bold;" href="#">Oficinas</a>
-                        </li>
-                        <li class="nav-item mr-md-5">
-                            <a class="nav-link text-white" style="font-weight: bold;" href="#">Testimonios</a>
-                        </li>
-                        <li class="nav-item mr-md-5">
-                            <a class="nav-link text-white" style="font-weight: bold;" href="#">Novedades</a>
-                        </li>
-                    </ul>
-
-                </div>
-            </nav>
-        </header>
-
-        <main class="mb-auto mt-5 row">
-            <div class="col-6 text-left">
-                <h1 style="font-family: Poppins;
+                    <main class="mb-auto mt-5 row">
+                        <div class="col-6 text-left">
+                            <h1 style="font-family: Poppins;
                 font-style: normal;
                 font-weight: bold;
                 font-size: 60px;
                 line-height: 111.5%; text-align: left;">¡Somos la Nueva Generación!</h1>
-                <p style="font-family: Poppins;
+                            <p style="font-family: Poppins;
                 font-style: normal;
                 font-weight: 500;
                 font-size: 18px;
                 line-height: 145.5%; text-align: left;">Desarrolla habilidades de liderazgo, comunicación asertiva,
-                    aprende a crear equipos de
-                    alto desempeño, a gestionar tus estados emocionales, a identificar y romper con las creencias
-                    limitantes.
-                </p>
-                <p class="lead d-flex justify-content-left">
-                    <a href="#" class="btn btn-outline-secondary fw-bold text-white">Conoce más</a>
-                </p>
+                                aprende a crear equipos de
+                                alto desempeño, a gestionar tus estados emocionales, a identificar y romper con las
+                                creencias
+                                limitantes.
+                            </p>
+                            <p class="lead d-flex justify-content-left">
+                                <a href="#" class="btn btn-outline-secondary fw-bold text-white">Conoce más</a>
+                            </p>
+                        </div>
+
+                        <div class="col-6">
+                            <img src="{{ asset('images/zoe/logo/home.png') }}" alt="" width="350px">
+                        </div>
+                    </main>
+
+                </div>
             </div>
-
-            <div class="col-6">
-                <img src="{{ asset('images/zoe/logo/home.png') }}" alt="" width="350px">
-            </div>
-        </main>
-
-    </div>
-
-    <div id="gtx-trans" style="position: absolute; left: 196px; top: 219.094px;">
-        <div class="gtx-trans-icon"></div>
-    </div>
 
 
     @include('panels/scripts')
 
+    <script src="{{asset('js/scripts/components/components-dropdowns.js')}}"></script>
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -194,7 +191,6 @@
 
     </script>
 
-    <script src="{{ asset('js/scripts/custom/bootstrap.min.js') }}"></script>
-</body>
+    </div>
 
 </html>

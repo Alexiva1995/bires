@@ -34,6 +34,18 @@
             margin-right: 30px !important;
         }
 
+        .img-auth-1 {
+            position: absolute;
+            top: 20px;
+            left: 0px;
+        }
+
+        .img-auth-2 {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+
     </style>
 </head>
 
@@ -45,14 +57,17 @@
     <div class="app-content content {{ $configData['pageClass'] }}">
 
         <div class="content-wrapper">
-            <div class="content-body">
+            <div class="content-body" >
 
                 <div class="d-flex h-100 text-white bg-zoe">
 
                     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-                        <header class="mb-5">
+                        <header class="mb-5" style="z-index: 4">
 
-                            <nav class="navbar navbar-expand-md navbar-dark">
+                                <nav class="header-navbar navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center navbar-expand-md navbar-dark"
+                                data-nav="brand-center">
+            
+
                                 <a href="{{ route('landing') }}" class="navbar-brand"><img
                                         src="{{ asset('images/zoe/logo/logo.svg') }}" alt="logo" width="70%"></a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -62,14 +77,14 @@
                                 </button>
 
                                 <div class="collapse navbar-collapse flex-row-reverse" id="navbarCollapse">
-                                    @if (Route::has('login'))
+                                    @if (Route::is('login'))
                                     <a href="{{ route('register') }}"
                                         class="btn btn-sm btn-secondary fw-bold text-white">Registrarse</a>
-                                    @else
+                                    @elseif (Route::is('register'))
                                     <a href="{{ route('login') }}"
                                         class="btn btn-sm btn-secondary fw-bold text-white">Ingresar</a>
                                     @endif
-                                    <ul class="nav navbar-nav pr-5">
+                                    <ul class="nav navbar-nav mx-auto">
                                         <li class="nav-item dropdown dropdown-language">
                                             <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#"
                                                 data-bs-toggle="dropdown" aria-haspopup="true">
@@ -109,23 +124,23 @@
                                     </ul>
 
 
-                                    <ul class="navbar-nav m-auto">
-                                        <li class="nav-item active mr-md-5">
+                                    <ul class="navbar-nav mx-auto">
+                                        <li class="nav-item active mx-auto">
                                             <a class="nav-link text-white" style="font-weight: bold;"
                                                 href="#">Inicio</a>
                                         </li>
-                                        <li class="nav-item mr-md-5">
+                                        <li class="nav-item ">
                                             <a class="nav-link text-white" style="font-weight: bold;" href="#">PMI</a>
                                         </li>
-                                        <li class="nav-item mr-md-5">
+                                        <li class="nav-item ">
                                             <a class="nav-link text-white" style="font-weight: bold;"
                                                 href="#">Oficinas</a>
                                         </li>
-                                        <li class="nav-item mr-md-5">
+                                        <li class="nav-item ">
                                             <a class="nav-link text-white" style="font-weight: bold;"
                                                 href="#">Testimonios</a>
                                         </li>
-                                        <li class="nav-item mr-md-5">
+                                        <li class="nav-item ">
                                             <a class="nav-link text-white" style="font-weight: bold;"
                                                 href="#">Novedades</a>
                                         </li>
@@ -142,8 +157,10 @@
                     </div>
                 </div>
             </div>
-            <img class="img-auth-1" width="750px" height="600px" style="z-index: 2;" src="{{ asset('images/zoe/svg/Vector-2.svg') }}" />
-            <img class="img-auth-2" width="750px" height="600px" style="z-index: 2;" src="{{ asset('images/zoe/svg/Vector-1.svg') }}" />
+            <img class="img-auth-1" width="750px" height="600px" style="z-index: 2;"
+                src="{{ asset('images/zoe/svg/Vector-2.svg') }}" />
+            <img class="img-auth-2" width="750px" height="600px" style="z-index: 2;"
+                src="{{ asset('images/zoe/svg/Vector-1.svg') }}" />
 
         </div>
     </div>

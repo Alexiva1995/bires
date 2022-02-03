@@ -50,7 +50,7 @@ $referred = DB::table('users')
                         <input class="hidden" type="text" name="referred_id" value="1" />
                         @endif
 
-                        <div class="col-6 mb-1">
+                        <div class="col-12 col-sm-6 mb-1">
                             <label for="username" class="form-label">Usuario</label>
                             <input type="text" class="form-control @error('username') is-invalid @enderror"
                                 id="username" name="username" placeholder="john123" autofocus required
@@ -62,7 +62,7 @@ $referred = DB::table('users')
                             @enderror
                         </div>
 
-                        <div class="col-3 mb-1">
+                        <div class="col-12 col-sm-3 mb-1">
                             <label for="name" class="form-label">Nombre</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
                                 name="name" placeholder="johndoe" required value="{{ old('name') }}" />
@@ -73,7 +73,7 @@ $referred = DB::table('users')
                             @enderror
                         </div>
 
-                        <div class="col-3 mb-1">
+                        <div class="col-12 col-sm-3 mb-1">
                             <label for="lastname" class="form-label">Apellido</label>
                             <input type="text" class="form-control @error('lastname') is-invalid @enderror"
                                 id="lastname" name="lastname" placeholder="smit" required
@@ -84,7 +84,7 @@ $referred = DB::table('users')
                             </span>
                             @enderror
                         </div>
-                        <div class="col-6 mb-1">
+                        <div class="col-12 col-sm-6 mb-1">
                             <label for="phone" class="form-label">Telefono</label>
                             <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone"
                                 name="phone" placeholder="+58 412 000 0000" required value="{{ old('phone') }}" />
@@ -95,7 +95,7 @@ $referred = DB::table('users')
                             @enderror
                         </div>
 
-                        <div class="col-6 mb-1">
+                        <div class="col-12 col-sm-6 mb-1">
                             <label for="country" class="form-label">Pais</label>
                             <select class="select2 form-select" name="country" data-toggle="select" class="form-control"
                                 id="country" required>
@@ -112,7 +112,7 @@ $referred = DB::table('users')
                             @enderror
                         </div>
 
-                        <div class="col-6 mb-1">
+                        <div class="col-12 col-sm-6 mb-1">
                             <label for="email" class="form-label">Correo</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
                                 name="email" placeholder="john@example.com" value="{{ old('email') }}" />
@@ -123,7 +123,7 @@ $referred = DB::table('users')
                             @enderror
                         </div>
 
-                        <div class="col-6 mb-1">
+                        <div class="col-12 col-sm-6 mb-1">
                             <label for="email_confirm" class="form-label">Repetir Correo</label>
                             <input type="text" class="form-control @error('email_confirm') is-invalid @enderror"
                                 id="email_confirm" name="email_confirm" value="{{ old('email_confirm') }}" />
@@ -134,7 +134,7 @@ $referred = DB::table('users')
                             @enderror
                         </div>
 
-                        <div class="col-6 mb-1">
+                        <div class="col-12 col-sm-6 mb-1">
                             <label for="password" class="form-label">Contraseña</label>
                             <div
                                 class="input-group input-group-merge form-password-toggle @error('password') is-invalid @enderror">
@@ -150,7 +150,7 @@ $referred = DB::table('users')
                             @enderror
                         </div>
 
-                        <div class="col-6 mb-1">
+                        <div class="col-12 col-sm-6 mb-1">
                             <label for="password-confirm" class="form-label">Repetir contraseña</label>
                             <div class="input-group input-group-merge form-password-toggle">
                                 <input type="password" class="form-control form-control-merge" id="password-confirm"
