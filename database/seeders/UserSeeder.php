@@ -19,13 +19,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'username'=> 'admin zoe',
+            'username'=> 'admin bires',
             'name'=> 'admin',
             'lastname'=> Str::random(5),
             'phone'=> Str::random(5),
             'country_id'=> '1',
             'referred_id'=> '1',
-            'email'=> 'admin@zoe.com',
+            'email'=> 'admin@bires.com',
             'email_verified_at'=> Carbon::now(),
             'password' => Hash::make('12345678'),
         ]);
