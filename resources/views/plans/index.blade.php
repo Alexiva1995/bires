@@ -28,8 +28,9 @@
     -moz-transition-duration: 100ms;
   }
 
-  a.primary{
+  a.btn{
    background-color: #4BCFEE;
+;
 
   }
 </style>
@@ -47,11 +48,11 @@
                         <div class="card-body">
                             <p class="text-center">{{$item->Description}}</p>
 
-                            <div>Retorno: <strong style="color: #F5A707;">7.5% por mes</strong></div>
+                            <div>Retorno: <strong style="color: #18A0FB;">7.5% por mes</strong></div>
                             <br>
                             <div class="d-grid gap-4 col-20 mx-auto">
-                                <a href="#" target="_blank" class="btn btn-primary">
-                                    {{ $item->price }} ZOEC
+                                <a href="#" target="_blank" class="btn">
+                                   <strong style="position: static;width: 83px;height: 19px;left: 21px;top: 5px;">{{ $item->price }} ZOEC</strong>
                                 </a>
                             </div>
                         </div>
