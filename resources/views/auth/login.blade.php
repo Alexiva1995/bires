@@ -23,6 +23,7 @@
                     <form class="auth-login-form col-6" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-1">
+                        
                             <label for="login-email" class="form-label">Correo electronico</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror"
                                 id="login-email" name="email" placeholder="tucorreo@gmail.com"
