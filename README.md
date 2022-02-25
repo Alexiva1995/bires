@@ -1,12 +1,11 @@
 # Bires [Status badge](https://img.shields.io/badge/status-complete-green)
-
+<p align="center"><a href="#" target="_blank"><img src="#" ></a></p>
 <p align="center" dir="auto">
 <a href="https://travis-ci.org/laravel/framework" rel="nofollow"><img src="https://camo.githubusercontent.com/fa459b08edcef0a72eaec3b515452fa09f6efb1282166209476903af384e145c/68747470733a2f2f7472617669732d63692e6f72672f6c61726176656c2f6672616d65776f726b2e737667" alt="Build Status" data-canonical-src="https://travis-ci.org/laravel/framework.svg" style="max-width: 100%;"></a>
 <a href="https://packagist.org/packages/laravel/framework" rel="nofollow"><img src="https://camo.githubusercontent.com/743641544e753306c29c453fa7de33615dbd966120213b3c0b78eba38dd94040/68747470733a2f2f706f7365722e707567782e6f72672f6c61726176656c2f6672616d65776f726b2f762f737461626c652e737667" alt="Latest Stable Version" data-canonical-src="https://poser.pugx.org/laravel/framework/v/stable.svg" style="max-width: 100%;"></a>
 </p>
 
 ##   Project Bires
-<p align="center"><a href="#" target="_blank"><img src="#" ></a></p>
 ✨ Multilevel platform, oriented to the payment of investments and return of capital in marketing networks, integration with the best conpaymets services for payments.
 
 
