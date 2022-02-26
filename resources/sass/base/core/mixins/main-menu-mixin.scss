@@ -124,10 +124,10 @@
   $main-menu-sub-open-color: $theme-color;
 
   color: $theme-color;
-  background: $theme-bg;
+  background: linear-gradient(180deg, #043D70 0%, #043B6C 57.44%, #054176 100%);
 
   .navigation {
-    background: $theme-bg;
+    background: linear-gradient(180deg, #043D70 0%, #043B6C 57.44%, #054176 100%);
     .navigation-header {
       color: lighten($theme-color, 21.5%);
       margin: calc(#{$content-padding} + 0.286rem) 0 0.8rem ($content-padding + 0.2rem);

@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\AppsController;
 use App\Http\Controllers\UserInterfaceController;
 use App\Http\Controllers\CardsController;
@@ -15,7 +17,9 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
-
+use App\Http\Controllers\IntercambiosController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\StripeCtrl;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,17 +32,29 @@ use App\Http\Controllers\ChartsController;
 */
 
 // Main Page Route
-// Route::get('/', [DashboardController::class,'dashboardEcommerce'])->name('dashboard-ecommerce')->middleware('verified');
-Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+
+Route::get('/', [DashboardController::class, 'landing'])->name('landing');
 
 Auth::routes(['verify' => true]);
 
-/* Route Dashboards */
-Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
-    Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+Route::middleware('auth')->group(function () {
+
+    Route::middleware('admin')->group(function () {
+
+        Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
+
+    });
+    /* Route Dashboards */
+    Route::group(['prefix' => 'dashboard'], function () {
+        Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
+        Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+    });
+    /* Route Dashboards */
+    //PASARELA
+    //STRIPE
+    Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
+    Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
 });
-/* Route Dashboards */
 
 /* Route Apps */
 Route::group(['prefix' => 'app'], function () {
@@ -177,8 +193,8 @@ Route::group(['prefix' => 'page'], function () {
     Route::get('profile', [PagesController::class, 'profile'])->name('page-profile');
     Route::get('faq', [PagesController::class, 'faq'])->name('page-faq');
     Route::get('knowledge-base', [PagesController::class, 'knowledge_base'])->name('page-knowledge-base');
-    Route::get('knowledge-base/category', [PagesController::class, 'kb_category'])->name('page-knowledge-base');
-    Route::get('knowledge-base/category/question', [PagesController::class, 'kb_question'])->name('page-knowledge-base');
+    Route::get('knowledge-base/category', [PagesController::class, 'kb_category']);
+    Route::get('knowledge-base/category/question', [PagesController::class, 'kb_question']);
     Route::get('pricing', [PagesController::class, 'pricing'])->name('page-pricing');
     Route::get('blog/list', [PagesController::class, 'blog_list'])->name('page-blog-list');
     Route::get('blog/detail', [PagesController::class, 'blog_detail'])->name('page-blog-detail');
@@ -219,3 +235,22 @@ Route::get('/maps/leaflet', [ChartsController::class, 'maps_leaflet'])->name('ma
 
 // locale Route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
+
+//Intercambios
+
+Route::get('/intercambios/index', [IntercambiosController::class, 'index'])->name('intercambios.index');
+Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
+Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
+Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
+
+//RUTAS PARA LOS PLANES
+Route::group(['prefix' => 'plans'], function () {
+    Route::get('', [PlanController::class, 'index'])->name('plans.index');
+});
+
+
+//Settlement
+
+Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
+Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
+

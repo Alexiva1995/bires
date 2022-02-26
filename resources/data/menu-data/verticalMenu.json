@@ -21,7 +21,20 @@
         }
       ]
     },
+    {
+        "name": "Intercambios",
+        "url": "intercambios/index",
+        "icon": "circle",
+        "slug": "dashboard-analytics"
 
+    },
+    {
+        "name": "Planes",
+        "url": "plans",
+        "icon": "shopping-bag",
+        "slug": "plans.index"
+
+    },
     {
       "navheader": "Apps & Pages",
       "slug": ""

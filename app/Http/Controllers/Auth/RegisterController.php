@@ -47,15 +47,22 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    
     protected function validator(array $data)
     {
+        
         return Validator::make($data, [
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
             'name' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
+            'country' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-    }
 
+    }
+    
     /**
      * Create a new user instance after a valid registration.
      *
@@ -64,20 +71,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        
+        $user = User::create([
+            'username' => $data['username'],
             'name' => $data['name'],
+            'lastname' => $data['lastname'],
+            'phone' => $data['phone'],
+            'country_id' => $data['country'],
+            'referred_id' => $data['referred_id'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password'])
         ]);
+
+        return $user;
     }
 
     // Register
-    public function showRegistrationForm()
-    {
-        $pageConfigs = ['blankPage' => true];
+    // public function showRegistrationForm()
+    // {
+    //     $pageConfigs = ['blankPage' => true];
 
-        return view('/auth/register', [
-        'pageConfigs' => $pageConfigs
-        ]);
-    }
+    //     return view('/auth/register', [
+    //     'pageConfigs' => $pageConfigs
+    //     ]);
+    // }
 }

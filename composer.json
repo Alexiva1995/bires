@@ -12,9 +12,11 @@
     "fideloper/proxy": "^4.4",
     "fruitcake/laravel-cors": "^2.0",
     "guzzlehttp/guzzle": "^7.0.1",
+    "kevupton/laravel-coinpayments": "^1.1",
     "laravel/framework": "^8.40",
     "laravel/tinker": "^2.5",
-    "laravel/ui": "^3.3"
+    "laravel/ui": "^3.3",
+    "stripe/stripe-php": "^7.111"
   },
   "require-dev": {
     "facade/ignition": "^2.5",

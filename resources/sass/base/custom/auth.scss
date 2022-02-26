@@ -1,0 +1,169 @@
+// Auth styles
+body {
+    background-color: #032D52 !important;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+span,
+.form-label {
+    color: #fff
+}
+
+.auth-wrapper.auth-v1 .auth-inner {
+    max-width: 1050px !important;
+}
+
+.card-auth {
+    background: linear-gradient(90deg, rgb(1, 65, 120) 52.6%, rgba(76, 72, 140, 0.907) 100%), url(./img/auth.png) no-repeat !important;
+    background-position: right !important;
+    mix-blend-mode: normal !important;
+    border-radius: 50px !important;
+    color: #fff;
+}
+
+.btn-f {
+    border-color: #294FD7 !important;
+    background-color: #294FD7 !important;
+    color: #fff !important;
+}
+
+.btn-g {
+    border-color: #0F528C !important;
+    background-color: #0F528C !important;
+    color: #fff !important;
+}
+
+.btn-is {
+    border-color: #F5A707 !important;
+    background-color: #F5A707 !important;
+    color: #fff !important;
+}
+
+// css inputs
+input[type=text],
+input[type=text]:focus,
+input[type=text]:active,
+input[type=text]:read-only,
+input[type=text]::placeholder,
+input[type=text]:hover:not([disabled]),
+
+input[type=email],
+input[type=email]:focus,
+input[type=email]:active,
+input[type=email]:read-only,
+input[type=email]::placeholder,
+input[type=email]:hover:not([disabled]),
+
+input[type=number],
+input[type=number]:focus,
+input[type=number]:active,
+input[type=number]:read-only,
+input[type=number]::placeholder,
+input[type=number]:hover:not([disabled]),
+
+input[type=password],
+input[type=password]:focus,
+input[type=password]:active,
+input[type=password]:read-only,
+input[type=password]::placeholder,
+input[type=password]:hover:not([disabled]),
+
+input[type=textarea],
+input[type=textarea]:focus,
+input[type=textarea]:active,
+input[type=textarea]:read-only,
+input[type=textarea]::placeholder,
+input[type=textarea]:hover:not([disabled]),
+
+input[type=search],
+input[type=search]:focus,
+input[type=search]:active,
+input[type=search]:read-only,
+input[type=search]::placeholder,
+input[type=search]:hover:not([disabled]),
+
+.input-group-text {
+    background: #2986D7;
+    border-color: #2986D7 !important;
+    color: #ffffff !important;
+}
+
+.form-check-input:checked {
+    border-color: #2986D7 !important;
+    color: #ffffff !important;
+}
+
+.form-select {
+    color: #2986D7 !important;
+    background-color: #F8EFD8 !important;
+    // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d8d6de' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    border: 1px solid #2986D7 !important;
+}
+
+// css select2
+.select2-container--default .select2-selection--single {
+    background-color: #2986D7 !important;
+    border: 1px solid #2986D7 !important;
+    border-radius: 4px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    background: #2986D7 !important;
+    color: #fff !important;
+    line-height: 28px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    background: #0F528C !important;
+    border: 1px solid #0F528C !important;
+    color: #000 !important;
+}
+
+.select2-container--open .select2-dropdown--below {
+    border: 1px solid #2986D7 !important;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: #2986D7 !important;
+}
+
+.select2-container--classic .select2-results__option,
+.select2-container--default .select2-results__option {
+    color: #fff !important;
+    padding: 0.428rem 1rem;
+}
+
+.select2-container--default .select2-results__option[aria-disabled=true] {
+    color: #fff !important;
+    background: #0f528c;
+    border: 1px solid #0f528c !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    display: none;
+}
+
+
+// css scroll 
+body::-webkit-scrollbar {
+    width: 10px !important;
+    height: 7px !important;
+    overflow: visible !important;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #0F528C !important;
+    border-radius: 7px !important;
+}
+
+body::-webkit-scrollbar-thumb:horizontal {
+    background: #0F528C !important;
+    border-radius: 7px !important;
+}
