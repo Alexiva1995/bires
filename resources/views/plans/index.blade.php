@@ -41,18 +41,27 @@
         <div class="container">
             <div class="row">
                 @foreach ($plans as $item)
-                    <div class="card container-fluid mt-1" style="width: 17rem; padding: 15px">
+                    <div class="card container-fluid " style="width: 16rem; padding: 14px">
                         <div class="text-center mt-1">
                             <font size="4"><strong>{{$item->name}}</strong></font>
                         </div>
                         <div class="card-body">
-                            <p class="text-center">{{$item->Description}}</p>
+                            <p class="text-center" style="font-size: 13px; color: white;">
+                                <strong>{{$item->Description}}</strong>
+                            </p>
 
-                            <div>Retorno: <strong style="color: #18A0FB;">7.5% por mes</strong></div>
+                            <div style="font-size: 11px">
+                                <strong>Retorno:</strong> 
+                                <strong style="color: rgba(117, 202, 255, 1); font-size: 12px">
+                                    7.5% por mes
+                                </strong>
+                            </div>
                             <br>
                             <div class="d-grid gap-4 col-20 mx-auto">
                                 <a href="#" target="_blank" class="btn">
-                                   <strong style="position: static;width: 83px;height: 19px;left: 21px;top: 5px;">{{ $item->price }} ZOEC</strong>
+                                   <strong style="font-style: normal;font-weight: 600;font-size: 14.5px;line-height: 105%;">
+                                       {{ $item->price }} ZOEC
+                                   </strong>
                                 </a>
                             </div>
                         </div>
