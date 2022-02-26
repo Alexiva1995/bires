@@ -43,9 +43,9 @@
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
           <li class="nav-item dropdown dropdown-notification me-25 mx-2">
-            <a class="btn btn-sm btn-secondary mx-1" href="javascript:void(0);" data-bs-toggle="dropdown">
-              <i class="ficon" data-feather="bell"></i>
-              <span class="badge">5</span>
+            <a class="btn mx-1" style="background-color: #F5A707; border-radius: 3px; width: 50px;height:20px;left: 0px;top: 0px;" href="javascript:void(0);" data-bs-toggle="dropdown">
+              <i class="ficon" data-feather="bell" style="position: absolute;left: 12.75%;top: 10%;bottom: 40%;"></i>
+              <span class="badge"  style="height: 18px;top: calc(50% - 22px/2 + 1px);"><strong style="color: white;">5</strong></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
               <li class="dropdown-menu-header">
@@ -145,10 +145,17 @@
             </ul>
           </li>
           <li class="nav-item dropdown mx-1">
-            <a class="btn btn-primary" href="#" id="referred" data-bs-toggle="dropdown">Referir</a> 
+            <a href="#" id="referred" data-bs-toggle="dropdown"><strong style="color:white;width: 39px;height: 18px;top:1px;left:22,5px;">Referir</strong></a> 
           </li>
           <li class="nav-item dropdown mx-1">
-            <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
+            <a href="javascript:void(0);" data-bs-toggle="dropdown">
+              @if(Auth::user()->disponibles() != null)
+                <strong style="color:white; width: 62px; height: 18px;top: 1px;left: 11px;">
+              {{ Auth::user()->disponibles()}} ZOEC</strong></a>
+              @else
+                <strong style="color:white; width: 62px; height: 18px;top: 1px;left: 11px;">
+                0 ZOEC</strong></a>
+              @endif
           </li>
           <li class="nav-item dropdown dropdown-language">
             <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
@@ -184,13 +191,15 @@
           <li class="nav-item dropdown dropdown-user">
             <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
               <div class="user-nav d-sm-flex d-none">
-                <span class="user-name fw-bolder"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} </span>
-                <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span>
+               {{-- <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span> --}}
               </div>
-              <span class="avatar">
-                <img class="round" src="{{asset('images/logo/logo-toffle.png')}}" alt="avatar" height="40" width="40">
-                <span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span>
-              </span>
+              <li  class="nav-item dropdown dropdown-user"> 
+                <span class="avatar" class="mt-1">
+                  <img class="d-block" src="{{asset('images/avatars/12-small.png')}}" style="width: 27px;height: 28px;left: 361.4px;top: 0px; border-radius: 3px">
+                  {{--<span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span>--}}
+                </span>
+              </li>
+              <span class="user-name fw-bolder" style="color: #1964A5;font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;text-align: right;"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
               <a class="dropdown-item" href="{{url('page/profile')}}">

@@ -57,6 +57,10 @@
             background-size: cover;
             width: 100% ;
         }
+        button.btn-sm{
+            background: #4BCFEE; 
+        }
+       
     </style>
   @endsection
 
@@ -69,40 +73,44 @@
 </div>
 <div class="row">
     <div class="col-9">
-
-        <div class="row">
-            <div class="col-5 align-self-center">
-                <span>Wilmar Cardona a Generacion Zoe</span>
+        <div class="row" style="--bs-gutter-x: 0rem;">
+            <div class="col-5 align-self-center"  style="width: 41%;">
+                <span style="color: #4BCFEE;">Wilmar Cardona a Generacion Zoe</span>
             </div>
-            <div class="col-2 align-self-center">
-                <span class="small" ><i data-feather='arrow-up-right'></i> Tu link de referido</span>
+            <div class="col-3 align-self-center" style="width: 22%">
+                <span class="small" style="font-size: 15px; color: white; height: 18px;"> Tu link de referido</span>
             </div>
-            <div class="col-2">
-                <div class="btn-group">
+            <div class="col-2" style="width:15%;">
+                <div class="btn-group"  style="padding-right: 100%">
                     <button
-                      class="btn btn-flat-primary dropdown-toggle small"
-                      type="button"
-                      id="dropdownMenuButton100"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Ver todos
+                        class="btn btn-flat-primary dropdown-toggle small"
+                        type="button"
+                        id="dropdownMenuButton100"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        >
+                        <i data-feather='arrow-up-right' style="left: 62.24%;right: 37.37%;top: 17.53%;bottom: 81.9%;">
+                              
+                        </i>
+                        <strong style="color:white; font-size: 11px;">
+                            Ver todos
+                        </strong>
+                         
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton100">
-                      <a class="dropdown-item" href="#">Option 1</a>
-                      <a class="dropdown-item" href="#">Option 2</a>
-                      <a class="dropdown-item" href="#">Option 3</a>
+                        <a class="dropdown-item" href="#">Option 1</a>
+                        <a class="dropdown-item" href="#">Option 2</a>
+                        <a class="dropdown-item" href="#">Option 3</a>
                     </div>
                 </div>
             </div>
-            <div class="col-3">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-secondary btn-sm rounded-pill" onclick="getlink()"><i data-feather='copy'></i> Copiar enlace</button>
+            <div class="col-3" style="width: 10%">
+                <div class="">
+                    <button style="width: 159px;height: 29px;" class="btn btn-sm rounded-pill"onclick="getlink()"><i data-feather='copy'></i><strong style="font-style: normal;font-weight: 600;font-size: 14.5px;">Copiar enlace</strong></button>
                 </div>
             </div>
         </div>
-
-        @include('components.tranding-view')
+    @include('components.tranding-view')
 
         <div class="row match-height">
             <!-- Greetings Card starts -->
@@ -170,7 +178,7 @@
                                 <span class="card-text font-small-1"><i data-feather='arrow-up-right'></i> Ver todos</span>
                             </div>
                             <div class="col-3 align-self-center">
-                                <button class="btn-darks btn-block mt-4 rounded" style="boder-color=#66FFCC; position: //" >
+                                <button class="btn-darks btn-block mt-4 rounded" style="color:#66FFCC; position: //" >
                             </div>
                         </div>
                     </div>
@@ -221,7 +229,7 @@
                   align-items-md-center align-items-start
                 "
               >
-                <h4 class="card-title">Data Science</h4>
+                <h4 class="card-title" style="font-size: 14px;letter-spacing: -0.02em;">Ganancias por mes</h4>
                 <div class="d-flex align-items-center mt-md-0 mt-1">
                   <i class="font-medium-2" data-feather="calendar"></i>
                   <input
@@ -255,7 +263,9 @@
             <div class="card-footer">
                 <div class="container">
                     <div class="d-grid gap-2">
-                        <button class="btn btn-secondary rounded">Verificar</button>    
+                        <button class="btn btn-sm rounded" style="border-radius: 10px">
+                            <strong style="font-size:14px">Verificar</strong>
+                        </button>    
                     </div>
                 </div>
             </div>

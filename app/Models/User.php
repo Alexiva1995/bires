@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Inversion;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -59,5 +61,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new MyResetPassword($token));
+    }
+
+    public function inversiones()
+    {
+        return $this->hasMany(Inversion::class, 'user_id');
+    }
+
+    public function disponibles()
+    {
+        return $this->inversiones->where('status', '=', 1)->sum('invested');
     }
 }
