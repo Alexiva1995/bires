@@ -109,7 +109,7 @@
                           Pagar 1 USD. Comisión incluida. 
                         </strong>
                       </p>
-                      <p class="text-white text-center f-little fw-lighter mt-0 mb-3" >
+                      <p class="text-white text-center f-little fw-lighter mt-0 mb-3">
                         <strong style="padding-right: 10%; color:white;width: 321px;height: 48px;top: 562px;
                         ;">
                           Tiempo de ingreso ~ 20 minutos.

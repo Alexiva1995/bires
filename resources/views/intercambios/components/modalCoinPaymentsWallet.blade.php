@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title " id="modalInfoTitle">Método de pago: Coinpayments.</h5>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" style="background-color:  #4BCFEE;" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -21,12 +21,12 @@
                     </h5>
 
                     <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-yellow text-white mt-2">Continuar</button>
+                        <button type="submit" class="btn text-white mt-2" style="background-color:  #4BCFEE;">Continuar</button>
                     </div>
                 </form>
             </div>
             {{-- <div class="modal-footer primary-background">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-sm" data-bs-dismiss="modal">Cerrar</button>
             </div> --}}
         </div>
     </div>

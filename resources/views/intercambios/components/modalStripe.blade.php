@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title " id="modalstripeTitle">Método de pago: Coinpayments.</h5>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="" style="background-color: #4BCFEE;" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
