@@ -86,32 +86,32 @@
           </ul>
         </li>
         <li class="nav-item dropdown mx-1">
-          <a class="btn btn-primary" href="#" id="referred" data-bs-toggle="dropdown">Referir</a>
+          <a class="text-white" style="font-weight: 800;" href="#" id="referred" data-bs-toggle="dropdown">Referir</a>
         </li>
         <li class="nav-item dropdown mx-1">
-          <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
+          <a class="text-white" style="font-weight: 800;" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
         </li>
         <li class="nav-item dropdown dropdown-language">
           <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
-            <i class="flag-icon flag-icon-mx"></i>
-            <span class="selected-language">ESPAÑOL</span>
+          <i data-feather='arrow-down' style="color: #1964A5;"></i>
+            <span class="selected-language" style="color: #1964A5;">Es</span>
           </a>
           {{----}}
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
             <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es" alt="ESPAÑOL">
-              <i class="flag-icon flag-icon-mx"></i> ESPAÑOL
+              <i class="flag-icon flag-icon-mx"></i> Es
             </a>
             <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en" alt="INGLES">
-              <i class="flag-icon flag-icon-us"></i> INGLES
+              <i class="flag-icon flag-icon-us"></i> En
             </a>
             <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr" alt="FRANCÉS">
-              <i class="flag-icon flag-icon-fr"></i> FRANCÉS
+              <i class="flag-icon flag-icon-fr"></i> Fr
             </a>
             <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de" alt="ALEMÁN">
-              <i class="flag-icon flag-icon-de"></i> ALEMÁN
+              <i class="flag-icon flag-icon-de"></i> De
             </a>
             <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt" alt="PORTUGUÉS">
-              <i class="flag-icon flag-icon-pt"></i> PORTUGUÉS
+              <i class="flag-icon flag-icon-pt"></i> Pt
             </a>
           </div>
         </li>
@@ -119,13 +119,14 @@
         <li class="nav-item dropdown dropdown-user">
           <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
             <div class="user-nav d-sm-flex d-none">
-              <span class="user-name fw-bolder"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} </span>
-              <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span>
+          
+              <span class="user-name" style="color: #1964A5;"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} <i data-feather='arrow-down' style="color: #1964A5;"></i></span>
+              <!-- <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span> -->
             </div>
-            <span class="avatar">
+            <!-- <span class="avatar">
               <img class="round" src="{{asset('images/logo/logo-toffle.png')}}" alt="avatar" height="40" width="40">
               <span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span>
-            </span>
+            </span> -->
           </a>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
             <a class="dropdown-item" href="{{url('page/profile')}}">
