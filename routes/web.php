@@ -20,6 +20,8 @@ use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\IntercambiosController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\StripeCtrl;
+use App\Http\Controllers\NotificationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +56,9 @@ Route::middleware('auth')->group(function () {
     //STRIPE
     Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
     Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
+
+
+    Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
 });
 
 /* Route Apps */
