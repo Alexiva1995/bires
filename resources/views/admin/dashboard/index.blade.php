@@ -71,6 +71,7 @@
 <div class="">
     <h2>Hola bienvenido</h2>
 </div>
+
 <div class="row">
     <div class="col-9">
         <div class="row" style="--bs-gutter-x: 0rem;">
@@ -104,9 +105,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3" style="width: 10%">
+            <div class="col-3" style="width: 10%; padding-left:5%;">
                 <div class="">
-                    <button style="width: 159px;height: 29px;" class="btn btn-sm rounded-pill"onclick="getlink()"><i data-feather='copy'></i><strong style="font-style: normal;font-weight: 600;font-size: 14.5px;">Copiar enlace</strong></button>
+                    <button style="width: 139px;height: 29px;" class="btn btn-sm rounded-pill"onclick="getlink()"><i data-feather='copy'></i><strong style="font-style: normal;font-weight: 600;font-size: 12.5px;">Copiar enlace</strong></button>
                 </div>
             </div>
         </div>

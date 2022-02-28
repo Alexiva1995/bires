@@ -56,7 +56,7 @@
 
                     <div class="row">
                         <div class="col-xs-12">
-                            <button class="btn btn-success btn-block" type="submit">Pay ($500)</button>
+                            <button class="btn btn-success btn-block" type="submit">Pay {{$data['cantidad']}}</button>
                         </div>
                     </div>
                       

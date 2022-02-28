@@ -35,6 +35,15 @@
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 31.77%, rgba(0, 0, 0, 0.2) 59.9%), linear-gradient(180deg, rgba(15, 111, 195, 0.5) 0%, rgba(15, 111, 195, 0.5) 100%), url('{{ url('images/zoe/home/home-1.png')}}') no-repeat !important;
         mix-blend-mode: normal !important;
     }
+    button.btn-sm{
+            background: #4BCFEE; 
+        }
+        a.nav-link, div.dropdown-menu, a.btn-sm{
+     
+            top: 13px;
+            border-radius: 0px;
+            text-indent: 30px; 
+        }
 
 </style>
 
@@ -46,11 +55,21 @@
                 <a href="{{ route('landing') }}" class="float-md-start mb-0"><img
                         src="{{ asset('images/zoe/logo/logo.svg') }}" alt="logo" width="70%"></a>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link text-white active" aria-current="page" href="#">Inicio</a>
-                    <a class="nav-link text-white" href="#">PMI</a>
-                    <a class="nav-link text-white" href="#">Oficinas</a>
-                    <a class="nav-link text-white" href="#">Testimonios</a>
-                    <a class="nav-link text-white" href="#">Novedades</a>
+                    <a class="nav-link text-white active" aria-current="page" href="#">
+                        <strong style="height: 29px;width: 121px;left: 320px;top: 0px;border-radius: nullpx;">Inicio</strong>
+                    </a>
+                    <a class="nav-link text-white" href="#"> 
+                        <strong style="height: 29px;width: 121px;left: 320px;top: 0px;border-radius: nullpx;">PMI</strong>
+                    </a>
+                    <a class="nav-link text-white" href="#">
+                        <strong style="height: 29px;width: 121px;left: 320px;top: 0px;border-radius: nullpx;">Oficinas</strong>
+                    </a>
+                    <a class="nav-link text-white" href="#">
+                        <strong style="height: 29px;width: 121px;left: 320px;top: 0px;border-radius: nullpx;">Testimonios</strong>
+                    </a>
+                    <a class="nav-link text-white" href="#">
+                        <strong style="height: 29px;width: 121px;left: 320px;top: 0px;border-radius: nullpx;">Novedades</strong>
+                    </a>
                     <li class="nav-item dropdown dropdown-language">
                         <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown"
                             aria-haspopup="true">
@@ -64,29 +83,33 @@
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
-                            <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es"
+                            <a href="#googtrans(es|es)" class="dropdown-item lang-select rounded" data-language="es"
                                 alt="ESPAÑOL">
                                 <i class="flag-icon flag-icon-mx"></i> ES
                             </a>
-                            <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en"
+                            <a href="#googtrans(es|en)" class="dropdown-item lang-select rounded" data-language="en"
                                 alt="INGLES">
                                 <i class="flag-icon flag-icon-us"></i> EN
                             </a>
-                            <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr"
+                            <a href="#googtrans(es|fr)" class="dropdown-item lang-select rounded" data-language="fr"
                                 alt="FRANCÉS">
                                 <i class="flag-icon flag-icon-fr"></i> FR
                             </a>
-                            <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de"
+                            <a href="#googtrans(es|de)" class="dropdown-item lang-select rounded" data-language="de"
                                 alt="ALEMÁN">
                                 <i class="flag-icon flag-icon-de"></i> AL
                             </a>
-                            <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt"
+                            <a href="#googtrans(es|pt)" class="dropdown-item lang-select rounded" data-language="pt"
                                 alt="PORTUGUÉS">
                                 <i class="flag-icon flag-icon-pt"></i> PT
                             </a>
                         </div>
                     </li>
-                    <a href="{{ route('login') }}" class="btn btn-outline-secondary fw-bold text-white">Ingresar</a>
+                    <a class="nav-link" href="{{ route('login') }}">
+                        <button style="height: 32px;width: 150px;left: 647px;top: 0px;border-radius: 5px;" class="btn btn-sm ">
+                            <strong style="height: 22px;width: 71px;left: 686px;top: 3px;border-radius: nullpx;">Ingresar</strong>
+                        </button>
+                    </a>
                 </nav>
             </div>
         </header>
@@ -94,18 +117,19 @@
         <main class="mb-auto row">
             <div class="col-6 text-left">
                 <h1 style="font-family: Poppins;
+                height: 226px;
+                width: 998px;
+                top: 332px;
+                border-radius: nullpx;
                 font-style: normal;
                 font-weight: bold;
                 font-size: 60px;
-                line-height: 111.5%; text-align: left;">¡Somos la Nueva Generación!</h1>
+                line-height: 111.5%; text-align: left;">¡Somos la Nueva <br>Generación!</h1>
                 <p style="font-family: Poppins;
                 font-style: normal;
                 font-weight: 500;
                 font-size: 18px;
-                line-height: 145.5%; text-align: left;">Desarrolla habilidades de liderazgo, comunicación asertiva,
-                    aprende a crear equipos de
-                    alto desempeño, a gestionar tus estados emocionales, a identificar y romper con las creencias
-                    limitantes.
+                line-height: 145.5%; text-align: left;">Desarrolla habilidades de liderazgo, comunicación asertiva, aprende a <br> crear equipos de alto desempeño, a gestionar tus estados emocionales,<br> a identificar y romper con las creencias limitantes.
                 </p>
                 <p class="lead d-flex justify-content-left">
                     <a href="#" class="btn btn-outline-secondary fw-bold text-white">Conoce más</a>

@@ -37,7 +37,7 @@
 
 @section('content')
     <div class="content-body mb-6">
-        <h3 class="card-header mb-2"><strong>PLANES</strong></strong></h3>
+        <h3 class="card-header mb-2"><strong>Planes</strong></strong></h3>
         <div class="container">
             <div class="row">
                 @foreach ($plans as $item)
