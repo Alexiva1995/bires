@@ -21,6 +21,7 @@ use App\Http\Controllers\IntercambiosController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\StripeCtrl;
 use App\Http\Controllers\NotificationController;
+use LDAP\Result;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,8 @@ Route::middleware('auth')->group(function () {
 
 
     Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
+
+    Route::get('functionName', [NotificationController::class, 'functionName'])->name('functionName');
 });
 
 /* Route Apps */

@@ -13,6 +13,9 @@ class sendRegisterReffered extends Notification
 {
     use Queueable;
 
+
+    public $user;
+
     /**
      * Create a new notification instance.
      *
@@ -42,12 +45,12 @@ class sendRegisterReffered extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+         return (new MailMessage)
+                    ->greeting($this->details['greeting'])
+                    ->line($this->details['body'])
+                    ->line($this->details['thanks']);
+                   
     }
-
     /**
      * Get the array representation of the notification.
      *
@@ -61,7 +64,7 @@ class sendRegisterReffered extends Notification
             'name' => $this->user->name,
             'email' => $this->user->email,
             'padre' => $this->user->referred_id,
-            'message'     => "Se ah activo uno de sus directos, el usuario ".$this->user->email
+            'message'     => "Nuevo Registro, El usuario".$this->user->referred_id." acaba de registrar"
         ];
     }
 }
