@@ -49,7 +49,7 @@
     .primary-background{
         background: #032351;
     }
-    
+   
   </style>
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/dataTables.bootstrap5.min.css')) }}">
@@ -82,8 +82,8 @@
                     <label for="cantidad" class="form-label text-white form-label-text-size">
                       <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Cantidad</strong>
                     </label>
-                    <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="emailHelp">
-                    <span class="permanent-placeholder">USD</span>
+                    <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="emailHelp" style="background: white;">
+                    <span class="permanent-placeholder" style="color: background: #999999;">USD</span>
                     <div class="form-text"><strong style="color:#4BCFEE;width:120px;height: 21px;top: 409px;left: 432px;">Comisión: 1 USD</strong></div>
                   </div>
                   <div class="col-sm-2"></div>
@@ -91,8 +91,8 @@
                     <label for="recibido" class="form-label text-white form-label-text-size">
                       <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Recibo</strong>
                    </label>
-                    <input type="number" class="form-control" id="recibido" name="recibido">
-                    <span class="permanent-placeholder">ZOEC</span>
+                    <input type="number" class="form-control" id="recibido" name="recibido" style="background: white;">
+                    <span class="permanent-placeholder" style="color: background: #999999;">ZOEC</span>
                     <div class="form-text"><strong style="color:#4BCFEE;width: 192px;height: 21px;left: 969px;top: 405px;">Cantidad recibida en ZOEC</strong></div>
                   </div>
                 </div>

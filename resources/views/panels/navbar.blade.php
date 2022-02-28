@@ -171,7 +171,7 @@
             {{----}}
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
               <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es" alt="ESPAÑOL">
-                <i class="flag-icon flag-icon-mx"></i> ESPAÑOL
+                <i class="flag-icon flag-icon-es"></i> ESPAÑOL
               </a>
               <a href="#googtrans(es|en)" class="dropdown-item lang-select"  data-language="en" alt="INGLES">
                 <i class="flag-icon flag-icon-us"></i> INGLES

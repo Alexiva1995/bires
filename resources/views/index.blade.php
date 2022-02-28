@@ -44,7 +44,8 @@
             border-radius: 0px;
             text-indent: 30px; 
         }
-
+        .flag-icon-mx {
+    background-image: url(../../fonts/flag-icon-css/flags/4x3/es.svg);
 </style>
 
 <body class="d-flex h-100 text-center text-white bg-zoe">
@@ -85,7 +86,7 @@
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
                             <a href="#googtrans(es|es)" class="dropdown-item lang-select rounded" data-language="es"
                                 alt="ESPAÑOL">
-                                <i class="flag-icon flag-icon-mx"></i> ES
+                                <i class="flag-icon flag-icon-es"></i> ES
                             </a>
                             <a href="#googtrans(es|en)" class="dropdown-item lang-select rounded" data-language="en"
                                 alt="INGLES">
