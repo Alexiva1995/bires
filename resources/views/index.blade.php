@@ -74,7 +74,7 @@
                     <li class="nav-item dropdown dropdown-language">
                         <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown"
                             aria-haspopup="true">
-                            <i class="flag-icon flag-icon-mx"></i>
+                            <i class="flag-icon flag-icon-es"></i>
                             <span class="selected-language">
                                 @if(session()->has('locale'))
                                 {{session()->get('locale')}}
