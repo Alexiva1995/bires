@@ -42,8 +42,8 @@
       <ul class="nav navbar-nav align-items-center ms-auto">
         <li class="nav-item dropdown dropdown-notification">
           <a class="btn btn-sm btn-secondary" href="javascript:void(0);" data-bs-toggle="dropdown" style="margin-right: 15px;">
-            <i class="ficon" data-feather="bell"></i>@if(count(auth()->user()->unreadNotifications) > 0)
-            <div class="badge rounded-pill" style="font-weight: 600;font-size:12px;">{{count(auth()->user()->unreadNotifications)}}</div>
+          <i class="fa-solid fa-bell" style="font-size: 15px;"></i>@if(count(auth()->user()->unreadNotifications) > 0)
+            <div class="badge rounded-pill" style="font-weight: 600;font-size:15px;">{{count(auth()->user()->unreadNotifications)}}</div>
             @endif
           </a>
 
@@ -90,24 +90,24 @@
         </li>
         <li class="nav-item dropdown dropdown-language">
           <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" style="margin-right: 15px;">
-            <i class="flag-icon flag-icon-mx"></i>
+            <i class="flag-icon flag-icon-es rounded" style="font-size: 15px;"></i>
             <span class="selected-language">ES</span>
           </a>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
             <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es" alt="ESPAÑOL">
-              <i class="flag-icon flag-icon-mx"></i> ES
+              <i class="flag-icon flag-icon-es rounded"></i> ES
             </a>
             <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en" alt="INGLES">
-              <i class="flag-icon flag-icon-us"></i> EN
+              <i class="flag-icon flag-icon-us rounded"></i> EN
             </a>
             <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr" alt="FRANCÉS">
-              <i class="flag-icon flag-icon-fr"></i> FR
+              <i class="flag-icon flag-icon-fr rounded"></i> FR
             </a>
             <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de" alt="ALEMÁN">
-              <i class="flag-icon flag-icon-de"></i> DE
+              <i class="flag-icon flag-icon-de rounded"></i> DE
             </a>
             <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt" alt="PORTUGUÉS">
-              <i class="flag-icon flag-icon-pt"></i> PT
+              <i class="flag-icon flag-icon-pt rounded" ></i> PT
             </a>
           </div>
         </li>
@@ -115,11 +115,11 @@
         <li class="nav-item dropdown dropdown-user">
           <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
             <span class="">
-              <img class="" src="{{asset('images/avatars/1-small.png')}}" alt="avatar" height="30" width="30" style="margin-right: 15px;">
+              <img class="rounded" src="{{asset('images/avatars/1-small.png')}}" alt="avatar" height="30" width="30" style="margin-right: 15px;">
               <!-- <span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span> -->
             </span>
             <div class="user-nav d-sm-flex d-none">
-              <span class="user-name" style="color: #1964A5;"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} <i data-feather='arrow-down' style="color: #1964A5;"></i></span>
+              <span class="user-name" style="color: #1964A9;"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} <i data-feather='arrow-down' style="color: #1964A5;"></i></span>
               <!-- <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span> -->
             </div>
           </a>
@@ -130,8 +130,7 @@
             <div class="dropdown-divider"></div>
             <form method="POST" class="" action="{{ route('logout') }}">
               @csrf
-              <button class="dropdown-item w-100" href="{{ route('logout') }}" onclick="event.preventDefault();
-                          this.closest('form').submit();">
+              <button class="dropdown-item w-100" href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();">
                 <i class="mr-50" data-feather="power"></i> Cerrar Sesion
               </button>
             </form>
