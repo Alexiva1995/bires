@@ -64,13 +64,13 @@
           <div class="border border-info border-5 rounded-1 container-fluid primary-background" >
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="text-white ms-2 mt-1 ">Método de pago</h3>
+                <h3 class="text-white ms-2 mt-1" style="font-style: normal;font-weight: 500;font-size: 29px;line-height: 43px;">Método de pago</h3>
               </div>
-              <div class="col-sm-6">
-                <h6 class="text-white ps-5 mt-2 f-little fw-lighter"> Datos protegidos por el estándar PCI DSS </h6>
-                <i class="bi bi-shield-fill-check"></i><i class="fas fa-shield-check"></i>
+              <div class="col-sm-6 mt-1">
+                <h6 class="text-white ps-5 mt-2 f-little fw-lighter" style="font-style: normal;font-weight: 300;font-size: 14px;line-height: 21px;"> Datos protegidos por el estándar PCI DSS <td><img class="" src={{asset('img/paymentLogos/Vector.png')}} alt="Vector"/></td></h6>
+               
             </div>
-            <hr class="text-white ms-0 col-12" style="width: 100% !important">
+            <hr class="text-white ms-0 col-12 mt-1" style="width: 100% !important">
                 {{-- <form action={{route('settlement.aprobarRetiro')}} method="POST"> --}}
                   {{--   @csrf --}}
                     @include('intercambios.components.paymentCards')

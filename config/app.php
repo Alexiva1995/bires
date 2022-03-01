@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        \Kevupton\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class,
+        Kevupton\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class,
 
         /*
          * Package Service Providers...

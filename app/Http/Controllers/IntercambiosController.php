@@ -19,7 +19,7 @@ class IntercambiosController extends Controller
     }
 
     public function paymentMethods(Request $request){
-
+         
         $validate = $request->validate([
             'cantidad' => ['required'],
             'recibido' => ['required'],

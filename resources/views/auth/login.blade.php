@@ -9,20 +9,21 @@
 
 @section('content')
 <div class="auth-wrapper auth-v1">
-    <div class="auth-inner">
+   {{-- <div class="auth-inner">--}}
         <div class="card-auth p-2">
             <div class="card-body">
                 <a href="#" class="card-text">
                     <img src="{{ asset('images/zoe/logo/icon.png') }}" class="logo" width="40px" alt="">
                 </a>
 
-                <h5 class="card-text mb-2 mt-2">Bienvenido de nuevo</h5>
-                <h1 class="card-title mb-1 font-weight-bold" style="font-size: 50px;">Iniciar sesión</h1>
+                <h5 class="card-text mb-2 mt-2" style="height: 22px;width: 179px;left: 0px;top: 87.150146484375px;border-radius: nullpx;">Bienvenido de nuevo</h5>
+                <h1 class="card-title mb-1 font-weight-bold" style="font-size: 50px; height: 84px;width: 376px;left: 0px;top: 126.150146484375px;border-radius: nullpx;">Iniciar sesión</h1>
 
                 <div class="row">
                     <form class="auth-login-form col-6" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-1">
+                        
                             <label for="login-email" class="form-label">Correo electronico</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror"
                                 id="login-email" name="email" placeholder="tucorreo@gmail.com"
@@ -52,15 +53,15 @@
 
                             <div class="d-flex justify-content-around pl-2">
                                 <div class="col-7">
-                                    <a href="#" class="btn btn-f btn-lg btn-block py-1 px-3" style="font-size: 0.8rem">
-                                        <img src="{{ asset('images/zoe/svg/f.svg') }}" width="5%" alt="">&nbsp;
+                                    <a href="#" class="btn btn-f btn-lg btn-block py-1 px-3" style="height: 46px;width: 229,5px;left: 0px;top: 0px;border-radius: 4px; font-size: 0.8rem">
+                                        <img src="{{ asset('images/zoe/redes/Vector.png') }}" style="width:9px;" alt="Vector.png">&nbsp;
                                         Continuar vía Facebook
                                     </a>
                                 </div>
 
                                 <div class="col-5">
-                                    <a href="#" class="btn btn-g btn-lg btn-block py-1 px-2" style="font-size: 0.8rem">
-                                        <img src="{{ asset('images/zoe/svg/g.svg') }}" width="10%" alt="">&nbsp;
+                                    <a href="#" class="btn btn-g btn-lg btn-block py-1 px-2" style="font-size: 0.8rem; height: 46px;width: 197px;top: 0px;border-radius: 4px;">
+                                        <img src="{{ asset('images/zoe/svg/g.svg') }}" width="10%" alt="g.svg">&nbsp;
                                         Continuar vía Google
                                     </a>
                                 </div>
@@ -68,18 +69,18 @@
                         </div>
 
                         <div class="d-flex justify-content-around">
-                            <p class="text-center mt-2" style="font-size: 0.8rem">
+                            <p class="text-center mt-2" style="font-size: 0.8rem; font-weight:mixed;font-size: 13px; line-height: 22px;line-height: 113%; vertical-align: top;">
                                 @if (Route::has('register'))
                                 <a href="{{ route('register') }}">
                                     <span>¿No tienes una cuenta?</span>
-                                    <span>Registrate</span>
+                                    <span style="font-weight:Bold;font-size: 13px; line-height: 22px;line-height: 113%; vertical-align: top;">Registrate</span>
                                 </a>
                                 @endif
                             </p>
 
                             <h2 class="text-center mt-1">|</h1>
 
-                                <p class="text-center mt-2" style="font-size: 0.8rem">
+                                <p class="text-center mt-2" style="font-weight:Bold;font-size: 13px; line-height: 22px;line-height: 113%; vertical-align: top;">
                                     @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">
                                         <span>¿Olvidaste tu contraseña?</span>
@@ -92,16 +93,16 @@
 
                     <div class="col-6">
                         <div class="text-center mt-3">
-                            <h1>Tu mejor oportunidad esta aqui!</h1>
-                            <h4>Gana dinero y aprende tranding con nosotros!.</h4>
+                            <h1 style="height: 34px;width: 514px; top: 0px;border-radius: nullpx;">    Tu mejor oportunidad esta aqui!
+                            </h1>
+                            <h4 style="height: 28px;width: 482px; padding-left: 40px;x;top: 46px;border-radius: nullpx;">  Gana dinero y aprende tranding con nosotros!.
+                            </h4>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-    </div>
+    {{--</div>--}}
 </div>
 
 @endsection
