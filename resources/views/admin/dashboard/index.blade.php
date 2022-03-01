@@ -73,10 +73,8 @@
                 <div class="col-5 align-self-center">
                     <span style="color: #4BCFEE;">{{ Auth::user()->name }} {{ Auth::user()->lastname }} a Generacion ZOE</span>
                 </div>
-                <div class="col-2 align-self-center">
-                    <span class="small fw-old"><i data-feather='arrow-up'></i> Tu link</span>
-                </div>
-                <div class="col-2">
+                <div class="col-4 align-self-center">
+                    <span class="small fw-old"><i data-feather='arrow-up-right'></i> Tu link</span>
                     <div class="btn-group">
                         <button class="btn btn-flat-primary dropdown-toggle small" type="button" id="dropdownMenuButton100" data-bs-toggle="dropdown" aria-expanded="false">
                             Ver todos
