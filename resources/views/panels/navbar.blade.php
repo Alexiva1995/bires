@@ -91,30 +91,41 @@
         <li class="nav-item dropdown mx-1">
           <a class="text-white" style="font-weight: 800;" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
         </li>
-        <li class="nav-item dropdown dropdown-language">
-          <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
-          <i data-feather='arrow-down' style="color: #1964A5;"></i>
-            <span class="selected-language" style="color: #1964A5;">Es</span>
-          </a>
-          {{----}}
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
-            <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es" alt="ESPAÑOL">
-              <i class="flag-icon flag-icon-mx"></i> Es
-            </a>
-            <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en" alt="INGLES">
-              <i class="flag-icon flag-icon-us"></i> En
-            </a>
-            <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr" alt="FRANCÉS">
-              <i class="flag-icon flag-icon-fr"></i> Fr
-            </a>
-            <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de" alt="ALEMÁN">
-              <i class="flag-icon flag-icon-de"></i> De
-            </a>
-            <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt" alt="PORTUGUÉS">
-              <i class="flag-icon flag-icon-pt"></i> Pt
-            </a>
-          </div>
-        </li>
+         <li class="nav-item dropdown dropdown-language">
+                        <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown"
+                            aria-haspopup="true">
+                            <i class="flag-icon flag-icon-es"></i>
+                            <span class="selected-language">
+                                @if(session()->has('locale'))
+                                {{session()->get('locale')}}
+                                @else
+                                ES
+                                @endif
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
+                            <a href="#googtrans(es|es)" class="dropdown-item lang-select rounded" data-language="es"
+                                alt="ESPAÑOL">
+                                <i class="flag-icon flag-icon-es"></i> ES
+                            </a>
+                            <a href="#googtrans(es|en)" class="dropdown-item lang-select rounded" data-language="en"
+                                alt="INGLES">
+                                <i class="flag-icon flag-icon-us"></i> EN
+                            </a>
+                            <a href="#googtrans(es|fr)" class="dropdown-item lang-select rounded" data-language="fr"
+                                alt="FRANCÉS">
+                                <i class="flag-icon flag-icon-fr"></i> FR
+                            </a>
+                            <a href="#googtrans(es|de)" class="dropdown-item lang-select rounded" data-language="de"
+                                alt="ALEMÁN">
+                                <i class="flag-icon flag-icon-de"></i> AL
+                            </a>
+                            <a href="#googtrans(es|pt)" class="dropdown-item lang-select rounded" data-language="pt"
+                                alt="PORTUGUÉS">
+                                <i class="flag-icon flag-icon-pt"></i> PT
+                            </a>
+                        </div>
+                    </li>
 
         <li class="nav-item dropdown dropdown-user">
           <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
