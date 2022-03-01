@@ -84,7 +84,7 @@
                     <label for="cantidad" class="form-label text-white form-label-text-size">
                       <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Cantidad</strong>
                     </label>
-                    <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="">
+                    <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="" style="background: white;">
                     <span class="permanent-placeholder" style="color: #999999;font-size: 16px;">USD</span>
                     <div class="form-text">
                       <strong style="color:#4BCFEE;width:120px;height: 21px;top: 409px;left: 432px;">Comisión: 1 USD 
