@@ -73,10 +73,8 @@
                 <div class="col-5 align-self-center">
                     <span style="color: #4BCFEE;">{{ Auth::user()->name }} {{ Auth::user()->lastname }} a Generacion ZOE</span>
                 </div>
-                <div class="col-2 align-self-center">
-                    <span class="small fw-old"><i data-feather='arrow-up'></i> Tu link</span>
-                </div>
-                <div class="col-2">
+                <div class="col-4 align-self-center">
+                    <span class="small fw-old"><i data-feather='arrow-up-right'></i> Tu link</span>
                     <div class="btn-group">
                         <button class="btn btn-flat-primary dropdown-toggle small" type="button" id="dropdownMenuButton100" data-bs-toggle="dropdown" aria-expanded="false">
                             Ver todos
@@ -177,16 +175,9 @@
                                 </div>
                                 <div class="col">
                                     <p style="font-weight: 600;font-size:14px;">Referidos</p>
-                                    @if(count(auth()->user()->referrals) > 0)
-                                    <p style="font-weight: 600;font-size:14px;">
-                                        {{count(auth()->user()->referrals)}}
-                                    </p>
-                                    @else
-                                    <p style="font-weight: 600;font-size:14px;">0</p>
-                                    @endif
-                                    <a href="{{route('red.unilevel')}}">
-                                        <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
-                                    </a>
+                                    <p style="font-weight: 600;font-size:14px;">23</p>
+                                    <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
+
                                 </div>
                             </div>
                         </div>

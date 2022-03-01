@@ -38,18 +38,15 @@
     @endif
     <div class="navbar-container d-flex content">
       <div class="bookmark-wrapper d-flex align-items-center">
-
-
       </div>
       <ul class="nav navbar-nav align-items-center ms-auto">
         <li class="nav-item dropdown dropdown-notification">
-          <a class="btn btn-sm btn-secondary" href="javascript:void(0);" data-bs-toggle="dropdown">
+          <a class="btn btn-sm btn-secondary" href="javascript:void(0);" data-bs-toggle="dropdown" style="margin-right: 15px;">
             <i class="ficon" data-feather="bell"></i>@if(count(auth()->user()->unreadNotifications) > 0)
-          <div class="badge rounded-pill" style="font-weight: 600;font-size:12px;">{{count(auth()->user()->unreadNotifications)}}</div>
-          @endif
+            <div class="badge rounded-pill" style="font-weight: 600;font-size:12px;">{{count(auth()->user()->unreadNotifications)}}</div>
+            @endif
           </a>
-        
-         
+
           <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
             <li class="dropdown-menu-header">
               <div class="dropdown-header d-flex">
@@ -86,47 +83,45 @@
           </ul>
         </li>
         <li class="nav-item dropdown mx-1">
-          <a class="text-white" style="font-weight: 800;" href="#" id="referred" data-bs-toggle="dropdown">Referir</a>
+          <a class="text-white" style="font-weight: 800;" href="#" id="referred" data-bs-toggle="dropdown" style="margin-left: 15px;">Referir</a>
         </li>
         <li class="nav-item dropdown mx-1">
-          <a class="text-white" style="font-weight: 800;" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
+          <a class="text-white" style="font-weight: 800;margin-right:15px;" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
         </li>
         <li class="nav-item dropdown dropdown-language">
-          <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
-          <i data-feather='arrow-down' style="color: #1964A5;"></i>
-            <span class="selected-language" style="color: #1964A5;">Es</span>
+          <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" style="margin-right: 15px;">
+            <i class="flag-icon flag-icon-mx"></i>
+            <span class="selected-language">ES</span>
           </a>
-          {{----}}
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
             <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es" alt="ESPAÑOL">
-              <i class="flag-icon flag-icon-mx"></i> Es
+              <i class="flag-icon flag-icon-mx"></i> ES
             </a>
             <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en" alt="INGLES">
-              <i class="flag-icon flag-icon-us"></i> En
+              <i class="flag-icon flag-icon-us"></i> EN
             </a>
             <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr" alt="FRANCÉS">
-              <i class="flag-icon flag-icon-fr"></i> Fr
+              <i class="flag-icon flag-icon-fr"></i> FR
             </a>
             <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de" alt="ALEMÁN">
-              <i class="flag-icon flag-icon-de"></i> De
+              <i class="flag-icon flag-icon-de"></i> DE
             </a>
             <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt" alt="PORTUGUÉS">
-              <i class="flag-icon flag-icon-pt"></i> Pt
+              <i class="flag-icon flag-icon-pt"></i> PT
             </a>
           </div>
         </li>
 
         <li class="nav-item dropdown dropdown-user">
           <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
+            <span class="">
+              <img class="" src="{{asset('images/avatars/1-small.png')}}" alt="avatar" height="30" width="30" style="margin-right: 15px;">
+              <!-- <span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span> -->
+            </span>
             <div class="user-nav d-sm-flex d-none">
-          
               <span class="user-name" style="color: #1964A5;"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} <i data-feather='arrow-down' style="color: #1964A5;"></i></span>
               <!-- <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span> -->
             </div>
-            <!-- <span class="avatar">
-              <img class="round" src="{{asset('images/logo/logo-toffle.png')}}" alt="avatar" height="40" width="40">
-              <span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span>
-            </span> -->
           </a>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
             <a class="dropdown-item" href="{{url('page/profile')}}">
@@ -146,7 +141,7 @@
     </div>
   </nav>
 
-  {{-- Search Start Here --}}
+  <!-- {{-- Search Start Here --}}
   <ul class="main-search-list-defaultlist d-none">
     <li class="d-flex align-items-center">
       <a href="javascript:void(0);">
@@ -279,5 +274,5 @@
       </a>
     </li>
   </ul>
-  {{-- Search Ends --}}
+  {{-- Search Ends --}} -->
   <!-- END: Header-->
