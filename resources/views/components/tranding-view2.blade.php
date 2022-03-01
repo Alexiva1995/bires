@@ -7,10 +7,12 @@
         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
             {
             "symbols": [
+             
               {
-                "description": "BTC/USD",
-                "proName": "COINBASE:BTCUSD"
+                "description": "ETH/USD",
+                "proName": "COINBASE:ETHUSD"
               }
+
             ],
             "colorTheme": "dark",
             "isTransparent": true,
