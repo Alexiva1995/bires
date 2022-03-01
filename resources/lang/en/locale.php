@@ -8,6 +8,8 @@ return [
     "eCommerce" => "eCommerce",
     "Apps" => "Apps",
     "Planes" => "Planes",
+    "Referidos" => "Referidos",
+    "Intercambios" => "Intercambios",
     "Forms & Tables" => "Forms & Tables",
     "Pages" => "Pages",
     "Charts & Maps" => "Charts & Maps",

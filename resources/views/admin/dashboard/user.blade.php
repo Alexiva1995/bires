@@ -184,7 +184,7 @@
                                     @else
                                     <p style="font-weight: 600;font-size:14px;">0</p>
                                     @endif
-                                    <a href="#">
+                                    <a href="{{route('red.unilevel')}}">
                                         <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
                                     </a>
                                 </div>
