@@ -35,6 +35,15 @@
         "slug": "plans.index"
 
     },
+
+    {
+      "name": "Referidos",
+      "url": "/red/unilevel",
+      "icon": "grid",
+      "slug": "red.unilevel"
+
+  },
+
     {
       "navheader": "Apps & Pages",
       "slug": ""

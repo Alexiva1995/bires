@@ -21,6 +21,7 @@ use App\Http\Controllers\IntercambiosController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\StripeCtrl;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\TreeController;
 use LDAP\Result;
 
 /*
@@ -43,7 +44,6 @@ Auth::routes(['verify' => true]);
 Route::middleware('auth')->group(function () {
 
     Route::middleware('admin')->group(function () {
-
     });
 
     Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
@@ -53,6 +53,9 @@ Route::middleware('auth')->group(function () {
         Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
         Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
     });
+
+
+
     /* Route Dashboards */
     //PASARELA
     //STRIPE
@@ -61,7 +64,6 @@ Route::middleware('auth')->group(function () {
 
 
     Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
-
 });
 
 
@@ -257,6 +259,11 @@ Route::group(['prefix' => 'plans'], function () {
     Route::get('', [PlanController::class, 'index'])->name('plans.index');
 });
 
+// Red de usuario
+Route::group(['prefix' => 'red'], function () {
+    // Ruta para visualizar el arbol o la matriz
+    Route::get('/unilevel', [TreeController::class, 'index'])->name('red.unilevel');
+});
 
 //Settlement
 

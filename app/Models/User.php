@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Http\Traits\Tree;
 use App\Models\Inversion;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -13,7 +15,8 @@ use App\Notifications\VerifyEmail;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, Tree;
+    
 
     /**
      * The attributes that are mass assignable.
@@ -78,5 +81,27 @@ class User extends Authenticatable implements MustVerifyEmail
         auth()->user()->unreadNotifications->markAsRead();
 
         return back();
+    }
+
+    public function referrals()
+    {
+        return $this->hasMany(User::class, 'referred_id');
+    }
+
+    public function referidos()
+    {
+        return $this->hasMany(User::class, 'referred_id');
+    }
+
+    public function countReferidosDirectos()
+    {
+        $referidos = $this->getChildrens($this, new Collection, 1);
+
+        return count($referidos->where('nivel', 1));
+    }
+
+    public function padre()
+    {
+        return $this->belongsTo('App\Models\User', 'referred_id');
     }
 }

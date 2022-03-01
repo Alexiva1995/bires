@@ -177,9 +177,16 @@
                                 </div>
                                 <div class="col">
                                     <p style="font-weight: 600;font-size:14px;">Referidos</p>
-                                    <p style="font-weight: 600;font-size:14px;">23</p>
-                                    <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
-
+                                    @if(count(auth()->user()->referrals) > 0)
+                                    <p style="font-weight: 600;font-size:14px;">
+                                        {{count(auth()->user()->referrals)}}
+                                    </p>
+                                    @else
+                                    <p style="font-weight: 600;font-size:14px;">0</p>
+                                    @endif
+                                    <a href="#">
+                                        <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
