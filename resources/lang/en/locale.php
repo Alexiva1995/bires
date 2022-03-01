@@ -12,6 +12,7 @@ return [
     "Intercambios" => "Intercambios",
     "Forms & Tables" => "Forms & Tables",
     "Pages" => "Pages",
+    "Dashboard" => "Dashboard",
     "Charts & Maps" => "Charts & Maps",
     "Others" => "Others",
     "Email" => "Email",

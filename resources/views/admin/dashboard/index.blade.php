@@ -74,9 +74,9 @@
                     <span style="color: #4BCFEE;">{{ Auth::user()->name }} {{ Auth::user()->lastname }} a Generacion ZOE</span>
                 </div>
                 <div class="col-4 align-self-center">
-                    <span class="small fw-old"><i data-feather='arrow-up-right'></i> Tu link</span>
+                    <span class="small fw-old"><i data-feather='arrow-up-right'></i>Tu link</span>
                     <div class="btn-group">
-                        <button class="btn btn-flat-primary dropdown-toggle small" type="button" id="dropdownMenuButton100" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-flat-primary dropdown-toggle small" type="button" id="dropdownMenuButton100" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 12px;font-weight:700;">
                             Ver todos
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton100">
@@ -180,9 +180,9 @@
                                     @else
                                     <div style="font-weight: 600;font-size:14px;">0</div>
                                     @endif
-
-                                    <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
-
+                                    <a href="{{route('red.unilevel')}}">
+                                        <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>

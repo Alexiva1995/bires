@@ -181,7 +181,9 @@
                                     <div style="font-weight: 600;font-size:14px;">0</div>
                                     @endif
 
-                                    <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
+                                    <a href="{{route('red.unilevel')}}">
+                                        <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
+                                    </a>
 
                                 </div>
                             </div>
