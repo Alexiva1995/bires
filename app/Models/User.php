@@ -72,4 +72,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->inversiones->where('status', '=', 1)->sum('invested');
     }
+
+    public function notificacionesLeidas()
+    {
+        auth()->user()->unreadNotifications->markAsRead();
+
+        return back();
+    }
 }

@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
             'name'=> 'admin',
             'lastname'=> Str::random(5),
             'phone'=> Str::random(5),
+            'admin'=> '1',
             'country_id'=> '1',
             'referred_id'=> '1',
             'email'=> 'admin@bires.com',

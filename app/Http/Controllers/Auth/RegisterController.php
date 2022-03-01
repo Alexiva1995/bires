@@ -83,6 +83,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password'])
         ]);
 
+        // $user->notify(new \App\Notifications\sendRegisterReffered($user));
+
         return $user;
     }
 

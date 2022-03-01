@@ -13,14 +13,4 @@ class NotificationController extends Controller
 
         return back();
     }
-
-    public function functionName()
-    {
-        $user = User::find(1);
-    
-        $user->notify(new \App\Notifications\sendRegisterReffered($user));
-    
-        return back();
-        
-    }
 }
