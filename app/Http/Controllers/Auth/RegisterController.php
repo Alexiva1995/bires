@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Notifications\sendRegisterReffered;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Notification;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -83,7 +85,10 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password'])
         ]);
 
-        // $user->notify(new \App\Notifications\sendRegisterReffered($user));
+        if($user->padre != null){
+            Notification::send($user->padre, new sendRegisterReffered($user));
+        }
+
 
         return $user;
     }

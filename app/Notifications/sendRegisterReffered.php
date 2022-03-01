@@ -64,7 +64,7 @@ class sendRegisterReffered extends Notification
             'name' => $this->user->name,
             'email' => $this->user->email,
             'padre' => $this->user->referred_id,
-            'message'     => "Nuevo Registro, El usuario".$this->user->referred_id." acaba de registrar"
+            'message'=> "Nuevo Registro, El usuario ". $this->user->email ." acaba de registrar"
         ];
     }
 }

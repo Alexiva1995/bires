@@ -19,7 +19,7 @@ class TreeController extends Controller
 
         try {
             $referidos = $this->getChildrens(Auth::user(), new Collection, 1);
-      
+            
             return view('user.list-referidos', compact('referidos'));
         } catch (\Throwable $th) {
 
