@@ -42,14 +42,14 @@
 
       </div>
       <ul class="nav navbar-nav align-items-center ms-auto">
-        <li class="nav-item dropdown dropdown-notification me-25">
-          <a class="btn btn-sm btn-secondary mx-1" href="javascript:void(0);" data-bs-toggle="dropdown">
-            <i class="ficon" data-feather="bell"></i>
-          </a>
-          @if(count(auth()->user()->unreadNotifications) > 0)
-          <div class="badge rounded-pill badge-light-primary">{{count(auth()->user()->unreadNotifications)}}</div>
+        <li class="nav-item dropdown dropdown-notification">
+          <a class="btn btn-sm btn-secondary" href="javascript:void(0);" data-bs-toggle="dropdown">
+            <i class="ficon" data-feather="bell"></i>@if(count(auth()->user()->unreadNotifications) > 0)
+          <div class="badge rounded-pill" style="font-weight: 600;font-size:12px;">{{count(auth()->user()->unreadNotifications)}}</div>
           @endif
           </a>
+        
+         
           <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
             <li class="dropdown-menu-header">
               <div class="dropdown-header d-flex">

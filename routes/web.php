@@ -61,7 +61,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
 
-    Route::get('functionName', [NotificationController::class, 'functionName'])->name('functionName');
+    Route::get('/functionName', [NotificationController::class, 'functionName'])->name('functionName');
 });
 
 /* Route Apps */

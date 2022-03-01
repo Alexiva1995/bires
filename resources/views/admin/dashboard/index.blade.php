@@ -98,7 +98,7 @@
             @include('components.tranding-view')
 
             <div class="row match-height">
-                <!-- Greetings Card starts -->
+                <!-- Greetings Card starts --> 
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="card card-dark" style="border: none;border-radius:10px;background-color:#0B3C67;">
                         <div class="card-body">
@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="col">
                                     <p style="font-weight: 600;font-size:14px;">Referidos</p>
-                                    <p style="font-weight: 600;font-size:14px;">25</p>
+                                    <p style="font-weight: 600;font-size:14px;">23</p>
                                     <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Ver Todos</p>
 
                                 </div>
