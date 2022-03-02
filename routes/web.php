@@ -248,6 +248,8 @@ Route::get('/maps/leaflet', [ChartsController::class, 'maps_leaflet'])->name('ma
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 
 //Intercambios
+Route::get('/graphicDash', [AdminDashboardController::class, 'graphicDash'])->name('graphicDash');
+
 
 Route::get('/intercambios/index', [IntercambiosController::class, 'index'])->name('intercambios.index');
 Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');

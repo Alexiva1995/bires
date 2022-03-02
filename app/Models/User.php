@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Http\Traits\Tree;
@@ -16,7 +18,7 @@ use App\Notifications\VerifyEmail;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable, Tree;
-    
+
 
     /**
      * The attributes that are mass assignable.
@@ -104,4 +106,15 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsTo('App\Models\User', 'referred_id');
     }
+
+    public function ganancias()
+    {
+        $gain = 0;
+     
+            $gain = Wallet::where('status', 0)->sum('amount');
+        
+
+        return $gain;
+    }
+
 }

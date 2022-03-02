@@ -130,8 +130,9 @@
 
                                 <div class="col">
                                     <p style="font-weight:600;font-size:14px;">Balance</p>
-                                    <p style="font-weight:600;font-size:20px;">1200 <span style="font-size: 11px;">ZOEC</span></p>
-                                    <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Comprar</p>
+                                    <p style="font-weight:600;font-size:20px;">0<span style="font-size: 11px;"> ZOEC</span></p>
+                                    <a href="#">
+                                    <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Comprar</p></a>
                                 </div>
                             </div>
 
@@ -148,7 +149,7 @@
                             <div class="row justify-content-center">
                                 <div class="col">
                                     <p style="font-weight: 600;font-size:14px;">Ganancias</p>
-                                    <p style="font-weight: 600;font-size:20px;">$682.5</p>
+                                    <p style="font-weight: 600;font-size:20px;">$0</p>
                                 </div>
                                 <div class="col">
                                     <div id="order-chart"></div>
@@ -198,7 +199,7 @@
                         <div class="card-body ">
                             <h5 style="font-weight: 600;">Depositos</h5>
                             <h6 class="fw-bolder mt-1 text-white-50 mb-2">Sin depositos recientes</h6>
-                            <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Realizar deposito</span>
+                            <a href="#"><span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Realizar deposito</span></a>
                         </div>
                     </div>
                 </div>
@@ -207,7 +208,8 @@
                         <div class="card-body">
                             <h5 style="font-weight: 600;">Retiros</h5>
                             <h6 class="fw-bolder mt-1 text-white-50 mb-2">Sin retiros recientes</h6>
-                            <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Ver retiros</span>
+                            <a href="#">
+                            <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Ver retiros</span></a>
                         </div>
                     </div>
                 </div>
@@ -216,7 +218,7 @@
                         <div class="card-body">
                             <h5 style="font-weight: 600;">Plan activo</h5>
                             <h6 class="fw-bolder mt-1 text-white-50 mb-2">No posees plan activo</h6>
-                            <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Comprar plan educativo</span>
+                            <a href="{{route('plans.index')}}"><span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Comprar plan educativo</span></a>
                         </div>
                     </div>
                 </div>
@@ -231,7 +233,7 @@
                   justify-content-md-between justify-content-start
                   align-items-md-center align-items-start
                 ">
-                        <p>Ganacias Por Mes <br> <span class="h2" style="font-weight: 600;">$1.300</span></p>
+                        <p>Ganacias Por Mes <br> <span class="h2" style="font-weight: 600;">${{Auth::user()->ganancias()}}</span></p>
 
                         <div class="d-flex align-items-center mt-md-0 mt-1">
                             <i class="font-medium-2" data-feather="calendar"></i>
@@ -239,7 +241,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div id="column-chart"></div>
+                        <div id="chart"></div>
                     </div>
                 </div>
             </div>
@@ -256,8 +258,6 @@
                     <h4 style="font-weight: 600;">Verifica tu cuenta</h4>
 
                     <span class="card-text" style="font-weight: 600;">Necesitamos verificar <br> tu cuenta para mayor seguridad</span>
-
-
                 </div>
                 <div class="card-footer">
                     <div class="container">
@@ -349,100 +349,98 @@
     }
     // Column Chart
     // --------------------------------------------------------------------
-    var flatPicker = $('.flat-picker'),
-        isRtl = $('html').attr('data-textdirection') === 'rtl',
-        chartColors = {
-            column: {
-                series1: '#826af9',
-                series2: '#d2b0ff',
-                bg: '#f8d3ff'
-            },
-            success: {
-                shade_100: '#7eefc7',
-                shade_200: '#06774f'
-            },
-            donut: {
-                series1: '#ffe700',
-                series2: '#00d4bd',
-                series3: '#826bf8',
-                series4: '#2b9bf4',
-                series5: '#FFA1A1'
-            },
-            area: {
-                series3: '#a4f8cd',
-                series2: '#60f2ca',
-                series1: '#2bdac7'
-            }
-        };
+    const url = '/graphicDash';
 
-    var columnChartEl = document.querySelector('#column-chart'),
-        columnChartConfig = {
-            chart: {
-                height: 400,
-                type: 'bar',
-                stacked: true,
-                parentHeightOffset: 0,
-                toolbar: {
-                    show: false
-                }
-            },
-            plotOptions: {
-                bar: {
-                    columnWidth: '15%',
-                    colors: {
-                        backgroundBarColors: [
-                            chartColors.column.bg,
-                            chartColors.column.bg,
-                            chartColors.column.bg,
-                            chartColors.column.bg,
-                            chartColors.column.bg
-                        ],
-                        backgroundBarRadius: 10
+
+    axios.get(url, {
+            responseType: 'JSON'
+        })
+        .then(function(res) {
+            if (res.status == 200) {
+
+                var options = {
+                    series: [{
+                        name: 'Ganancias',
+                        data: res.data.valores
+                    }],
+                    chart: {
+                        height: 350,
+                        type: 'bar',
+                    },
+                    plotOptions: {
+                        bar: {
+                            borderRadius: 10,
+                            dataLabels: {
+                                position: 'top', // top, center, bottom
+                            },
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        formatter: function(val) {
+                            return val + "$";
+                        },
+                        offsetY: -20,
+                        style: {
+                            fontSize: '12px',
+                            colors: ["#304758"]
+                        }
+                    },
+
+                    xaxis: {
+                        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                        position: 'top',
+                        axisBorder: {
+                            show: false
+                        },
+                        axisTicks: {
+                            show: false
+                        },
+                        crosshairs: {
+                            fill: {
+                                type: 'gradient',
+                                gradient: {
+                                    colorFrom: '#D8E3F0',
+                                    colorTo: '#BED1E6',
+                                    stops: [0, 100],
+                                    opacityFrom: 0.4,
+                                    opacityTo: 0.5,
+                                }
+                            }
+                        },
+                        tooltip: {
+                            enabled: true,
+                        }
+                    },
+                    yaxis: {
+                        axisBorder: {
+                            show: false
+                        },
+                        axisTicks: {
+                            show: false,
+                        },
+                        labels: {
+                            show: false,
+                            formatter: function(val) {
+                                return val + "$";
+                            }
+                        }
+
+                    },
+                    title: {
+                        
+                        floating: true,
+                        offsetY: 330,
+                        align: 'center',
+                        style: {
+                            color: '#444'
+                        }
                     }
-                }
-            },
-            dataLabels: {
-                enabled: false
-            },
-            legend: {
-                show: true,
-                position: 'top',
-                horizontalAlign: 'start'
-            },
-            colors: [chartColors.column.series1, chartColors.column.series2],
-            stroke: {
-                show: true,
-                colors: ['transparent']
-            },
-            grid: {
-                xaxis: {
-                    lines: {
-                        show: true
-                    }
-                }
-            },
-            series: [{
-                    name: 'Apple',
-                    data: [90, 120, 55, 100, 80, 125, 175, 70, 88, 180]
-                },
-                {
-                    name: 'Samsung',
-                    data: [85, 100, 30, 40, 95, 90, 30, 110, 62, 20]
-                }
-            ],
-            xaxis: {
-                categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12', '14/12', '15/12', '16/12']
-            },
-            fill: {
-                opacity: 1
-            },
-            yaxis: {
-                opposite: isRtl
+                };
+
+                var chart = new ApexCharts(document.querySelector("#chart"), options);
+                chart.render();
             }
-        };
-    if (typeof columnChartEl !== undefined && columnChartEl !== null) {
-        var columnChart = new ApexCharts(columnChartEl, columnChartConfig);
-        columnChart.render();
-    }
+        })
 </script>
 @endsection
