@@ -58,14 +58,6 @@
                     <form class="auth-login-form col-6" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-1">
-                            <!-- <label for="login-email" class="form-label">Correo electronico</label>
-                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="login-email" name="email" placeholder="tucorreo@gmail.com" value="{{ old('email') }}" />
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror -->
-
 
                             <div class='full-input'>
                                 <label for='email' class="form-label">Correo electronico</label>
