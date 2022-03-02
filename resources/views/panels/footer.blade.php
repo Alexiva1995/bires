@@ -11,14 +11,14 @@
         </div>
 
         <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center mt-3 mt-sm-1">
-            <a href="#" style="margin-right: 0.6rem;">
-                <img src={{asset('images/zoe/redes/facebook.png')}} alt="facebook" style=" width:22,08px;height:23px; top:-0px; left:-0px;" />
+            <a href="#" style="margin-right:1rem;">
+            <i class="fa-brands fa-facebook" style="color: #FFF;font-size:1.8rem;"></i>
             </a> 
-            <a href="#" style="margin-right: 0.6rem;">
-                <img src={{asset('images/zoe/redes/instagram.png')}} alt="instagram" style="width:24px; height:22,08px; top:0,46px; left:0,46px;" />
+            <a href="#" style="margin-right: 1rem;">
+            <i class="fa-brands fa-instagram" style="color: #FFF;font-size:1.8rem;"></i>
             </a> 
-            <a href="#" style="margin-right: 0.6rem;">
-                <img src={{asset('images/zoe/redes/linkdin.png')}} alt="linkdin" style="width:24px; height:22,08px; top:0,46px; left:0,46px;" />
+            <a href="#" style="margin-right:1rem;">
+            <i class="fa-brands fa-linkedin" style="color: #FFF;font-size:1.8rem;"></i>
             </a> 
         </div>
     </div> 
