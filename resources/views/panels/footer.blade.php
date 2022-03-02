@@ -27,4 +27,11 @@
 type="button">
   <i data-feather="arrow-up"></i>
 </button> 
+
+<style>
+      footer {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+</style>
 <!-- END: Footer-->

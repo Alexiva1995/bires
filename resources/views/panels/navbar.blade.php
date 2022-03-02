@@ -93,22 +93,6 @@
             <i class="flag-icon flag-icon-es rounded" style="font-size: 15px;"></i>
             <span class="selected-language">ES</span>
           </a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
-            <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es" alt="ESPAÑOL">
-              <i class="flag-icon flag-icon-es rounded"></i> ES
-            </a>
-            <a href="#googtrans(es|en)" class="dropdown-item lang-select" data-language="en" alt="INGLES">
-              <i class="flag-icon flag-icon-us rounded"></i> EN
-            </a>
-            <a href="#googtrans(es|fr)" class="dropdown-item lang-select" data-language="fr" alt="FRANCÉS">
-              <i class="flag-icon flag-icon-fr rounded"></i> FR
-            </a>
-            <a href="#googtrans(es|de)" class="dropdown-item lang-select" data-language="de" alt="ALEMÁN">
-              <i class="flag-icon flag-icon-de rounded"></i> DE
-            </a>
-            <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt" alt="PORTUGUÉS">
-              <i class="flag-icon flag-icon-pt rounded" ></i> PT
-            </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
               <a href="#googtrans(es|es)" class="dropdown-item lang-select rounded" data-language="es" alt="ESPAÑOL">
                 <i class="flag-icon flag-icon-es"></i> ES
