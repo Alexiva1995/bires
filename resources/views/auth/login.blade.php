@@ -58,22 +58,37 @@
                     <form class="auth-login-form col-6" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-1">
-                            <label for="login-email" class="form-label">Correo electronico</label>
+                            <!-- <label for="login-email" class="form-label">Correo electronico</label>
                             <input type="text" class="form-control @error('email') is-invalid @enderror" id="login-email" name="email" placeholder="tucorreo@gmail.com" value="{{ old('email') }}" />
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                            @enderror
+                            @enderror -->
+
+
+                            <div class='full-input'>
+                                <label for='email' class="form-label">Correo electronico</label>
+                                <input type="text" class="form-control @error('email') is-invalid @enderror" id="login-email" name="email" placeholder="tucorreo@gmail.com" value="{{ old('email') }}" />
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
                         </div>
 
                         <div class="mb-1">
-                            <label class="form-label" for="login-password">Contraseña</label>
-                            <div class="input-group input-group-merge form-password-toggle">
-                                <input type="password" class="form-control form-control-merge" id="login-password" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="login-password" />
-                                <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                            <div class='full-input'>
+                                <label class="form-label" for="login-password">Contraseña</label>
+                                <div class="input-group input-group-merge form-password-toggle">
+                                    <input type="password" class="form-control form-control-merge" id="login-password" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="login-password" />
+                                    <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                                </div>
                             </div>
                         </div>
+
 
                         <button type="submit" class="btn btn-secondary w-100" tabindex="4">Iniciar sesión</button>
 
@@ -135,7 +150,6 @@
 
 
 <style>
-
     nav {
         float: right;
     }
@@ -168,6 +182,30 @@
 
     nav ul li ul li {
         min-width: 190px;
+    }
+
+
+
+    .full-input {
+        display: inline-block;
+        background-color: #2986D7;
+        padding: 5px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    input {
+        outline: none;
+        border: none;
+        display: block;
+        line-height: 1.2em;
+        font-size: 14pt;
+    }
+
+    label {
+        margin-left: 15px;
+        display: block;
+        font-size: 12px;
     }
 </style>
 
