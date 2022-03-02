@@ -86,7 +86,6 @@
           <a class="text-white" style="font-weight: 800;" href="#" id="referred" data-bs-toggle="dropdown" style="margin-left: 15px;">Referir</a>
         </li>
         <li class="nav-item dropdown mx-1">
-<<<<<<< HEAD
           <a class="text-white" style="font-weight: 800;margin-right:15px;" href="javascript:void(0);" data-bs-toggle="dropdown">1200 ZOEC</a>
         </li>
         <li class="nav-item dropdown dropdown-language">
@@ -109,30 +108,6 @@
             </a>
             <a href="#googtrans(es|pt)" class="dropdown-item lang-select" data-language="pt" alt="PORTUGUÉS">
               <i class="flag-icon flag-icon-pt rounded" ></i> PT
-=======
-          <a class="text-white" style="font-weight: 800;" href="javascript:void(0);" data-bs-toggle="dropdown">
-            @if(Auth::user()->disponibles() != null)
-              <strong style="color:white; width: 62px; height: 18px;top: 1px;left: 11px;">
-                {{ Auth::user()->disponibles()}} ZOEC
-              </strong>
-              @else
-                <strong style="color:white; width: 62px; height: 18px;top: 1px;left: 11px;">
-                  0 ZOEC
-                </strong>
-              @endif
-          </a>
-        </li>
-        <li class="nav-item dropdown dropdown-language">
-            <a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true">
-              <i class="flag-icon flag-icon-es"></i>
-              <span class="selected-language">
-                @if(session()->has('locale'))
-                  {{session()->get('locale')}}
-                @else
-                  ES
-                @endif
-              </span>
->>>>>>> 9bcf11c5c17eeef6941135fc8cb3ea7b162af1ce
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
               <a href="#googtrans(es|es)" class="dropdown-item lang-select rounded" data-language="es" alt="ESPAÑOL">
@@ -157,7 +132,6 @@
             </div>
         </li>
         <li class="nav-item dropdown dropdown-user">
-<<<<<<< HEAD
           <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
             <span class="">
               <img class="rounded" src="{{asset('images/avatars/1-small.png')}}" alt="avatar" height="30" width="30" style="margin-right: 15px;">
@@ -168,20 +142,6 @@
               <!-- <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span> -->
             </div>
           </a>
-=======
-            <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-bs-toggle="dropdown" aria-haspopup="true">
-              <div class="user-nav d-sm-flex d-none">
-               {{-- <span class="user-status">{{ Auth::user()->role == 1 ? 'Admin' : 'Empleado' }}</span> --}}
-              </div>
-              <li  class="nav-item dropdown dropdown-user"> 
-                <span class="avatar" class="mt-1">
-                  <img class="d-block" src="{{asset('images/avatars/12-small.png')}}" style="width: 27px;height: 28px;left: 361.4px;top: 0px; border-radius: 3px">
-                  {{--<span class="avatar-status-{{ Auth::user()->status == true ? 'online' : 'busy' }}"></span>--}}
-                </span>
-              </li>
-              <span class="user-name fw-bolder" style="color: #1964A5;font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;text-align: right;"> {{ Auth::user()->name }} {{ Auth::user()->lastname }} </span>
-            </a>
->>>>>>> 9bcf11c5c17eeef6941135fc8cb3ea7b162af1ce
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
             <a class="dropdown-item" href="{{url('page/profile')}}">
               <i class="me-50" data-feather="user"></i> Profile
