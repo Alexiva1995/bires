@@ -1,14 +1,14 @@
 <style>
     .card-size{
-        width: 11rem !important;
+        width: 13rem !important;
         height: 9rem !important;
         margin: 1rem 1rem;
         background: #fff;
     }
 
     .card-img-size{
-        width: 8rem !important;
-        height: 7rem !important;
+        width: 19rem !important;
+        height: 9rem !important;
         object-fit: contain;
     }
 
@@ -20,60 +20,40 @@
     <div class="row mt-2">
 
         <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block">
-            <img class="img-fluid card-img-size" style="padding:10px;" src={{asset('img/paymentLogos/paypal.png')}} alt="PayPal"/>
-            <img class="" src={{asset('img/paymentLogos/visa.png')}} alt="visa"/>
-            <img class="" src={{asset('img/paymentLogos/mastercard.jpg')}} alt="mastercard"/>  
+            <img class="img-fluid card-img-size " src={{asset('images/zoe/payments/paypal.png')}} alt="paypal">
         </button>
 
         <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" >
-            <img class="img-fluid card-img-size " src={{asset('img/paymentLogos/payu.png')}} alt="PayU">
-            <img class="" src={{asset('img/paymentLogos/visa.png')}} alt="visa"/>
-            <img class="" src={{asset('img/paymentLogos/mastercard.jpg')}} alt="mastercard"/>
+            <img class="img-fluid card-img-size " src={{asset('images/zoe/payments/payu.png')}} alt="payu">
         </button>
 
 
         <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" >
-            <img class="img-fluid card-img-size " src={{asset('img/paymentLogos/wompii.png')}} alt="Wompi">
-            <img class="" src={{asset('img/paymentLogos/visa.png')}} alt="visa"/>
-            <img class="" src={{asset('img/paymentLogos/mastercard.jpg')}} alt="mastercard"/>
-            <img class="" src={{asset('img/paymentLogos/transf.png')}} alt="Transf"/>
-        
+            <img class="img-fluid card-img-size " src={{asset('images/zoe/payments/wompi.png')}} alt="wompi">
         </button>
 
         <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#modalstripe" onclick="traerData()"/>
-            <img class="img-fluid card-img-size " src={{asset('img/paymentLogos/stripe_logo.png')}} alt="Stripe">
-            <img class="" src={{asset('img/paymentLogos/visa.png')}} alt="visa"/>
-            <img class="" src={{asset('img/paymentLogos/mastercard.jpg')}} alt="mastercard"/>
+            <img class="img-fluid card-img-size " src={{asset('images/zoe/payments/stripe.png')}} alt="stripe">
         </button>
-
-
     </div>
     <div class="row mb-3">
 
         <button type="submit" class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="mostrarWallet()">
-            <img class="img-fluid card-img-size " src={{asset('img/paymentLogos/coinpayments.png')}} alt="CoinPayments">
-            <img class="" src={{asset('img/paymentLogos/tether.png')}} alt="tether"/>
-            <img class="" src={{asset('img/paymentLogos/bicoint.png')}} alt="bicoint"/>
-            <img class="" src={{asset('img/paymentLogos/nose.png')}} alt="nose"/>
+            <img class="img-fluid card-img-size " src={{asset('images/zoe/payments/coinpayments.png')}} alt="coinpayments">
         </button>
 
 
         <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" >
-            <img class="img-fluid card-img-size " src={{asset('img/paymentLogos/coinbase.png')}} alt="Coinbase">
-            <img class="" src={{asset('img/paymentLogos/tether.png')}} alt="tether"/>
-            <img class="" src={{asset('img/paymentLogos/bicoint.png')}} alt="bicoint"/>
-            <img class="" src={{asset('img/paymentLogos/nose.png')}} alt="nose"/>
+            <img class="img-fluid card-img-size " src={{asset('images/zoe/payments/coinbase.png')}} alt="coinbase">
         </button>
 
 
         <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" >
-            <img class="img-fluid card-img-size " src={{asset('img/paymentLogos/bank-transfer.png')}} alt="Bank Transfer">
+           <img class="img-fluid card-img-size " src={{asset('images/zoe/payments/back-transfer.png')}} alt="back-transfer">
         </button>
 
         <button class="card card-img-top card-size col-xs-12 col-sm-6 col-md-3 mx-auto d-block" >
-            <img class="img-fluid card-img-size " src={{asset('img/paymentLogos/zelle.png')}} alt="Zelle">
+          <img class="img-fluid card-img-size " src={{asset('images/zoe/payments/zelle.png')}} alt="zelle"> 
         </button>
-
-
     </div>
 </div>

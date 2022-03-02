@@ -36,16 +36,13 @@
         mix-blend-mode: normal !important;
     }
     button.btn-sm{
-            background: #4BCFEE; 
-        }
-        a.nav-link, div.dropdown-menu, a.btn-sm{
-     
-            top: 13px;
-            border-radius: 0px;
-            text-indent: 30px; 
-        }
-        .flag-icon-mx {
-    background-image: url(../../fonts/flag-icon-css/flags/4x3/es.svg);
+        background: #4BCFEE; 
+    }
+    a.nav-link, div.dropdown-menu, a.btn-sm{
+        top: 13px;
+        border-radius: 0px;
+        text-indent: 30px; 
+    }
 </style>
 
 <body class="d-flex h-100 text-center text-white bg-zoe">
