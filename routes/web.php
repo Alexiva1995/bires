@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
         Route::middleware('admin')->group(function () {
         });
 
-
+        /* Route Dashboards */
         Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
 
         /* Route Dashboards */
@@ -56,14 +56,26 @@ Route::middleware('auth')->group(function () {
             Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
         });
 
+        //RUTAS PARA LOS PLANES
+        Route::group(['prefix' => 'plans'], function () {
+            Route::get('', [PlanController::class, 'index'])->name('plans.index');
+        });
+
+        // Red de usuario
+        Route::group(['prefix' => 'red'], function () {
+            // Ruta para visualizar el arbol o la matriz
+            Route::get('/unilevel', [TreeController::class, 'index'])->name('red.unilevel');
+        });
+
+        //Settlement
+        Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
+        Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
 
 
-        /* Route Dashboards */
         //PASARELA
         //STRIPE
         Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
         Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
-
 
         Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
     });
@@ -259,19 +271,3 @@ Route::get('/intercambios/index', [IntercambiosController::class, 'index'])->nam
 Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
 Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
 Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
-
-//RUTAS PARA LOS PLANES
-Route::group(['prefix' => 'plans'], function () {
-    Route::get('', [PlanController::class, 'index'])->name('plans.index');
-});
-
-// Red de usuario
-Route::group(['prefix' => 'red'], function () {
-    // Ruta para visualizar el arbol o la matriz
-    Route::get('/unilevel', [TreeController::class, 'index'])->name('red.unilevel');
-});
-
-//Settlement
-
-Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
-Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
