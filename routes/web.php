@@ -39,33 +39,37 @@ use LDAP\Result;
 
 Route::get('/', [DashboardController::class, 'landing'])->name('landing');
 
-Auth::routes(['verify' => true]);
 
 Route::middleware('auth')->group(function () {
+    Route::middleware('verified')->group(function () {
 
-    Route::middleware('admin')->group(function () {
+
+        Route::middleware('admin')->group(function () {
+        });
+
+
+        Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
+
+        /* Route Dashboards */
+        Route::group(['prefix' => 'dashboard'], function () {
+            Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
+            Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+        });
+
+
+
+        /* Route Dashboards */
+        //PASARELA
+        //STRIPE
+        Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
+        Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
+
+
+        Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
     });
-
-    Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
-
-    /* Route Dashboards */
-    Route::group(['prefix' => 'dashboard'], function () {
-        Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
-        Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
-    });
-
-
-
-    /* Route Dashboards */
-    //PASARELA
-    //STRIPE
-    Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
-    Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
-
-
-    Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
 });
 
+Auth::routes(['verify' => true]);
 
 /* Route Apps */
 Route::group(['prefix' => 'app'], function () {

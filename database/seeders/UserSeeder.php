@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
             'phone'=> Str::random(5),
             'admin'=> '1',
             'country_id'=> '1',
-            'referred_id'=> null,
+            'referred_id'=> '0',
             'email'=> 'admin@bires.com',
             'email_verified_at'=> Carbon::now(),
             'password' => Hash::make('12345678'),
