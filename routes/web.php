@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\StripeCtrl;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TreeController;
+use App\Http\Controllers\universoController;
 use LDAP\Result;
 
 /*
@@ -71,6 +72,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
         Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
 
+        Route::get('universo', [universoController::class, 'universo'])->name('universo.zoe');
 
         //PASARELA
         //STRIPE

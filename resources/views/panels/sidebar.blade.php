@@ -112,7 +112,8 @@ $configData = Helper::applClasses();
 <style>
   .main-menu.menu-light .navegation {
     color: #81D6FF;
-    background: linear-gradient(180deg, rgba(0, 58, 156, 0) 8.33%, #043B60 54.69%, rgba(26, 76, 120, 0.152680) 92.19%)
+    background: #05103A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 </style>
 <!-- END: Main Menu-->
