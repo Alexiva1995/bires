@@ -32,7 +32,7 @@
 
 <style>
     .bg-zoe {
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 31.77%, rgba(0, 0, 0, 0.2) 59.9%), linear-gradient(180deg, rgba(15, 111, 195, 0.5) 0%, rgba(15, 111, 195, 0.5) 100%), url('{{ url('images/zoe/home/home-1.png')}}') no-repeat !important;
+        background: url('{{ url('images/zoe/home/home-1.png')}}') no-repeat !important;
         mix-blend-mode: normal !important;
     }
     button.btn-sm{
@@ -43,6 +43,7 @@
         border-radius: 0px;
         text-indent: 30px; 
     }
+   
 </style>
 
 <body class="d-flex h-100 text-center text-white bg-zoe">
@@ -50,8 +51,14 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
             <div>
-                <a href="{{ route('landing') }}" class="float-md-start mb-0"><img
-                        src="{{ asset('images/zoe/logo/logo.svg') }}" alt="logo" width="70%"></a>
+        
+               <a href="{{ route('landing') }}" class="float-md-start mb-0">
+                   <img src="{{ asset('images/zoe/header/S.png') }}" alt="logo">
+                   <img src="{{ asset('images/zoe/header/p.png') }}" alt="logo">
+                   <img src="{{ asset('images/zoe/header/O.png') }}" alt="logo">
+                   <img src="{{ asset('images/zoe/header/R.png') }}" alt="logo">
+                   <img src="{{ asset('images/zoe/header/A.png') }}" alt="logo">
+                </a> 
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a class="nav-link text-white active" aria-current="page" href="#">
                         <strong style="height: 29px;width: 121px;left: 320px;top: 0px;border-radius: nullpx;">Inicio</strong>
@@ -114,8 +121,8 @@
 
         <main class="mb-auto row">
             <div class="col-6 text-left">
-                <h1 style="font-family: Poppins;
-                height: 226px;
+                <h1 style="font-family:  Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;;
+                height: 160px;
                 width: 998px;
                 top: 332px;
                 border-radius: nullpx;
@@ -123,19 +130,15 @@
                 font-weight: bold;
                 font-size: 60px;
                 line-height: 111.5%; text-align: left;">¡Somos la Nueva <br>Generación!</h1>
-                <p style="font-family: Poppins;
+                <p style="
                 font-style: normal;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 145.5%; text-align: left;">Desarrolla habilidades de liderazgo, comunicación asertiva, aprende a <br> crear equipos de alto desempeño, a gestionar tus estados emocionales,<br> a identificar y romper con las creencias limitantes.
+                font-weight: 300;
+                font-size: 15px;
+                line-height: 146.5%; text-align: left;">Desarrolla habilidades de liderazgo, comunicación asertiva, aprende a <br> crear equipos de alto desempeño, a gestionar tus estados emocionales,<br> a identificar y romper con las creencias limitantes.
                 </p>
-                <p class="lead d-flex justify-content-left">
-                    <a href="#" class="btn btn-outline-secondary fw-bold text-white">Conoce más</a>
+                <p class="lead d-flex justify-content-left mt-4">
+                    <a href="#" class="btn btn-outline-secondary fw-bold text-white" style="width: 34%">Conoce más</a>
                 </p>
-            </div>
-
-            <div class="col-6">
-              <img src="{{ asset('images/zoe/svg/home.png') }}" alt="" width="350px">
             </div>
         </main>
 
@@ -144,6 +147,9 @@
     <div id="gtx-trans" style="position: absolute; left: 196px; top: 219.094px;">
         <div class="gtx-trans-icon"></div>
     </div>
+</div>
+    
 </body>
 
 </html>
+
