@@ -353,5 +353,183 @@ class IntercambiosController extends Controller
         }
         return $result;
     }
+    public function method_coinpayments(Request $request)
+    {
+      try {
+
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.coinpayments',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_coinpayments -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
+    public function method_coinbase(Request $request)
+    {
+      try {
+
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.coinbase',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_coinbase -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
+
+    public function method_bank(Request $request)
+    {
+      try {
+        
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.bank',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_bank -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
+    public function method_zelle(Request $request)
+    {
+      try {
+
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.zelle',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_zelle -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
+    public function method_paypal(Request $request)
+    {
+      try {
+
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.paypal',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_paypal -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
+    public function method_payu(Request $request)
+    {
+      try {
+
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.payu',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_payu -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
+     public function method_wompi(Request $request)
+    {
+      try {
+
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.wompi',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_wompi -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
+    public function method_stripe(Request $request)
+    {
+      try {
+
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.stripe',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_stripe -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
 
 }
+
