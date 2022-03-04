@@ -89,16 +89,45 @@
                 <label for="cantidad" class="form-label text-white form-label-text-size">
                   <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Cantidad</strong>
                 </label>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="" >
+=======
                 <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="" style="background: white; text-decoration-color: #1e1e1e">
+>>>>>>> 9e9f1af552a385cf7c0750f174850c6db676acc0
+=======
+                <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="" style="background: white; text-decoration-color: #1e1e1e">
+>>>>>>> origin/abraham
                 <span class="permanent-placeholder" style="color: #999999;font-size: 16px;">USD</span>
                 <div class="form-text">
                   <strong style="color:#4BCFEE;width:120px;height: 21px;top: 409px;left: 432px;">Comisión: 1 USD
                   
                   </strong>
                 </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
               </div>
               <div class="col-2 text-center">
               <i class="fa-solid fa-arrow-right-arrow-left" style="font-size: 25px;"></i>
+              </div>
+              <div class="mb-3 ps-2 col col-sm-5 flex-end input-container">
+                <label for="recibido" class="form-label text-white form-label-text-size">
+                  <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Recibo</strong>
+                </label>
+                <input type="number" class="form-control" id="recibido" name="recibido">
+                <span class="permanent-placeholder" style="color: #999999;font-size: 15px; padding-right:15%">ZOEC</span>
+                <div class="form-text"><strong style="color:#4BCFEE;width: 192px;height: 21px;left: 969px;top: 405px;">Cantidad recibida en ZOEC</strong></div>
+              </div>
+=======
+              </div>
+                <div class="col-2">
+                    <img class="" style="width: 6rem !important;height: 8rem !important;object-fit: contain; padding-left: 20%" src={{asset('images/zoe/Arrow.png')}} alt="Arrow">
+                  </div>
+=======
+              </div>
+              <div class="col-2 text-center">
+              <i class="fa-solid fa-arrow-right-arrow-left" style="font-size: 25px;"></i>
+>>>>>>> origin/abraham
               <div class="mb-3 ps-2 col col-sm-5 flex-end input-container">
                 <label for="recibido" class="form-label text-white form-label-text-size">
                   <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Recibo</strong>
@@ -107,6 +136,10 @@
                 <span class="permanent-placeholder" style="color: #999999;font-size: 15px; padding-right:15%">ZOEC</span>
                 <div class="form-text"><strong style="color:#4BCFEE;width: 192px;height: 21px;left: 969px;top: 405px;">Cantidad recibida en ZOEC</strong></div>
               </div>
+<<<<<<< HEAD
+>>>>>>> 9e9f1af552a385cf7c0750f174850c6db676acc0
+=======
+>>>>>>> origin/abraham
             </div>
             <div class="row mx-auto">
               <div class="col-6 mx-auto">
@@ -169,4 +202,7 @@
 </script>
 
 @endsection
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/abraham

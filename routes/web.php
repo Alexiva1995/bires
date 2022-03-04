@@ -56,7 +56,10 @@ Route::middleware('auth')->group(function () {
             Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
             Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
         });
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/abraham
         //RUTAS PARA LOS PLANES
         Route::group(['prefix' => 'plans'], function () {
             Route::get('', [PlanController::class, 'index'])->name('plans.index');
@@ -80,7 +83,6 @@ Route::middleware('auth')->group(function () {
         Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
 
         Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
-    });
 });
 
 Auth::routes(['verify' => true]);
@@ -104,7 +106,6 @@ Route::group(['prefix' => 'app'], function () {
     Route::get('file-manager', [AppsController::class, 'file_manager'])->name('app-file-manager');
     Route::get('user/list', [AppsController::class, 'user_list'])->name('app-user-list');
     Route::get('user/view', [AppsController::class, 'user_view'])->name('app-user-view');
-    Route::get('user/edit', [AppsController::class, 'user_edit'])->name('app-user-edit');
 });
 /* Route Apps */
 
