@@ -84,15 +84,15 @@
           </ul>
         </li>
         <li class="nav-item dropdown mx-1">
-          <a class="text-white" style="font-weight: 800;" href="#" id="referred" data-bs-toggle="dropdown" style="margin-left: 15px;">Referir</a>
+          <a class="text-white btn" style="font-weight: 800; background-color:rgba(5,16,58,1);" href="#" id="referred" data-bs-toggle="dropdown" style="margin-left: 15px;">Referir</a>
         </li>
-        <li class="nav-item dropdown mx-1">
+        <li class="nav-item dropdown mx-1 btn" style="background-color:rgba(5,16,58,1);">
           <a class="text-white" style="font-weight: 800;margin-right:15px;" href="javascript:void(0);" data-bs-toggle="dropdown">
             @if(auth()->user()->disponible > 0)
             {{auth()->user()->disponible}}$ ZOEC</a>
           @else
           <a class="text-white" style="font-weight: 800;margin-right:15px;" href="javascript:void(0);" data-bs-toggle="dropdown">
-            0$ ZOEC</a>
+            <span style="font-size: 15px;">0$</span> ZOEC</a>
           @endif
         </li>
         <li class="nav-item dropdown dropdown-language">

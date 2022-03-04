@@ -60,6 +60,7 @@
 @endsection
 
 @section('content')
+
 <!-- Dashboard Analytics Start -->
 <section id="dashboard-analytics">
 
@@ -140,7 +141,7 @@
                                         @if(auth()->user()->disponible > 0)
                                         {{auth()->user()->disponible}}$ <span style="font-size:20px;">ZOEC</span> </a>
                                         @else
-                                        0$<span style="font-size: 15px;"> ZOEC</span>
+                                        <span style="font-size: 20px;">0$</span><span style="font-size: 15px;"> ZOEC</span>
                                         @endif
                                     </p>
                                     <a href="#">
