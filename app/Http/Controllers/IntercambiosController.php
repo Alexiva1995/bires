@@ -508,6 +508,28 @@ class IntercambiosController extends Controller
             abort(403, "Ocurrio un error, contacte con el administrador");
         }
     }
+    public function method_stripe(Request $request)
+    {
+      try {
+
+            $validate = $request->validate([
+                'cantidad' => ['required'],
+                'recibido' => ['required'],
+            ]);
+            
+            $cantidad = $request->cantidad;
+            $recibido = $request->recibido;
+
+            $data = [
+                'cantidad' => $cantidad,
+                'recibido' => $recibido
+            ];
+          return view('intercambios.methods.stripe',compact('data'));
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_stripe -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
 
 }
 
