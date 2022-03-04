@@ -15,7 +15,6 @@
 
 @section('content')
 
-
 <div class="parent">
     <div class="div1">
 
@@ -412,6 +411,7 @@
         grid-area: 5 / 4 / 6 / 5;
     }
 </style>
+
 
 
 @endsection
