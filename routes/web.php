@@ -56,6 +56,10 @@ Route::middleware('auth')->group(function () {
             Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
             Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/abraham
         //RUTAS PARA LOS PLANES
         Route::group(['prefix' => 'plans'], function () {
             Route::get('', [PlanController::class, 'index'])->name('plans.index');
@@ -270,8 +274,6 @@ Route::get('/intercambios/index', [IntercambiosController::class, 'index'])->nam
 Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'paymentMethods'])->name('intercambios.payment-methods');
 Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
 Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
-<<<<<<< HEAD
-=======
 
 Route::post('intercambios/method-paypal', [IntercambiosController::class, 'method_paypal'])->name('intercambios.methods.paypal');
 Route::post('intercambios/method-payu', [IntercambiosController::class, 'method_payu'])->name('intercambios.methods.payu');
@@ -299,4 +301,3 @@ Route::group(['prefix' => 'red'], function () {
 
 Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
 Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
->>>>>>> 9e9f1af552a385cf7c0750f174850c6db676acc0
