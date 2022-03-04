@@ -89,7 +89,7 @@
                 <label for="cantidad" class="form-label text-white form-label-text-size">
                   <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Cantidad</strong>
                 </label>
-                <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="" >
+                <input type="number" class="form-control" id="cantidad" name="cantidad" aria-describedby="" style="background: white; text-decoration-color: #1e1e1e">
                 <span class="permanent-placeholder" style="color: #999999;font-size: 16px;">USD</span>
                 <div class="form-text">
                   <strong style="color:#4BCFEE;width:120px;height: 21px;top: 409px;left: 432px;">Comisión: 1 USD
@@ -99,19 +99,17 @@
               </div>
               <div class="col-2 text-center">
               <i class="fa-solid fa-arrow-right-arrow-left" style="font-size: 25px;"></i>
-              </div>
               <div class="mb-3 ps-2 col col-sm-5 flex-end input-container">
                 <label for="recibido" class="form-label text-white form-label-text-size">
                   <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Recibo</strong>
                 </label>
-                <input type="number" class="form-control" id="recibido" name="recibido">
+                <input type="number" class="form-control" id="recibido" name="recibido" style="background: white; text-decoration-color: #1e1e1e">
                 <span class="permanent-placeholder" style="color: #999999;font-size: 15px; padding-right:15%">ZOEC</span>
                 <div class="form-text"><strong style="color:#4BCFEE;width: 192px;height: 21px;left: 969px;top: 405px;">Cantidad recibida en ZOEC</strong></div>
               </div>
             </div>
             <div class="row mx-auto">
               <div class="col-6 mx-auto">
-                <button type="submit" class="btn-sm text-white lead" style="
                       width: 402.38px;height: 60px;top: 488px;">
                   <strong style="font-style: normal;font-weight: 600;font-size: 24px;">Continuar</strong>
                 </button>
@@ -171,3 +169,4 @@
 </script>
 
 @endsection
+
