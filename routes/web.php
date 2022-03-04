@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\StripeCtrl;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TreeController;
+use App\Http\Controllers\universoController;
 use LDAP\Result;
 
 /*
@@ -39,33 +40,50 @@ use LDAP\Result;
 
 Route::get('/', [DashboardController::class, 'landing'])->name('landing');
 
-Auth::routes(['verify' => true]);
 
 Route::middleware('auth')->group(function () {
+    Route::middleware('verified')->group(function () {
 
-    Route::middleware('admin')->group(function () {
+
+        Route::middleware('admin')->group(function () {
+        });
+
+        /* Route Dashboards */
+        Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
+
+        /* Route Dashboards */
+        Route::group(['prefix' => 'dashboard'], function () {
+            Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
+            Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+        });
+
+        //RUTAS PARA LOS PLANES
+        Route::group(['prefix' => 'plans'], function () {
+            Route::get('', [PlanController::class, 'index'])->name('plans.index');
+        });
+
+        // Red de usuario
+        Route::group(['prefix' => 'red'], function () {
+            // Ruta para visualizar el arbol o la matriz
+            Route::get('/unilevel', [TreeController::class, 'index'])->name('red.unilevel');
+        });
+
+        //Settlement
+        Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
+        Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
+
+        Route::get('universo', [universoController::class, 'universo'])->name('universo.zoe');
+
+        //PASARELA
+        //STRIPE
+        Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
+        Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
+
+        Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
     });
-
-    Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard.index');
-
-    /* Route Dashboards */
-    Route::group(['prefix' => 'dashboard'], function () {
-        Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
-        Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
-    });
-
-
-
-    /* Route Dashboards */
-    //PASARELA
-    //STRIPE
-    Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
-    Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
-
-
-    Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
 });
 
+Auth::routes(['verify' => true]);
 
 /* Route Apps */
 Route::group(['prefix' => 'app'], function () {
@@ -256,6 +274,15 @@ Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'pa
 Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
 Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
 
+Route::post('intercambios/method-paypal', [IntercambiosController::class, 'method_paypal'])->name('intercambios.methods.paypal');
+Route::post('intercambios/method-payu', [IntercambiosController::class, 'method_payu'])->name('intercambios.methods.payu');
+Route::post('intercambios/method-wompi', [IntercambiosController::class, 'method_wompi'])->name('intercambios.methods.wompi');
+Route::post('intercambios/method-coinpayments', [IntercambiosController::class, 'method_coinpayments'])->name('intercambios.methods.coinpayments');
+Route::post('intercambios/method-coinbase', [IntercambiosController::class, 'method_coinbase'])->name('intercambios.methods.coinbase');
+Route::post('intercambios/method-bank', [IntercambiosController::class, 'method_bank'])->name('intercambios.methods.bank');
+Route::post('intercambios/method-zelle', [IntercambiosController::class, 'method_zelle'])->name('intercambios.methods.zelle');
+Route::post('intercambios/method-stripe', [IntercambiosController::class, 'method_stripe'])->name('intercambios.methods.stripe');
+
 //RUTAS PARA LOS PLANES
 Route::group(['prefix' => 'plans'], function () {
     Route::get('', [PlanController::class, 'index'])->name('plans.index');
@@ -271,3 +298,4 @@ Route::group(['prefix' => 'red'], function () {
 
 Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
 Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
+
