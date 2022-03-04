@@ -1,8 +1,8 @@
 @php
 $configData = Helper::applClasses();
 @endphp
-<div class="main-menu menu-fixed {{(($configData['theme'] === 'dark') || ($configData['theme'] === 'semi-dark')) ? 'menu-dark' : 'menu-light'}} menu-accordion menu-shadow" data-scroll-to-active="true" >
-  <div class="navbar-header" >
+<div class="main-menu menu-fixed {{(($configData['theme'] === 'dark') || ($configData['theme'] === 'semi-dark')) ? 'menu-dark' : 'menu-light'}} menu-accordion menu-shadow" data-scroll-to-active="true">
+  <div class="navbar-header">
     <ul class="nav navbar-nav flex-row">
       <li class="nav-item me-auto">
         <a class="navbar-brand" href="{{url('/')}}">
@@ -18,7 +18,7 @@ $configData = Helper::applClasses();
     </ul>
   </div>
   <div class="shadow-bottom"></div>
-  <div class="main-menu-content" style="margin-top: 4em;" >
+  <div class="main-menu-content" style="margin-top: 4em;">
     <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
       {{-- Para Usuarios Normales --}}
       @if (Auth::user()->admin == 0)
@@ -26,7 +26,7 @@ $configData = Helper::applClasses();
       @if(isset($menuData[0]))
       @foreach($menuData[0]->menu as $menu)
       @if(isset($menu->navheader))
-      <li class="navigation-header" >
+      <li class="navigation-header">
         <span>{{ __('locale.'.$menu->navheader) }}</span>
         <i data-feather="more-horizontal"></i>
       </li>
@@ -38,7 +38,7 @@ $configData = Helper::applClasses();
       $custom_classes = $menu->classlist;
       }
       @endphp
-      <li class="nav-item {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }} {{ $custom_classes }}" style="margin-bottom:5%;font-weight:500;" >
+      <li class="nav-item {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }} {{ $custom_classes }}" style="margin-bottom:5%;font-weight:500;">
         <a href="{{isset($menu->url)? url($menu->url):'javascript:void(0)'}}" class="d-flex align-items-center" target="{{isset($menu->newTab) ? '_blank':'_self'}}">
           <i data-feather="{{ $menu->icon }}"></i>
           <span class="menu-title text-truncate" style="color:#4BCFEE;">{{ __('locale.'.$menu->name) }}</span>
@@ -95,6 +95,14 @@ $configData = Helper::applClasses();
       @endif
       @endif
 
+      <form method="POST" class="mt-2" action="{{ route('logout') }}">
+        @csrf
+        <li class="">
+          <button class="btn-grad m-2 dropdown-item w-100 " onclick="event.preventDefault();this.closest('form').submit();">
+            <i class="fa-solid fa-angles-right text-white justify-content-end" style="font-size: 17px;margin-right:20px;display:flex;"></i>
+          </button>
+        </li>
+      </form>
 
       {{-- Foreach menu item ends --}}
     </ul>
@@ -102,11 +110,9 @@ $configData = Helper::applClasses();
 </div>
 
 <style>
-.main-menu.menu-light .navegation {
+  .main-menu.menu-light .navegation {
     color: #81D6FF;
     background: linear-gradient(180deg, rgba(0, 58, 156, 0) 8.33%, #043B60 54.69%, rgba(26, 76, 120, 0.152680) 92.19%)
-}
-
-
+  }
 </style>
 <!-- END: Main Menu-->
