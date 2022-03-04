@@ -41,7 +41,7 @@ $configData = Helper::applClasses();
       <li class="nav-item {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }} {{ $custom_classes }}" style="margin-bottom:5%;font-weight:500;" >
         <a href="{{isset($menu->url)? url($menu->url):'javascript:void(0)'}}" class="d-flex align-items-center" target="{{isset($menu->newTab) ? '_blank':'_self'}}">
           <i data-feather="{{ $menu->icon }}"></i>
-          <span class="menu-title text-truncate">{{ __('locale.'.$menu->name) }}</span>
+          <span class="menu-title text-truncate" style="color:#4BCFEE;">{{ __('locale.'.$menu->name) }}</span>
           @if (isset($menu->badge))
           <?php $badgeClasses = "badge badge-pill badge-light-primary ml-auto mr-1" ?>
           <span class="{{ isset($menu->badgeClass) ? $menu->badgeClass : $badgeClasses }} ">{{$menu->badge}}</span>
@@ -78,7 +78,7 @@ $configData = Helper::applClasses();
       <li class="nav-item {{ Route::currentRouteName() === $menu->slug ? 'active' : '' }} {{ $custom_classes }}" style="margin-bottom:5%;font-weight:500;">
         <a href="{{isset($menu->url)? url($menu->url):'javascript:void(0)'}}" class="d-flex align-items-center" target="{{isset($menu->newTab) ? '_blank':'_self'}}">
           <i data-feather="{{ $menu->icon }}"></i>
-          <span class="menu-title text-truncate">{{ __('locale.'.$menu->name) }}</span>
+          <span class="menu-title text-truncate" style="color:#4BCFEE;">{{ __('locale.'.$menu->name) }}</span>
           @if (isset($menu->badge))
           <?php $badgeClasses = "badge badge-pill badge-light-primary ml-auto mr-1" ?>
           <span class="{{ isset($menu->badgeClass) ? $menu->badgeClass : $badgeClasses }} ">{{$menu->badge}}</span>
@@ -102,6 +102,11 @@ $configData = Helper::applClasses();
 </div>
 
 <style>
+.main-menu.menu-light .navegation {
+    color: #81D6FF;
+    background: linear-gradient(180deg, rgba(0, 58, 156, 0) 8.33%, #043B60 54.69%, rgba(26, 76, 120, 0.152680) 92.19%)
+}
+
 
 </style>
 <!-- END: Main Menu-->
