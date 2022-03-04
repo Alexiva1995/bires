@@ -283,6 +283,8 @@ Route::post('intercambios/method-bank', [IntercambiosController::class, 'method_
 Route::post('intercambios/method-zelle', [IntercambiosController::class, 'method_zelle'])->name('intercambios.methods.zelle');
 Route::post('intercambios/method-stripe', [IntercambiosController::class, 'method_stripe'])->name('intercambios.methods.stripe');
 
+
+
 //RUTAS PARA LOS PLANES
 Route::group(['prefix' => 'plans'], function () {
     Route::get('', [PlanController::class, 'index'])->name('plans.index');
@@ -298,4 +300,3 @@ Route::group(['prefix' => 'red'], function () {
 
 Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
 Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
-
