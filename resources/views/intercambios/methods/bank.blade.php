@@ -2,59 +2,98 @@
 
 @section('vendor-style')
   <style>
-    .form-label-text-size{
-	    font-size:1.6rem !important;
-    }
-    .input-container {
-      position: relative;
-      width: 150px;
-    }
-    .input-container input {
-      width: 100%;
+  .form-label-text-size{
+	   font-size:1.6rem !important;
+  }
+  .input-container {
+    position: relative;
+    width: 150px;
+  }
+  .input-container input {
+     width: 100%;
 
-    }
-    .permanent-placeholder{
+  }
+  .permanent-placeholder{
 
-      position: absolute;
-      display: block;
-      top: 3.2rem;
-      right: 1.5rem;
-      color: #cccccc;
-      /* padding-left: 5px; */
-      width: 45px;
-    }
+    position: absolute;
+    display: block;
+    top: 3.2rem;
+    right: 1.5rem;
+    color: #cccccc;
+    /* padding-left: 5px; */
+    width: 45px;
+  }
 
-    .f-little{
-      font-size: 10px;
-    }
+  .f-little{
+    font-size: 10px;
+  }
 
-    .secondary{
-      color:#F5A707 !important;
-    }
+  .secondary{
+    color:#F5A707 !important;
+  }
 
 
-    .btn-yellow {
-      color: #22292f !important;
-      background-color: #F5A707 !important;
-      border-color: #F5A707 !important;
-    }
-    .btn-sm{
-      background-color: #4BCFEE;
-    }
+  .btn-yellow {
+    color: #22292f !important;
+    background-color: #F5A707 !important;
+    border-color: #F5A707 !important;
+   }
+  .btn-sm{
+    background-color: #4BCFEE;
+  }
 
-    .primary-background{
-        background: #032351;
-    }
+  .primary-background{
+    background: #032351;
+  }
+  strong.comision{
+   padding-right: 10%; color:white;width: 321px;height: 48px;top: 562px; 
+  }
+  strong.intercambio{
+    height: 45px;
+    width: 284.231201171875px;
+    left: 0px;
+    top: 0px;
+    border-radius: undefinedpx; 
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 45px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+  strong.header{
+    "height: 41px;
+    width: 264px;
+    left: 0px;top: 0px;
+    border-radius: undefinedpx;
+    font-style: SemiBold;
+    font-size: 24px;
+    line-height: 44px;
+    line-height: 100%;
+    vertical-align: top;
+  }
+  strong.method{
+   padding-left:0%;
+   height: 41px;
+   width: 264px;
+   left: 0px;
+   top: 0px;
+   border-radius: undefinedpx;
+   font-size: 24px;
+   line-height: 44px;
+   line-height: 100%;
+   vertical-align: top;
+  }
    
   </style>
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/dataTables.bootstrap5.min.css')) }}">
+  }
 @endsection
 
 @section('content')
   <h3 class="card-header">
-    <strong style="height: 45px;width: 284.231201171875px;left: 0px;top: 0px;border-radius: undefinedpx; font-size: 30px;font-style: normal;font-weight: 700;line-height: 45px;letter-spacing: 0px;text-align: left;">Intercambio
-    </strong>
+    <strong class="intercambio">Intercambio</strong>
   </h3>
   <section>
     <div class="d-flex p-2 bd-highlight">
@@ -62,7 +101,7 @@
         <div class="row">
           <div class="col-sm-6">
             <h3 class="text-white ms-2 mt-2">
-              <strong style="height: 41px;width: 264px;left: 0px;top: 0px;border-radius: undefinedpx; Font family: Poppinsfont-style: SemiBold;font-size: 24px;line-height: 44px;line-height: 100%;Align: Left;vertical-align: top;number-case:number-spacing:">
+              <strong class="header">
                   Comprar vía bank-transfer
               </strong>
             </h3>
@@ -85,7 +124,7 @@
        				</div>
               <div class="col-1"></div>
               <div class="mb-3 ps-2 col col-sm-5 flex-end input-container" style="padding-right:0%;"> 
-                <strong style="padding-left:0%;height: 41px;width: 264px;left: 0px;top: 0px;border-radius: undefinedpx; Font family: Poppinsfont-style: SemiBold;font-size: 24px;line-height: 44px;line-height: 100%;Align: Left;vertical-align: top;number-case:number-spacing:">
+                <strong class="method">
                   Método vía Bank-Transfer
                 </strong>
                 <p class="mt-1" style="font-style: Medium;font-size: 18px;line-height: 36px;line-height: 100%; padding-left:12%">
@@ -97,14 +136,12 @@
                   </strong>
                 </button>
                 <p class="text-white text-center f-little fw-lighter mt-1 mb-0">
-	                <strong style=" padding-right:10%;color:white;width: 321px;height: 48px;top: 562px;
-	                        ;">
+	                <strong class="comision">
 	                  Pagar 1 USD. Comisión incluida.  
 	                </strong>
                 </p>
                <p class="text-white text-center f-little fw-lighter mt-0 mb-3">
-	                <strong style="padding-right: 10%; color:white;width: 321px;height: 48px;top: 562px;
-	                        ;">
+	                <strong class="comision">
 	                 Tiempo de ingreso ~ 20 minutos.
 	                </strong>
                 </p>
