@@ -283,20 +283,3 @@ Route::post('intercambios/method-bank', [IntercambiosController::class, 'method_
 Route::post('intercambios/method-zelle', [IntercambiosController::class, 'method_zelle'])->name('intercambios.methods.zelle');
 Route::post('intercambios/method-stripe', [IntercambiosController::class, 'method_stripe'])->name('intercambios.methods.stripe');
 
-
-
-//RUTAS PARA LOS PLANES
-Route::group(['prefix' => 'plans'], function () {
-    Route::get('', [PlanController::class, 'index'])->name('plans.index');
-});
-
-// Red de usuario
-Route::group(['prefix' => 'red'], function () {
-    // Ruta para visualizar el arbol o la matriz
-    Route::get('/unilevel', [TreeController::class, 'index'])->name('red.unilevel');
-});
-
-//Settlement
-
-Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
-Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
