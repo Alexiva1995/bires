@@ -56,10 +56,7 @@ Route::middleware('auth')->group(function () {
             Route::get('analytics', [DashboardController::class, 'dashboardAnalytics'])->name('dashboard-analytics');
             Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
         });
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/abraham
         //RUTAS PARA LOS PLANES
         Route::group(['prefix' => 'plans'], function () {
             Route::get('', [PlanController::class, 'index'])->name('plans.index');
@@ -83,6 +80,7 @@ Route::middleware('auth')->group(function () {
         Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
 
         Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
+    });
 });
 
 Auth::routes(['verify' => true]);
@@ -106,6 +104,7 @@ Route::group(['prefix' => 'app'], function () {
     Route::get('file-manager', [AppsController::class, 'file_manager'])->name('app-file-manager');
     Route::get('user/list', [AppsController::class, 'user_list'])->name('app-user-list');
     Route::get('user/view', [AppsController::class, 'user_view'])->name('app-user-view');
+    Route::get('user/edit', [AppsController::class, 'user_edit'])->name('app-user-edit');
 });
 /* Route Apps */
 
@@ -283,21 +282,3 @@ Route::post('intercambios/method-coinbase', [IntercambiosController::class, 'met
 Route::post('intercambios/method-bank', [IntercambiosController::class, 'method_bank'])->name('intercambios.methods.bank');
 Route::post('intercambios/method-zelle', [IntercambiosController::class, 'method_zelle'])->name('intercambios.methods.zelle');
 Route::post('intercambios/method-stripe', [IntercambiosController::class, 'method_stripe'])->name('intercambios.methods.stripe');
-
-
-
-//RUTAS PARA LOS PLANES
-Route::group(['prefix' => 'plans'], function () {
-    Route::get('', [PlanController::class, 'index'])->name('plans.index');
-});
-
-// Red de usuario
-Route::group(['prefix' => 'red'], function () {
-    // Ruta para visualizar el arbol o la matriz
-    Route::get('/unilevel', [TreeController::class, 'index'])->name('red.unilevel');
-});
-
-//Settlement
-
-Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
-Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
