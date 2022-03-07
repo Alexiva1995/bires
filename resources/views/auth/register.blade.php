@@ -114,7 +114,7 @@ $referred = DB::table('users')
 
                         <div class="col-6 mb-1">
                             <label for="email" class="form-label">Correo</label>
-                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email"
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
                                 name="email" placeholder="john@example.com" value="{{ old('email') }}" />
                             @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -125,7 +125,7 @@ $referred = DB::table('users')
 
                         <div class="col-6 mb-1">
                             <label for="email_confirm" class="form-label">Repetir Correo</label>
-                            <input type="text" class="form-control @error('email_confirm') is-invalid @enderror"
+                            <input type="email" class="form-control @error('email_confirm') is-invalid @enderror"
                                 id="email_confirm" name="email_confirm" value="{{ old('email_confirm') }}" />
                             @error('email_confirm')
                             <span class="invalid-feedback" role="alert">

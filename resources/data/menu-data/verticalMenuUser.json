@@ -1,0 +1,71 @@
+{
+  "menu": [{
+          "url": "/dashboard",
+          "name": "Panel Principal",
+          "icon": "home",
+          "slug": ""
+      },
+
+      {
+          "name": "Planes",
+          "url": "plans",
+          "icon": "shopping-bag",
+          "slug": "plans.index"
+
+      },
+
+      {
+          "name": "Billetera",
+          "url": "/",
+          "icon": "navigation",
+          "slug": "Billetera"
+
+      },
+
+      {
+          "name": "Intercambios",
+          "url": "intercambios/index",
+          "icon": "shuffle",
+          "slug": "dashboard-analytics"
+
+      },
+
+
+      {
+          "name": "Universo Zoe",
+          "url": "/",
+          "icon": "aperture",
+          "slug": "Universo-Zoe"
+
+      }, {
+          "name": "Academia",
+          "url": "/",
+          "icon": "award",
+          "slug": "Academia"
+
+      },
+
+      {
+          "name": "Referidos",
+          "url": "/red/unilevel",
+          "icon": "users",
+          "slug": "red.unilevel"
+
+      },
+
+      {
+          "name": "Soporte",
+          "url": "/",
+          "icon": "headphones",
+          "slug": "Soporte"
+
+      },
+      {
+        "name": "Cuenta",
+        "url": "/",
+        "icon": "user",
+        "slug": "Cuenta"
+
+    }
+  ]
+}

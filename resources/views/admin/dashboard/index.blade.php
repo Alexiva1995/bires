@@ -60,6 +60,7 @@
 @endsection
 
 @section('content')
+
 <!-- Dashboard Analytics Start -->
 <section id="dashboard-analytics">
 
@@ -73,19 +74,25 @@
                 <div class="col-5 align-self-center">
                     <span style="color: #4BCFEE;">{{ Auth::user()->name }} {{ Auth::user()->lastname }} a Generacion ZOE</span>
                 </div>
-                <div class="col-4 align-self-center">
-                    <span class="small fw-old"><i data-feather='arrow-up-right'></i>Tu link</span>
-                    <div class="btn-group">
-                        <button class="btn btn-flat-primary dropdown-toggle small" type="button" id="dropdownMenuButton100" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 12px;font-weight:700;">
-                            Ver todos
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton100">
-                            <a class="dropdown-item" href="#">Option 1</a>
-                            <a class="dropdown-item" href="#">Option 2</a>
-                            <a class="dropdown-item" href="#">Option 3</a>
+
+                <div class="col-4 row ">
+                    <div class="col-sm-4">
+                        <span class="small fw-old"><i data-feather='arrow-up-right'></i>Tu link de referido</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="btn-group">
+                            <button class="btn btn-flat-primary dropdown-toggle small" type="button" id="dropdownMenuButton100" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 12px;font-weight:700;">
+                                Ver todos
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton100">
+                                <a class="dropdown-item" href="#">Option 1</a>
+                                <a class="dropdown-item" href="#">Option 2</a>
+                                <a class="dropdown-item" href="#">Option 3</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-3">
                     <div class="d-grid gap-2">
                         <button class="btn btn-sm rounded-pill" style="background-color: #4BCFEE;" onclick="getlink()"><i data-feather='copy'></i> Copiar enlace</button>
@@ -130,9 +137,16 @@
 
                                 <div class="col">
                                     <p style="font-weight:600;font-size:14px;">Balance</p>
-                                    <p style="font-weight:600;font-size:20px;">0<span style="font-size: 11px;"> ZOEC</span></p>
+                                    <p style="font-weight:600;">
+                                        @if(auth()->user()->disponible > 0)
+                                        {{auth()->user()->disponible}}$ <span style="font-size:20px;">ZOEC</span> </a>
+                                        @else
+                                        <span style="font-size: 20px;">0$</span><span style="font-size: 15px;"> ZOEC</span>
+                                        @endif
+                                    </p>
                                     <a href="#">
-                                    <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Comprar</p></a>
+                                        <p style="font-weight:normal;font-size:11px;"><i data-feather='arrow-up-right'></i> Comprar</p>
+                                    </a>
                                 </div>
                             </div>
 
@@ -149,7 +163,7 @@
                             <div class="row justify-content-center">
                                 <div class="col">
                                     <p style="font-weight: 600;font-size:14px;">Ganancias</p>
-                                    <p style="font-weight: 600;font-size:20px;">$0</p>
+                                    <p style="font-weight: 600;font-size:20px;">0$</p>
                                 </div>
                                 <div class="col">
                                     <div id="order-chart"></div>
@@ -199,7 +213,7 @@
                         <div class="card-body ">
                             <h5 style="font-weight: 600;">Depositos</h5>
                             <h6 class="fw-bolder mt-1 text-white-50 mb-2">Sin depositos recientes</h6>
-                            <a href="#"><span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Realizar deposito</span></a>
+                            <a href="{{route('intercambios.index')}}"><span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Realizar deposito</span></a>
                         </div>
                     </div>
                 </div>
@@ -209,7 +223,7 @@
                             <h5 style="font-weight: 600;">Retiros</h5>
                             <h6 class="fw-bolder mt-1 text-white-50 mb-2">Sin retiros recientes</h6>
                             <a href="#">
-                            <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Ver retiros</span></a>
+                                <span class="card-text font-small-3"><i data-feather='arrow-up-right'></i> Ver retiros</span></a>
                         </div>
                     </div>
                 </div>
@@ -428,7 +442,7 @@
 
                     },
                     title: {
-                        
+
                         floating: true,
                         offsetY: 330,
                         align: 'center',

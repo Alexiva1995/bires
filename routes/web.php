@@ -282,4 +282,3 @@ Route::post('intercambios/method-coinbase', [IntercambiosController::class, 'met
 Route::post('intercambios/method-bank', [IntercambiosController::class, 'method_bank'])->name('intercambios.methods.bank');
 Route::post('intercambios/method-zelle', [IntercambiosController::class, 'method_zelle'])->name('intercambios.methods.zelle');
 Route::post('intercambios/method-stripe', [IntercambiosController::class, 'method_stripe'])->name('intercambios.methods.stripe');
-
