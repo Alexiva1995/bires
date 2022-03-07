@@ -129,7 +129,7 @@
                 font-style: normal;
                 font-weight: bold;
                 font-size: 60px;
-                line-height: 111.5%; text-align: left;">¡Somos la Nueva <br>Generación</h1>
+                line-height: 111.5%; text-align: left;">¡Somos la Nueva <br>Generación!</h1>
                 <p style="
                 font-style: normal;
                 font-weight: 300;
