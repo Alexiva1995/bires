@@ -1,6 +1,4 @@
-@extends('layouts/contentLayoutMaster')
-
-@section('title', 'Aprobar Intercambio')
+ @extends('layouts/contentLayoutMaster')
 
 
 @push('vendor_css')
@@ -53,15 +51,31 @@
     .primary-background{
         background: #032351;
     }
-
+    strong.intercambio{
+    height: 45px;
+    width: 284.231201171875px;
+    left: 0px;
+    top: 0px;
+    border-radius: undefinedpx; 
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 45px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
   </style>
 @endpush
 
 @section('content')
+  <h3 class="card-header">
+    <strong class="intercambio">Aprobar Intercambio</strong>
+  </h3>
 <!-- Modal -->
 <div class="{{-- modal fade --}} col-8 offset-md-2" id="modalModalAprobar" {{-- tabindex="-1" role="dialog" aria-labelledby="modalModalAprobarTitle"
     aria-hidden="true" --}}>
     <div class="{{-- modal-dialog modal-dialog-centered modal-dialog-centered" role="document" --}} card bg-lp>
+       
         <div class="{{-- modal-content --}}">
             <div class="{{-- modal-header --}} card-header">
                 <h5 class="{{-- modal-title --}} card-title " id="modalModalAprobarTitle">Aprobar Intercambio</h5>

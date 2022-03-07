@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-centered  " role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title " id="modalstripeTitle">Método de pago: Coinpayments.</h5>
+                <h5 class="modal-title " id="modalstripeTitle">Método de pago: Stripe.</h5>
                 <button type="button" class="" style="background-color: #4BCFEE;" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -16,14 +16,16 @@
                     <input type="hidden" name="recibido" value="" class="form-control text-white recibido">
                     <div class='form-row row'>
                         <div class='col-xs-12 form-group required'>
-                            <label class='control-label'>Name on Card</label> <input
+                            <label class='control-label'>Name on Card</label> 
+                            <input
                                 class='form-control' size='4' type='text'>
                         </div>
                     </div>
 
                     <div class='form-row row'>
                         <div class='col-xs-12 form-group card required'>
-                            <label class='control-label'>Card Number</label> <input
+                            <label class='control-label'>Card Number</label> 
+                            <input
                                 autocomplete='off' class='form-control card-number' size='20'
                                 type='text'>
                         </div>
@@ -31,17 +33,20 @@
 
                     <div class='form-row row'>
                         <div class='col-xs-12 col-md-4 form-group cvc required'>
-                            <label class='control-label'>CVC</label> <input autocomplete='off'
+                            <label class='control-label'>CVC</label>
+                            <input autocomplete='off'
                                 class='form-control card-cvc' placeholder='ex. 311' size='4'
                                 type='text'>
                         </div>
                         <div class='col-xs-12 col-md-4 form-group expiration required'>
-                            <label class='control-label'>Expiration Month</label> <input
+                            <label class='control-label'>Expiration Month</label> 
+                            <input
                                 class='form-control card-expiry-month' placeholder='MM' size='2'
                                 type='text'>
                         </div>
                         <div class='col-xs-12 col-md-4 form-group expiration required'>
-                            <label class='control-label'>Expiration Year</label> <input
+                            <label class='control-label'>Expiration Year</label> 
+                            <input
                                 class='form-control card-expiry-year' placeholder='YYYY' size='4'
                                 type='text'>
                         </div>
@@ -49,8 +54,10 @@
 
                     <div class='form-row row'>
                         <div class='col-md-12 error form-group hide'>
-                            <div class='alert-danger alert'>Please correct the errors and try
-                                again.</div>
+                            <div class='alert-danger alert'>
+                                Please correct the errors and try
+                                again.
+                            </div>
                         </div>
                     </div>
 

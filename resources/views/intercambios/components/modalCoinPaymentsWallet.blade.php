@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body text-justify primary-background">
-                <form action="{{route('settlement.aprobarRetiro')}}" method="post">
+                <form action="{{route('settlement.aprobarDeposito')}}" method="post">
                     @csrf
 
                         <label for="form-control ">Ingrese su billetera USDT TRC20</label>
