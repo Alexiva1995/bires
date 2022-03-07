@@ -114,6 +114,10 @@
                     @include('components.tranding-view3')
 
                 </div>
+                <div class="col">
+                    @include('components.tranding-view4')
+
+                </div>
             </div>
 
 
@@ -122,7 +126,7 @@
             <div class="row match-height">
                 <!-- Greetings Card starts -->
                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="card card-dark" style="border: none;border-radius:10px;background-color:#0B3C67;">
+                    <div class="card card-dark" style="border: none;border-radius:10px;background-color:#002C53;">
                         <div class="card-body">
 
                             <div class="row align-items-center">
@@ -157,7 +161,7 @@
 
                 <!-- Subscribers Chart Card starts -->
                 <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="card card-dark" style="border: none;border-radius:10px;background-color:#0B3C67;">
+                    <div class="card card-dark" style="border: none;border-radius:10px;background-color:#002C53;">
                         <div class="card-body">
 
                             <div class="row justify-content-center">
@@ -166,7 +170,7 @@
                                     <p style="font-weight: 600;font-size:20px;">0$</p>
                                 </div>
                                 <div class="col">
-                                    <div id="order-chart"></div>
+                                <div id="avg-sessions-chart"></div>
                                 </div>
                             </div>
 
@@ -177,7 +181,7 @@
 
                 <!-- Orders Chart Card starts -->
                 <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="card card-dark" style="border-radius:10px;background-color:#0B3C67;">
+                    <div class="card card-dark" style="border-radius:10px;background-color:#002C53;">
                         <div class="card-body">
 
                             <div class="row align-items-center">
@@ -209,7 +213,7 @@
 
             <div class="row">
                 <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="card card-dark" style="height: 150px;">
+                    <div class="card " style="height: 150px;">
                         <div class="card-body ">
                             <h5 style="font-weight: 600;">Depositos</h5>
                             <h6 class="fw-bolder mt-1 text-white-50 mb-2">Sin depositos recientes</h6>
@@ -218,7 +222,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="card card-dark" style="height: 150px;">
+                    <div class="card " style="height: 150px;">
                         <div class="card-body">
                             <h5 style="font-weight: 600;">Retiros</h5>
                             <h6 class="fw-bolder mt-1 text-white-50 mb-2">Sin retiros recientes</h6>
@@ -228,7 +232,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="card card-dark" style="height: 150px;">
+                    <div class="card" style="height: 150px;">
                         <div class="card-body">
                             <h5 style="font-weight: 600;">Plan activo</h5>
                             <h6 class="fw-bolder mt-1 text-white-50 mb-2">No posees plan activo</h6>
@@ -239,7 +243,7 @@
             </div>
 
             <div class="col-12">
-                <div class="card">
+                <div class="card" style="background:#002C53;">
                     <div class="
                   card-header
                   d-flex
@@ -371,89 +375,106 @@
         })
         .then(function(res) {
             if (res.status == 200) {
+                var flatPicker = $('.flat-picker'),
+                    isRtl = $('html').attr('data-textdirection') === 'rtl',
+                    chartColors = {
+                        column: {
+                            series1: '#FF9F00',
+                            bg: '#FFF'
+                        },
+                    };
 
-                var options = {
-                    series: [{
-                        name: 'Ganancias',
-                        data: res.data.valores
-                    }],
-                    chart: {
-                        height: 350,
-                        type: 'bar',
-                    },
-                    plotOptions: {
-                        bar: {
-                            borderRadius: 10,
-                            dataLabels: {
-                                position: 'top', // top, center, bottom
-                            },
-                        }
-                    },
-                    dataLabels: {
-                        enabled: true,
-                        formatter: function(val) {
-                            return val + "$";
+                var columnChartEl = document.querySelector('#chart'),
+                    columnChartConfig = {
+                        chart: {
+                            height: 400,
+                            type: 'bar',
+                            stacked: true,
+                            parentHeightOffset: 10,
+                            toolbar: {
+                                show: true
+                            }
                         },
-                        offsetY: -20,
-                        style: {
-                            fontSize: '12px',
-                            colors: ["#304758"]
-                        }
-                    },
-
-                    xaxis: {
-                        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                        position: 'top',
-                        axisBorder: {
-                            show: false
-                        },
-                        axisTicks: {
-                            show: false
-                        },
-                        crosshairs: {
-                            fill: {
-                                type: 'gradient',
-                                gradient: {
-                                    colorFrom: '#D8E3F0',
-                                    colorTo: '#BED1E6',
-                                    stops: [0, 100],
-                                    opacityFrom: 0.4,
-                                    opacityTo: 0.5,
+                        plotOptions: {
+                            bar: {
+                                columnWidth: '70%',
+                                colors: {
+                                    backgroundBarColors: [
+                                        chartColors.column.bg,
+                                        chartColors.column.bg,
+                                        chartColors.column.bg,
+                                        chartColors.column.bg,
+                                        chartColors.column.bg,
+                                        chartColors.column.bg
+                                    ],
+                                    backgroundBarRadius: 10
                                 }
                             }
                         },
-                        tooltip: {
-                            enabled: true,
-                        }
-                    },
-                    yaxis: {
-                        axisBorder: {
-                            show: false
+                        dataLabels: {
+                            enabled: true
                         },
-                        axisTicks: {
+                        legend: {
                             show: false,
+                            position: 'top',
+                            horizontalAlign: 'start'
                         },
-                        labels: {
+                        colors: [chartColors.column.series1, chartColors.column.series2],
+                        stroke: {
                             show: false,
-                            formatter: function(val) {
-                                return val + "$";
+                            colors: ['transparent']
+                        },
+                        grid: {
+                            xaxis: {
+                                lines: {
+                                    show: false
+                                }
                             }
+                        },
+                        series: [{
+                            name: 'Ganancias',
+                            data: res.data.valores,
+                            style: {
+                                color: '#000'
+                            }
+
+                        }],
+                        xaxis: {
+                            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                            position: 'bottom',
+                            axisBorder: {
+                                show: false
+                            },
+                            axisTicks: {
+                                show: false
+                            },
+                            crosshairs: {
+                                fill: {
+                                    type: 'gradient',
+                                    gradient: {
+                                        colorFrom: '#D8E3F0',
+                                        colorTo: '#BED1E6',
+                                        stops: [0, 100],
+                                        opacityFrom: 0.4,
+                                        opacityTo: 0.5,
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                enabled: true,
+                            }
+                        },
+                        fill: {
+                            opacity: 1
+                        },
+                        yaxis: {
+                            opposite: isRtl
                         }
-
-                    },
-                    title: {
-
-                        floating: true,
-                        offsetY: 330,
-                        align: 'center',
-                        style: {
-                            color: '#444'
-                        }
-                    }
-                };
-
-                var chart = new ApexCharts(document.querySelector("#chart"), options);
-                chart.render();
+                    };
+                if (typeof columnChartEl !== undefined && columnChartEl !== null) {
+                    var columnChart = new ApexCharts(columnChartEl, columnChartConfig);
+                    columnChart.render();
+                }
             }
         })
 </script>

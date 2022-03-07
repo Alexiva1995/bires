@@ -19,7 +19,7 @@ $configData = Helper::applClasses();
   </div>
   <div class="shadow-bottom"></div>
   <div class="main-menu-content" style="margin-top: 4em;">
-    <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+    <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" style="background: linear-gradient(180deg, #043D70 0%, #072181 100%);">
       {{-- Para Usuarios Normales --}}
       @if (Auth::user()->admin == 0)
       {{-- Foreach menu item starts --}}
@@ -109,11 +109,4 @@ $configData = Helper::applClasses();
   </div>
 </div>
 
-<style>
-  .main-menu.menu-light .navegation {
-    color: #81D6FF;
-    background: #05103A;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-</style>
 <!-- END: Main Menu-->
