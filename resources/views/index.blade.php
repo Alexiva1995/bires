@@ -84,30 +84,30 @@
                                     @if(session()->has('locale'))
                                     {{session()->get('locale')}}
                                     @else
-                                    ES
+                                    Es
                                     @endif
                                 </span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end rounded" aria-labelledby="dropdown-flag">
-                                <a href="#googtrans(es|es)" class="dropdown-item lang-select rounded" data-language="es"
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag">
+                                <a href="#googtrans(es|es)" class="dropdown-item lang-select" data-language="es"
                                     alt="ESPAÑOL">
-                                    <i class="flag-icon flag-icon-es"></i> ES
+                                    <i class="flag-icon flag-icon-es"></i> Es
                                 </a>
                                 <a href="#googtrans(es|en)" class="dropdown-item lang-select rounded" data-language="en"
                                     alt="INGLES">
-                                    <i class="flag-icon flag-icon-us"></i> EN
+                                    <i class="flag-icon flag-icon-us"></i> En
                                 </a>
                                 <a href="#googtrans(es|fr)" class="dropdown-item lang-select rounded" data-language="fr"
                                     alt="FRANCÉS">
-                                    <i class="flag-icon flag-icon-fr"></i> FR
+                                    <i class="flag-icon flag-icon-fr"></i> Fr
                                 </a>
                                 <a href="#googtrans(es|de)" class="dropdown-item lang-select rounded" data-language="de"
                                     alt="ALEMÁN">
-                                    <i class="flag-icon flag-icon-de"></i> AL
+                                    <i class="flag-icon flag-icon-de"></i> Al
                                 </a>
                                 <a href="#googtrans(es|pt)" class="dropdown-item lang-select rounded" data-language="pt"
                                     alt="PORTUGUÉS">
-                                    <i class="flag-icon flag-icon-pt"></i> PT
+                                    <i class="flag-icon flag-icon-pt"></i> Pt
                                 </a>
                             </div>
                         </li>
