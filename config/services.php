@@ -32,8 +32,8 @@ return [
 
       'stripe' => [
         'base_uri' => env('STRIPE_BASE_URI'),
-        'key' => env('STRIPE_CLIENT_ID'),
-        'secret' => env('STRIPE_CLIENT_SECRET'),
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
         'class' => App\Services\StripeService::class,
     ],
 

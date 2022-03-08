@@ -162,7 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Kevupton\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class,
-
+        
         /*
          * Package Service Providers...
          */
