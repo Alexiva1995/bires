@@ -57,7 +57,7 @@
                     <a href="{{ route('landing') }}" class="float-md-start mb-0" style="padding-left: 5%">
                         {{-- <img style="margin-left:15%;" src="http://127.0.0.1:8000/images/auth/logo-spora-v2.png" height="60" width="100%" alt="">--}}
                        <img src="{{ asset('images/zoe/header/S.png') }}" alt="logo">
-                       <img src="{{ asset('images/zoe/header/p.png') }}" alt="logo">
+                       <img src="{{ asset('images/zoe/header/P.png') }}" alt="logo">
                        <img src="{{ asset('images/zoe/header/O.png') }}" alt="logo">
                        <img src="{{ asset('images/zoe/header/R.png') }}" alt="logo">
                        <img src="{{ asset('images/zoe/header/A.png') }}" alt="logo">
