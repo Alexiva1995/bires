@@ -542,7 +542,7 @@ class IntercambiosController extends Controller
         'email' => $user->email, # Payee Email Address.
         'phone' => $user->phone, # Payee Phone Number.
         ];
-        dd($data);
+        return $data;
     }
 
 }
