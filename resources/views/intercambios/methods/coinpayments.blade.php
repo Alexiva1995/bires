@@ -88,7 +88,7 @@
                   		<p class="mt-1" style="font-style: Medium;font-size: 20px;line-height: 36px;line-height: 100%; padding-left:10%">
                   			<strong>Completa tu pago ahora!</strong>
                   		</p>
-                  		<button type="submit" data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="mostrarWallet()" class="btn-sm text-white lead mt-2" style="height: 60px;width: 330.375px;left: 867px;top: 467px;border-radius: 4px"; data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="mostrarWallet()">
+                  		<button type="submit" data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="mostrarWallet()" class="btn-sm text-white lead mt-2" style="height: 60px;width: 330.375px;left: 867px;top: 467px;border-radius: 4px";>
                        		<strong style="font-style: normal;font-weight: 300;font-size: 21px;">
                        			Comprar 
                             <strong style="font-size:21px;">

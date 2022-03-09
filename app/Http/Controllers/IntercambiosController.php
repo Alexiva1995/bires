@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
+use Tzsk\Payu\Facade\Payment;
 
 class IntercambiosController extends Controller
 {
@@ -46,7 +47,7 @@ class IntercambiosController extends Controller
 
     public function aprobarDeposito(Request $request)
     {
-
+        
         $wallet = $request->wallet;
         $cantidad = $request->cantidad;
         $recibido = $request->recibido;
@@ -523,6 +524,25 @@ class IntercambiosController extends Controller
             Log::error('Intercambios - method_stripe -> Error: '.$th);
             abort(403, "Ocurrio un error, contacte con el administrador");
         }
+    }
+
+    public function payu(Request $request)
+    { 
+        $user = Auth::user();
+        $validate = $request->validate([
+            'cantidad' => ['required'],
+            'recibido' => ['required'],
+        ]);
+            
+        $data = [
+        'txnid' => rand(), # Transaction ID.
+        'amount' => $request->cantidad, # Amount to be charged.
+        'productinfo' => "Product Information",
+        'firstname' => $user->name, # Payee Name.
+        'email' => $user->email, # Payee Email Address.
+        'phone' => $user->phone, # Payee Phone Number.
+        ];
+        dd($data);
     }
 
 }

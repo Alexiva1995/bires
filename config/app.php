@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Kevupton\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class,
+       // Tzsk\Payu\Provider\PayuServiceProvider::class,
 
         
         /*
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // custom theme helper
         'Helper' => App\Helpers\Helper::class,
+        'Payment' => Tzsk\Payu\Facade\Payment::class,
     ],
 
 ];

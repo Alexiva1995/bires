@@ -78,9 +78,12 @@ Route::middleware('auth')->group(function () {
         //PASARELA
         //STRIPE
         Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
-        Route::POST('stripe',[StripeCtrl::class, 'stripePost'])->name('stripe.post');;
-
+        Route::POST('stripe',[StripeCtrl::class, 'stripePost'])->name('stripe.post');
+        //payU
+        Route::POST('payu',[IntercambiosController::class, 'payu'])->name('payu.post');
         Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
+        
+
     });
 });
 

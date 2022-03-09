@@ -23,7 +23,7 @@
                     </div>
 
                     <div class='form-row row'>
-                        <div class='col-xs-12 form-group card required'>
+                        <div class='col-xs-12 form-group required'>
                             <label class='control-label'>Card Number</label> 
                             <input
                                 autocomplete='off' class='form-control card-number' size='20'

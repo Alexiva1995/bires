@@ -64,6 +64,9 @@
     letter-spacing: 0px;
     text-align: left;
   }
+  button.btn{
+    background-color:  #4BCFEE;
+  }
   </style>
 @endpush
 
@@ -96,7 +99,7 @@
 
                         <input type="hidden" name="wallet" value={{$data['wallet']}}>
                         <input type="hidden" name="idLiquidation" value={{$data['idLiquidation']}}>
-                        <input type="text " name="correo_code" class="form-control" required>
+                        <input type="text " name="correo_code" class="form-control text-dark" required>
                         <div class="col-12 text-center mt-1">
                             {{-- <button type="button" class="btn btn-info text'white" v-on:click='sendCodeEmail' v-if='idliquidacion == 0'>Enviar Codigo</button> --}}
                             <span class=''>Codigo Enviado, tienes 30 min sino se cancelara el retiro automaticamente</span>
@@ -109,7 +112,7 @@
                     </div> --}}
 
                     <div class="form-group text-center">
-                        <button class="btn btn-warning mt-2">Aprobar</button>
+                        <button class="btn  mt-2" style="background-color:  #4BCFEE;">Aprobar</button>
                     </div>
                 </form>
             </div>

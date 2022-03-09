@@ -43,22 +43,24 @@
         border-radius: 0px;
         text-indent: 30px; 
     }
-   
+    a.btn-outline-secondary{
+     border:white;
+    background-color: rgba(19, 19, 19, 0,51) !important;
+    }
 </style>
 
 <body class="d-flex h-100 text-center text-white bg-zoe">
-    
-        <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
-           <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            <header class="mb-auto">
+    <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
+        <div class="cover-container d-flex w-100 h-100  mx-auto flex-column" >
+            <header class="mb-auto p-1" style="background: rgba(5, 16, 58, 1);">
                 <div>
-                    <a href="{{ route('landing') }}" class="float-md-start mb-0">
-                        <img style="margin-left:15%;" src="http://127.0.0.1:8000/images/auth/logo-spora-v2.png" height="60" width="100%" alt="">
-                      {{-- <img src="{{ asset('images/zoe/header/S.png') }}" alt="logo">
+                    <a href="{{ route('landing') }}" class="float-md-start mb-0" style="padding-left: 5%">
+                        {{-- <img style="margin-left:15%;" src="http://127.0.0.1:8000/images/auth/logo-spora-v2.png" height="60" width="100%" alt="">--}}
+                       <img src="{{ asset('images/zoe/header/S.png') }}" alt="logo">
                        <img src="{{ asset('images/zoe/header/p.png') }}" alt="logo">
                        <img src="{{ asset('images/zoe/header/O.png') }}" alt="logo">
                        <img src="{{ asset('images/zoe/header/R.png') }}" alt="logo">
-                       <img src="{{ asset('images/zoe/header/A.png') }}" alt="logo">--}}
+                       <img src="{{ asset('images/zoe/header/A.png') }}" alt="logo">
                     </a> 
                     <nav class="nav nav-masthead justify-content-center float-md-end">
                         <a class="nav-link text-white active" aria-current="page" href="#">
@@ -113,7 +115,9 @@
                         </li>
                         <a class="nav-link" href="{{ route('login') }}">
                             <button style="height: 32px;width: 150px;left: 647px;top: 0px;border-radius: 5px;" class="btn btn-sm ">
-                                <strong style="height: 22px;width: 71px;left: 686px;top: 3px;border-radius: nullpx;">Ingresar</strong>
+                                <strong style="height: 22px;width: 71px;left: 686px;top: 3px;border-radius: nullpx;">
+                                   Ingresar
+                                </strong>
                             </button>
                         </a>
                     </nav>
@@ -121,7 +125,7 @@
             </header>
 
             <main class="mb-auto row">
-                <div class="col-6 text-left">
+                <div class="col-6 text-left" style="padding: 4%;">
                     <h1 style="font-family:  Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;;
                     height: 160px;
                     width: 998px;
@@ -130,7 +134,7 @@
                     font-style: normal;
                     font-weight: bold;
                     font-size: 60px;
-                    line-height: 111.5%; text-align: left;">¡Somos la Nueva <br>Generación!</h1>
+                    line-height: 111.5%; text-align: left;">Descubre tu <br>nueva realidad</h1>
                     <p style="
                     font-style: normal;
                     font-weight: 300;
@@ -138,15 +142,15 @@
                     line-height: 146.5%; text-align: left;">Desarrolla habilidades de liderazgo, comunicación asertiva, aprende a <br> crear equipos de alto desempeño, a gestionar tus estados emocionales,<br> a identificar y romper con las creencias limitantes.
                     </p>
                     <p class="lead d-flex justify-content-left mt-4">
-                        <a href="#" class="btn btn-outline-secondary fw-bold text-white" style="width: 34%">Conoce más</a>
+                        <button href="#" class="btn fw-bold text-white" style="width: 34%; border-color:white;">Conoce más</button>
                     </p>
                 </div>
             </main> 
 
         </div>
  
-    <footer style="background: linear-gradient(90deg, #0F6FC3 -0.66%, #F5CD0E 100%); width: 100%; height: 7%;left: 0px;top: 864px;border-radius: 0px;" >
-    </footer>  
+   {{-- <footer style="background: linear-gradient(90deg, #0F6FC3 -0.66%, #F5CD0E 100%); width: 100%; height: 7%;left: 0px;top: 864px;border-radius: 0px;" >
+    </footer> --}}  
     </div>
 </body>
 

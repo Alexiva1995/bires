@@ -2,93 +2,89 @@
 
 @section('vendor-style')
   <style>
-  .form-label-text-size{
-	   font-size:1.6rem !important;
-  }
-  .input-container {
-    position: relative;
-    width: 150px;
-  }
-  .input-container input {
-     width: 100%;
+    .form-label-text-size{
+  	   font-size:1.6rem !important;
+    }
+    .input-container {
+      position: relative;
+      width: 150px;
+    }
+    .input-container input {
+       width: 100%;
 
-  }
-  .permanent-placeholder{
+    }
+    .permanent-placeholder{
 
-    position: absolute;
-    display: block;
-    top: 3.2rem;
-    right: 1.5rem;
-    color: #cccccc;
-    /* padding-left: 5px; */
-    width: 45px;
-  }
+      position: absolute;
+      display: block;
+      top: 3.2rem;
+      right: 1.5rem;
+      color: #cccccc;
+      /* padding-left: 5px; */
+      width: 45px;
+    }
 
-  .f-little{
-    font-size: 10px;
-  }
+    .f-little{
+      font-size: 10px;
+    }
 
-  .secondary{
-    color:#F5A707 !important;
-  }
+    .secondary{
+      color:#F5A707 !important;
+    }
+    .btn-yellow {
+      color: #22292f !important;
+      background-color: #F5A707 !important;
+      border-color: #F5A707 !important;
+     }
+    .btn-sm{
+      background-color: #4BCFEE;
+    }
 
-
-  .btn-yellow {
-    color: #22292f !important;
-    background-color: #F5A707 !important;
-    border-color: #F5A707 !important;
-   }
-  .btn-sm{
-    background-color: #4BCFEE;
-  }
-
-  .primary-background{
-    background: #032351;
-  }
-  strong.comision{
-   padding-right: 10%; color:white;width: 321px;height: 48px;top: 562px; 
-  }
-  strong.intercambio{
-    height: 45px;
-    width: 284.231201171875px;
-    left: 0px;
-    top: 0px;
-    border-radius: undefinedpx; 
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 45px;
-    letter-spacing: 0px;
-    text-align: left;
-  }
-  strong.header{
-    "height: 41px;
-    width: 264px;
-    left: 0px;top: 0px;
-    border-radius: undefinedpx;
-    font-style: SemiBold;
-    font-size: 24px;
-    line-height: 44px;
-    line-height: 100%;
-    vertical-align: top;
-  }
-  strong.method{
-   padding-left:0%;
-   height: 41px;
-   width: 264px;
-   left: 0px;
-   top: 0px;
-   border-radius: undefinedpx;
-   font-size: 24px;
-   line-height: 44px;
-   line-height: 100%;
-   vertical-align: top;
-  }
-   
+    .primary-background{
+      background: #032351;
+    }
+    strong.comision{
+     padding-right: 10%; color:white;width: 321px;height: 48px;top: 562px; 
+    }
+    strong.intercambio{
+      height: 45px;
+      width: 284.231201171875px;
+      left: 0px;
+      top: 0px;
+      border-radius: undefinedpx; 
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 45px;
+      letter-spacing: 0px;
+      text-align: left;
+    }
+    strong.header{
+      "height: 41px;
+      width: 264px;
+      left: 0px;top: 0px;
+      border-radius: undefinedpx;
+      font-style: SemiBold;
+      font-size: 24px;
+      line-height: 44px;
+      line-height: 100%;
+      vertical-align: top;
+    }
+    strong.method{
+     padding-left:0%;
+     height: 41px;
+     width: 264px;
+     left: 0px;
+     top: 0px;
+     border-radius: undefinedpx;
+     font-size: 24px;
+     line-height: 44px;
+     line-height: 100%;
+     vertical-align: top;
+    }
   </style>
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('vendors/css/tables/datatable/dataTables.bootstrap5.min.css')) }}">
-  }
 @endsection
 
 @section('content')
@@ -102,16 +98,16 @@
           <div class="col-sm-6">
             <h3 class="text-white ms-2 mt-2">
               <strong class="header">
-                  Comprar vía bank-transfer
+                Comprar vía bank-transfer
               </strong>
             </h3>
           </div>
           <div class="col-sm-6 mt-1" style="padding-left: 2%;">
             <h6 class="text-white ps-5 mt-2 f-little fw-lighter" style="font-style: normal;font-weight: 300;font-size: 14px;line-height: 21px;">
-                  Datos protegidos por el estándar PCI DSS 
-                  <td>
-                    <img style="padding-left: 5%;"class="" src={{asset('img/paymentLogos/Vector.png')}} alt="Vector"/>
-                  </td>
+              Datos protegidos por el estándar PCI DSS 
+              <td>
+                <img style="padding-left: 5%;"class="" src={{asset('img/paymentLogos/Vector.png')}} alt="Vector"/>
+              </td>
             </h6>    
           </div>
           <hr class="text-white ms-0 col-12" style="width: 100% !important">
@@ -130,7 +126,7 @@
                 <p class="mt-1" style="font-style: Medium;font-size: 18px;line-height: 36px;line-height: 100%; padding-left:12%">
                   <strong>Completa tu pago ahora!</strong>
                 </p>
-                <button type="submit" class="btn-sm text-white lead mt-2" style="height: 60px;width: 330.375px;left: 867px;top: 467px;border-radius: 4px;">
+                <button type="submit" class="btn-sm text-white lead mt-2" style="height: 60px;width: 330.375px;left: 867px;top: 467px;border-radius: 4px;" data-bs-toggle="modal" data-bs-target="#modalbank">
                   <strong style="font-style: normal;font-weight: 300;font-size: 21px;">
                     Comprar <strong style="font-size:21px;">{{$data['cantidad']}} ZOEC</strong> 
                   </strong>
@@ -140,21 +136,65 @@
 	                  Pagar 1 USD. Comisión incluida.  
 	                </strong>
                 </p>
-               <p class="text-white text-center f-little fw-lighter mt-0 mb-3">
+                <p class="text-white text-center f-little fw-lighter mt-0 mb-3">
 	                <strong class="comision">
-	                 Tiempo de ingreso ~ 20 minutos.
+	                  Tiempo de ingreso ~ 20 minutos.
 	                </strong>
                 </p>
-               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Modal -->
+  <div class="modal fade" id="modalbank" tabindex="-1" role="dialog" aria-labelledby="modalbankTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-centered  " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="modalInfoTitle">Método de pago: Bank-transfer.</h5>
+          <button type="button" style="background-color: #4BCFEE;" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-justify primary-background">
+          <form {{--action="{{route('settlement.aprobarDeposito')}}"--}} method="post" accept="multipart/">
+            @csrf
+            <input type="hidden" name="cantidad" value="{{$data['cantidad']}}" class="form-control text-white cantidad">
+            <input type="hidden" name="recibido" value="{{$data['recibido']}}" class="form-control text-white recibido">
+            <div class="form-row row mb-1">
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>Cuenta</label> 
+                <p>0000-0000-0000-0000-0000</p> 
+              </div>
+            </div>
+            <div class="form-row row mb-1">
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>Tipo de Cuenta</label> 
+                <p>Lorem ipsum</p> 
+              </div>
+            </div>
+            <div class="form-row row mb-1">
+              <div class='col-xs-12 form-group required'>
+                <label class='control-label'>DNI</label> 
+                <p>00-000-000</p> 
+              </div>
+            </div>
+            <div class="form-row row mb-1">
+              <div class='col-xs-12 form-group required'>
+                <label for="form-control">Adjunte su archivo</label>
+                <input type="file" name="archivo" id="modal-wallet" class="form-control mt-1">
+              </div>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn text-white mt-1" style="background-color:  #4BCFEE;">Continuar</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-  </section>
-</div>
-
-
+  </div>
 @endsection
 
 @section('vendor-script')
@@ -162,22 +202,4 @@
   <script src="{{ asset(mix('vendors/js/tables/datatable/jquery.dataTables.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.bootstrap5.min.js')) }}"></script>
   <script src="{{ asset(mix('vendors/js/tables/datatable/dataTables.responsive.min.js')) }}"></script>
-@endsection
-@section('page-script')
-    <script>
-        document.getElementById("cantidad").onchange = function() {updateValues()};
-
-        function updateValues() {
-            let cantidad = document.getElementById("cantidad");
-            recibido.value = cantidad.value - 1;
-        }
-
-        document.getElementById("recibido").onchange = function() {updateValuesRecibidos()};
-
-        function updateValuesRecibidos() {
-            let recibido = document.getElementById("recibido");
-
-            cantidad.value = parseFloat(recibido.value) + parseFloat(1);
-        }
-    </script>
 @endsection

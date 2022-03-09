@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26641c13db121eb0553e0eedac899c3a",
+    "content-hash": "42422d3e6468d90c10e7d0ef4ca129bf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5728,6 +5728,92 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
+        },
+        {
+            "name": "tzsk/payu",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tzsk/payu.git",
+                "reference": "4ee61c5039ac101e0df801cbf4def9a2c88bd028"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tzsk/payu/zipball/4ee61c5039ac101e0df801cbf4def9a2c88bd028",
+                "reference": "4ee61c5039ac101e0df801cbf4def9a2c88bd028",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "guzzlehttp/guzzle": "^7.0",
+                "laravel/legacy-factories": "^1.0",
+                "orchestra/testbench": "^6.0|^7.0",
+                "phpstan/phpstan": "^1.4",
+                "phpunit/phpunit": "^9.3",
+                "spatie/phpunit-snapshot-assertions": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tzsk\\Payu\\PayuServiceProvider"
+                    ],
+                    "aliases": {
+                        "Payu": "Tzsk\\Payu\\Facades\\Payu"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tzsk\\Payu\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tzsk",
+                    "email": "mailtokmahmed@gmail.com",
+                    "homepage": "https://tzsk.githu.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PayU India Payment Gateway Integration with Laravel",
+            "homepage": "https://github.com/tzsk/payu",
+            "keywords": [
+                "geteway",
+                "laravel 5 payment gateway",
+                "laravel payu",
+                "payment",
+                "payment gateway",
+                "payu",
+                "payu gateway with verification",
+                "payu payment gateway",
+                "payu payment verification laravel",
+                "tzsk",
+                "verification"
+            ],
+            "support": {
+                "issues": "https://github.com/tzsk/payu/issues",
+                "source": "https://github.com/tzsk/payu/tree/6.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/KMAhmed",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/tzsk",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-02-25T06:27:35+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
