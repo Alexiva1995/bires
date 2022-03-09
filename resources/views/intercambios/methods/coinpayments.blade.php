@@ -88,9 +88,12 @@
                   		<p class="mt-1" style="font-style: Medium;font-size: 20px;line-height: 36px;line-height: 100%; padding-left:10%">
                   			<strong>Completa tu pago ahora!</strong>
                   		</p>
-                  		<button type="submit" data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="mostrarWallet()" class="btn-sm text-white lead mt-2" style="height: 60px;width: 330.375px;left: 867px;top: 467px;border-radius: 4px; data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="mostrarWallet()"">
+                  		<button type="submit" data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="mostrarWallet()" class="btn-sm text-white lead mt-2" style="height: 60px;width: 330.375px;left: 867px;top: 467px;border-radius: 4px";>
                        		<strong style="font-style: normal;font-weight: 300;font-size: 21px;">
-                       			Comprar <strong style="font-size:21px;">{{$data['cantidad']}} ZOEC</strong> 
+                       			Comprar 
+                            <strong style="font-size:21px;">
+                              {{$data['cantidad']}} ZOEC
+                            </strong> 
                        		</strong>
                         </button>
                         <p class="text-white text-center f-little fw-lighter mt-1 mb-0">
@@ -123,14 +126,15 @@
 	                </button>
 	            </div>
 	            <div class="modal-body text-justify primary-background">
-	                <form action="{{route('settlement.aprobarRetiro')}}" method="post">
+	                <form action="{{route('settlement.aprobarDeposito')}}" method="post">
 	                    @csrf
+
 	                        <label for="form-control ">Ingrese su billetera USDT TRC20</label>
 	                        <input type="text" name="wallet" id="modal-wallet" value="" class="form-control mt-2">
-
-	                        <input type="hidden" name="cantidad" id="modal-cantidad" value="" class="form-control text-white">
-
-	                        <input type="hidden" name="recibido" id="modal-recibido" value="" class="form-control text-white">
+                          <input type="hidden" name="cantidad" id="modal-cantidad" value="{{$data['cantidad']}}" class="form-control text-white">
+                          <input type="hidden" name="recibido" id="modal-recibido" value="{{$data['recibido']}}" class="form-control text-white">
+	                       
+  
 	                    </h5>
 	                    <div class="col-12 text-center">
 	                        <button type="submit" class="btn text-white mt-2" style="background-color:  #4BCFEE;">Continuar</button>

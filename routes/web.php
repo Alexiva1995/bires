@@ -25,6 +25,7 @@ use App\Http\Controllers\TreeController;
 use App\Http\Controllers\universoController;
 use LDAP\Result;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,7 +70,7 @@ Route::middleware('auth')->group(function () {
         });
 
         //Settlement
-        Route::post('/aprobarRetiro', [IntercambiosController::class, 'aprobarRetiro'])->name('settlement.aprobarRetiro');
+        Route::post('/aprobarDeposito', [IntercambiosController::class, 'aprobarDeposito'])->name('settlement.aprobarDeposito');
         Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
 
         Route::get('universo', [universoController::class, 'universo'])->name('universo.zoe');
@@ -77,9 +78,12 @@ Route::middleware('auth')->group(function () {
         //PASARELA
         //STRIPE
         Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
-        Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
-
+        Route::POST('stripe',[StripeCtrl::class, 'stripePost'])->name('stripe.post');
+        //payU
+        Route::POST('payu',[IntercambiosController::class, 'payu'])->name('payu.post');
         Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
+        
+
     });
 });
 

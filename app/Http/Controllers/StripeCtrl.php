@@ -26,16 +26,20 @@ class StripeCtrl extends Controller
      */
     public function stripePost(Request $request)
     {
+        $validate = $request->validate([
+            'cantidad' => ['required'],
+            'recibido' => ['required'],
+        ]);
+
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         $stripe = Stripe\Charge::create ([
-                "amount" => 500 * 100,
+                "amount" => $request->cantidad * 100,
                 "currency" => "usd",
                 "source" => $request->stripeToken,
                 "description" => "Test payment from hackeradda.com." 
         ]);
-        return $stripe;
-        Session::flash('success', 'Payment successful!');
-          
-        return back();
+        return redirect()->route('intercambios.index')->with('message', 'Payment successful!');
+
+       /* Session::flash('success', 'Payment successful!');*/
     }
 }

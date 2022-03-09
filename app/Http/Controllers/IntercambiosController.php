@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
+use Tzsk\Payu\Facade\Payment;
 
 class IntercambiosController extends Controller
 {
@@ -44,13 +45,15 @@ class IntercambiosController extends Controller
         return view('intercambios.paymentAproved');
     }
 
-    public function aprobarRetiro(Request $request)
+    public function aprobarDeposito(Request $request)
     {
+        
         $wallet = $request->wallet;
         $cantidad = $request->cantidad;
         $recibido = $request->recibido;
-
+          
         $idLiquidation = $this->sendCodeEmail($wallet, $cantidad, $recibido);
+    
         $data = [
             'wallet' => $wallet,
             'idLiquidation' => $idLiquidation
@@ -63,7 +66,6 @@ class IntercambiosController extends Controller
 
     public function procesarLiquidacion(Request $request)
     {
-
             $validate = $request->validate([
                 'wallet' => ['required'],
                 'correo_code' => ['required'],
@@ -92,14 +94,14 @@ class IntercambiosController extends Controller
                 }  */
                 //Verifica si los códigos estan bien
                 if ($correo_code != $liquidation->code_correo) {
-                    return redirect()->route('intercambios.index')->with('status', 'El código de correo ingresado es incorrecto');
+                    return redirect()->route('intercambios.inde x')->with('status', 'El código de correo ingresado es incorrecto');
                 }else{
 
 
 
                 //if ($request->action == 'aproved' && session('intentos_fallidos') < 2) {
                      $aproved = $this->aprobarLiquidacion($idliquidation, $request->wallet);
-
+                     
                      if ($aproved == '') {
                          $accion = 'Aprobada';
                          $request->comentario= "Aprobada";
@@ -111,7 +113,6 @@ class IntercambiosController extends Controller
                             'origen' => 'CoinPayments',
 
                             ]);
-
                             $wallet->save();
 
                          if (!empty($idliquidation)) {
@@ -261,11 +262,14 @@ class IntercambiosController extends Controller
         $liquidacion = Liquidaction::create($data);
         return $liquidacion->id;
     }
-
+   
     public function sendCodeEmail($wallet, $cantidad, $recibido)
     {
+
         try {
              $this->reversarRetiro30Min();
+             $user = Auth::user();
+
             /* if (!session()->has('intentos_fallidos')) {
                 session(['intentos_fallidos' => 1]);
             }  */
@@ -274,29 +278,18 @@ class IntercambiosController extends Controller
                 ['status', '=', 0],
                 ['type', '=' , 0]
             ])->first();
-             if ($liquidation != null) {
+            
+          /*  if ($liquidation != null) {
 
                 $liquidation->update([
                     'wallet_used' => $wallet,
                 ]);
                 return $liquidation->id;
-            }
+            }*/
 
-            $user = Auth::user();
-
-            /* $comisiones = Wallet::where([
-                ['user_id', '=', $user->id],
-                ['status', '=', 0],
-                ['liquidado','=', 0],
-                ['tipo_transaction', '=', 0],
-                ['type', '!=' , 5]
-            ])->get(); */
+           
 
             $bruto = $cantidad;
-            /* if ($bruto < 50) {
-                return 0;
-            } */
-
             $feed = 1;
             $total = $recibido;
 
@@ -312,17 +305,19 @@ class IntercambiosController extends Controller
                 'code_correo' => Str::random(10),
                 'fecha_code' => Carbon::now()
             ];
+    
             $idLiquidation = $this->saveLiquidation($arrayLiquidation);
+
             $dataEmail = [
                 'billetera' => $wallet,
                 'total' => $total,
                 'user' => $user->name,
                 'code' => $arrayLiquidation['code_correo']
             ];
-
-            Mail::send('mail.SendCodeRetiro', $dataEmail, function ($msj) use ($user)
+          
+            Mail::send('mail.SendCodeDeposito', $dataEmail, function ($msj) use ($user)
             {
-                $msj->subject('Codigo Retiro');
+                $msj->subject('Codigo Deposito');
                 $msj->to($user->email);
             });
 
@@ -529,6 +524,25 @@ class IntercambiosController extends Controller
             Log::error('Intercambios - method_stripe -> Error: '.$th);
             abort(403, "Ocurrio un error, contacte con el administrador");
         }
+    }
+
+    public function payu(Request $request)
+    { 
+        $user = Auth::user();
+        $validate = $request->validate([
+            'cantidad' => ['required'],
+            'recibido' => ['required'],
+        ]);
+            
+        $data = [
+        'txnid' => rand(), # Transaction ID.
+        'amount' => $request->cantidad, # Amount to be charged.
+        'productinfo' => "Product Information",
+        'firstname' => $user->name, # Payee Name.
+        'email' => $user->email, # Payee Email Address.
+        'phone' => $user->phone, # Payee Phone Number.
+        ];
+        return $data;
     }
 
 }

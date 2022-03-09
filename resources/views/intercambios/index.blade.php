@@ -126,7 +126,7 @@
                 <label for="recibido" class="form-label text-white form-label-text-size">
                   <strong style="width: 130px;height: 36px;left: 431px;top: 304px;">Recibo</strong>
                 </label>
-                <input type="number" class="form-control" id="recibido" name="recibido" style="background: white;">
+                <input type="number" class="form-control text-dark" id="recibido" name="recibido" style="background: white;">
                 <span class="permanent-placeholder" style="color: #999999;font-size: 15px; padding-right:15%">ZOEC</span>
                 <div class="form-text">
                   <strong style="color:#4BCFEE;width: 192px;height: 21px;left: 969px;top: 405px;">Cantidad recibida en ZOEC</strong>
