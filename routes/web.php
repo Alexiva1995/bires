@@ -23,6 +23,7 @@ use App\Http\Controllers\StripeCtrl;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TreeController;
 use App\Http\Controllers\universoController;
+use App\Http\Controllers\PaymentController;
 use LDAP\Result;
 
 
@@ -78,10 +79,17 @@ Route::middleware('auth')->group(function () {
         //PASARELA
         //STRIPE
         Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
+        Route::post('intercambios/method-stripe', [StripeCtrl::class, 'method_stripe'])->name('intercambios.methods.stripe');
         Route::POST('stripe',[StripeCtrl::class, 'stripePost'])->name('stripe.post');
         //payU
         Route::POST('payu',[IntercambiosController::class, 'payu'])->name('payu.post');
         Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
+        //PAYPAL
+        Route::post('intercambios/method-paypal', [PaymentController::class, 'method_paypal'])->name('intercambios.methods.paypal');
+        Route::post('/paypal/pay', [PaymentController::class, 'payWithPayPal'])->name('paypal.pay');
+        Route::get('/paypal/status', [PaymentController::class, 'payPalStatus'])->name('paypal.status');
+        //BANK-TRANSFER
+        Route::post('/bank', [IntercambiosController::class, 'bank_post'])->name('bank.post');
         
 
     });
@@ -278,11 +286,10 @@ Route::post('/intercambios/payment-methods', [IntercambiosController::class, 'pa
 Route::post('/intercambios/payment-confirm', [IntercambiosController::class, 'confirmPayment'])->name('intercambios.confirm-payment');
 Route::get('/intercambios/payment-aproved', [IntercambiosController::class, 'paymentAproved'])->name('intercambios.payment-aproved');
 
-Route::post('intercambios/method-paypal', [IntercambiosController::class, 'method_paypal'])->name('intercambios.methods.paypal');
+
 Route::post('intercambios/method-payu', [IntercambiosController::class, 'method_payu'])->name('intercambios.methods.payu');
 Route::post('intercambios/method-wompi', [IntercambiosController::class, 'method_wompi'])->name('intercambios.methods.wompi');
 Route::post('intercambios/method-coinpayments', [IntercambiosController::class, 'method_coinpayments'])->name('intercambios.methods.coinpayments');
 Route::post('intercambios/method-coinbase', [IntercambiosController::class, 'method_coinbase'])->name('intercambios.methods.coinbase');
 Route::post('intercambios/method-bank', [IntercambiosController::class, 'method_bank'])->name('intercambios.methods.bank');
 Route::post('intercambios/method-zelle', [IntercambiosController::class, 'method_zelle'])->name('intercambios.methods.zelle');
-Route::post('intercambios/method-stripe', [IntercambiosController::class, 'method_stripe'])->name('intercambios.methods.stripe');

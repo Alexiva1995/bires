@@ -21,6 +21,7 @@ class CreateOrdenPurchasesTable extends Migration
             $table->enum('status', [0, 1, 2])->default(0)->comment('0 - En Espera, 1 - Completada, 2 - Rechazada');
             $table->enum('payment_gateway', ['paypal', 'payu', 'wompi', 'stripe', 'coinpayment', 'coinbase', 'bankTransfer', 'zelle'])->nullable();
             $table->string('transaction_id')->nullable()->comment('ID de la transacion');
+            $table->string('image')->nullable()->comment('imagen de la transation');
             $table->timestamps();
         });
     }

@@ -91,11 +91,15 @@
                 <p class="mt-1" style="font-style: Medium;font-size: 18px;line-height: 36px;line-height: 100%; padding-left:12%">
                   <strong>Completa tu pago ahora!</strong>
                 </p>
-                <button type="submit" class="btn-sm text-white lead mt-2" style="height: 60px;width: 330.375px;left: 867px;top: 467px;border-radius: 4px;">
-                  <strong style="font-style: normal;font-weight: 300;font-size: 21px;">
-                    Comprar <strong style="font-size:21px;">{{$data['cantidad']}} ZOEC</strong> 
-                  </strong>
-                </button>
+                <form role="form" action="{{ route('paypal.pay') }}" method="post">
+                  @csrf
+                  <input type="hidden" name="cantidad" value="{{$data['cantidad']}}">
+                  <button type="submit" class="btn-sm text-white lead mt-2" style="height: 60px;width: 330.375px;left: 867px;top: 467px;border-radius: 4px;">
+                    <strong style="font-style: normal;font-weight: 300;font-size: 21px;">
+                      Comprar <strong style="font-size:21px;">{{$data['cantidad']}} ZOEC</strong> 
+                    </strong>
+                  </button>
+                </form>
                 <p class="text-white text-center f-little fw-lighter mt-1 mb-0">
 	                <strong style=" padding-right:10%;color:white;width: 321px;height: 48px;top: 562px;
 	                        ;">
@@ -116,7 +120,6 @@
     </div>
   </section>
 </div>
-
 
 @endsection
 

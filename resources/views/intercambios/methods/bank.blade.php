@@ -93,7 +93,7 @@
   </h3>
   <section>
     <div class="d-flex p-2 bd-highlight">
-      <div class="border border-info border-5 rounded-1 container-fluid primary-background" >
+      <div class="border border-info border-5 rounded-1 container-fluid primary-background">
         <div class="row">
           <div class="col-sm-6">
             <h3 class="text-white ms-2 mt-2">
@@ -159,7 +159,7 @@
           </button>
         </div>
         <div class="modal-body text-justify primary-background">
-          <form {{--action="{{route('settlement.aprobarDeposito')}}"--}} method="post" accept="multipart/">
+          <form action="{{route('bank.post')}}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="cantidad" value="{{$data['cantidad']}}" class="form-control text-white cantidad">
             <input type="hidden" name="recibido" value="{{$data['recibido']}}" class="form-control text-white recibido">
@@ -184,7 +184,7 @@
             <div class="form-row row mb-1">
               <div class='col-xs-12 form-group required'>
                 <label for="form-control">Adjunte su archivo</label>
-                <input type="file" name="archivo" id="modal-wallet" class="form-control mt-1">
+                <input type="file" name="archivo" id="archivo" class="form-control mt-1" style="background: transparent;">
               </div>
             </div>
             <div class="col-12 text-center">

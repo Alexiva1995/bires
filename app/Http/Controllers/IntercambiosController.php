@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Liquidaction;
 use App\Models\Wallet;
+use App\Models\OrdenPurchase;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +20,8 @@ class IntercambiosController extends Controller
         return view('intercambios.index');
     }
 
-    public function paymentMethods(Request $request){
+    public function paymentMethods(Request $request)
+    {
          
         $validate = $request->validate([
             'cantidad' => ['required'],
@@ -37,7 +39,8 @@ class IntercambiosController extends Controller
         return view('intercambios.paymentMethods', compact('data'));
     }
 
-    public function confirmPayment(){
+    public function confirmPayment()
+    {
         return view('intercambios.confirmPayment');
     }
 
@@ -415,6 +418,40 @@ class IntercambiosController extends Controller
             abort(403, "Ocurrio un error, contacte con el administrador");
         }
     }
+    public function bank_post(Request $request)
+    {
+      try {
+         
+            $user = Auth::user();
+
+            $order = $request->validate([
+                'cantidad' => 'required',
+                'recibido' => 'required',
+                'archivo' => 'required',
+            ]);
+      
+            $order = new OrdenPurchase();
+            $order->user_id = $user->id;
+            $order->amount = $request->cantidad;
+            $order->fee = 1;
+            $order->status = '0';
+            $order->payment_gateway = 'bankTransfer';
+            
+            //Guardamos foto frontal
+            $archivo = $request->file('archivo');
+            $name = time() . "." . $archivo->extension();
+            $archivo->move(public_path('storage') . '/photo-bank-transfer', $name);
+            $order->image = '' . $name;
+
+            $order->save();
+            return redirect()->route('intercambios.index')->with('success', 'orden creada exitosamente');
+           
+        } catch (\Throwable $th) {
+            Log::error('Intercambios - method_bank -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
+
     public function method_zelle(Request $request)
     {
       try {
@@ -437,28 +474,7 @@ class IntercambiosController extends Controller
             abort(403, "Ocurrio un error, contacte con el administrador");
         }
     }
-    public function method_paypal(Request $request)
-    {
-      try {
-
-            $validate = $request->validate([
-                'cantidad' => ['required'],
-                'recibido' => ['required'],
-            ]);
-            
-            $cantidad = $request->cantidad;
-            $recibido = $request->recibido;
-
-            $data = [
-                'cantidad' => $cantidad,
-                'recibido' => $recibido
-            ];
-          return view('intercambios.methods.paypal',compact('data'));
-        } catch (\Throwable $th) {
-            Log::error('Intercambios - method_paypal -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
-        }
-    }
+   
     public function method_payu(Request $request)
     {
       try {
@@ -503,28 +519,7 @@ class IntercambiosController extends Controller
             abort(403, "Ocurrio un error, contacte con el administrador");
         }
     }
-    public function method_stripe(Request $request)
-    {
-      try {
-
-            $validate = $request->validate([
-                'cantidad' => ['required'],
-                'recibido' => ['required'],
-            ]);
-            
-            $cantidad = $request->cantidad;
-            $recibido = $request->recibido;
-
-            $data = [
-                'cantidad' => $cantidad,
-                'recibido' => $recibido
-            ];
-          return view('intercambios.methods.stripe',compact('data'));
-        } catch (\Throwable $th) {
-            Log::error('Intercambios - method_stripe -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
-        }
-    }
+   
 
     public function payu(Request $request)
     { 
