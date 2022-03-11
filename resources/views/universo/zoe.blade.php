@@ -15,6 +15,8 @@
 
 @section('content')
 
+<a href="{{route('universo.zoeCategories')}}" style="font-size:15px;font-weight:600;color:#FFF;">Ir a Negocios ></a>
+<br>
 <div class="parent">
 
     <div class="div1">
@@ -302,6 +304,9 @@
 
 
 <style>
+    body{
+        background:radial-gradient(50% 50% at 50% 50%, #05457D 0%, #032D52 100%)  !important;
+    }
     .contenedor {
         background-color: #FFF;
         width: 50px;

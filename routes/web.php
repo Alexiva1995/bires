@@ -74,16 +74,17 @@ Route::middleware('auth')->group(function () {
         Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
 
         Route::get('universo', [universoController::class, 'universo'])->name('universo.zoe');
+        Route::get('universo-zoe', [universoController::class, 'universos'])->name('universo.zoeCategories');
+        Route::get('select', [universoController::class, 'selects'])->name('universo.Select');
+
 
         //PASARELA
         //STRIPE
         Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
-        Route::POST('stripe',[StripeCtrl::class, 'stripePost'])->name('stripe.post');
+        Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
         //payU
-        Route::POST('payu',[IntercambiosController::class, 'payu'])->name('payu.post');
+        Route::POST('payu', [IntercambiosController::class, 'payu'])->name('payu.post');
         Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
-        
-
     });
 });
 
