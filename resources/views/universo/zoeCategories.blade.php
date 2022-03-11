@@ -14,10 +14,11 @@
 @endsection
 
 @section('content')
-
+<a href="{{route('universo.Select')}}" style="font-size:15px;font-weight:600;color:#FFF;">Ir a Negocios ></a>
+<br>
 <div class="container">
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <h3><i class="fa-solid fa-align-justify"></i>
                 Categirias
             </h3>
@@ -50,34 +51,26 @@
             <div class="row">
                 <div class="col-2">
 
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                     </div>
                 </div>
                 <div class="col-2">
 
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                     </div>
                 </div>
                 <div class="col-2">
 
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                     </div>
                 </div>
                 <div class="col-2">
 
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                     </div>
                 </div>
             </div>
@@ -86,7 +79,7 @@
         <div class="col-sm-offset-1 col-sm-8">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input type="text" class="form-control" placeholder="Buscar Negocio" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Buscar Negocio">
             </div>
 
             <div class="title" style="margin-left: 50px;">
@@ -96,15 +89,17 @@
             <div class="carousel-wrapper">
                 <div class="carousel">
 
-                    <img class="carousel__photo initial" src="{{asset('images/auth/barber.png')}}">
-                    <img class="carousel__photo" src="{{asset('images/auth/barber.png')}}">
-                    <img class="carousel__photo" src="{{asset('images/auth/barber.png')}}">
-                    <img class="carousel__photo" src="{{asset('images/auth/barber.png')}}">
-                    <img class="carousel__photo" src="{{asset('images/auth/barber.png')}}">
+                    <img class="carousel__photo initial" src="{{asset('images/Dashboard/1.svg')}}" style="background-size: cover;">
+                    <img class="carousel__photo" src="{{asset('images/Dashboard/1.svg')}}">
+                    <img class="carousel__photo" src="{{asset('images/Dashboard/1.svg')}}">
+                    <img class="carousel__photo" src="{{asset('images/Dashboard/1.svg')}}">
+                    <img class="carousel__photo" src="{{asset('images/Dashboard/1.svg')}}">
 
                     <div class="carousel__button--next"></div>
                     <div class="carousel__button--prev"></div>
-
+                    <div class="float col-12">
+                        <a class="btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
                 </div>
             </div>
 
@@ -115,49 +110,45 @@
             <div class="row col-5" style="margin-left: 50px;">
                 <div class="col-2">
 
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                     </div>
                 </div>
                 <div class="col-2">
 
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
 
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
                     </div>
-                </div>
-                <div class="col-2">
 
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <div class="carousel-wrapper mt-4">
                 <div class="carousel">
 
-                    <img class="carousel__photo initial" src="{{asset('images/auth/123456790.png')}}">
-                    <img class="carousel__photo" src="{{asset('images/auth/123456790.png')}}">
-                    <img class="carousel__photo" src="{{asset('images/auth/123456790.png')}}">
-                    <img class="carousel__photo" src="{{asset('images/auth/123456790.png')}}">
-                    <img class="carousel__photo" src="{{asset('images/auth/123456790.png')}}">
+                    <img class="carousel__photo initial" src="{{asset('images/Dashboard/2.png')}}" style="background-size: cover;">
+                    <img class="carousel__photo" src="{{asset('images/Dashboard/2.png')}}">
+                    <img class="carousel__photo" src="{{asset('images/Dashboard/2.png')}}">
+                    <img class="carousel__photo" src="{{asset('images/Dashboard/2.png')}}">
+                    <img class="carousel__photo" src="{{asset('images/Dashboard/2.png')}}">
 
                     <div class="carousel__button--next"></div>
                     <div class="carousel__button--prev"></div>
+                    <div class="float col-12">
+                        <a class="btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
+                    </div>
 
                 </div>
             </div>
@@ -168,31 +159,27 @@
 
             <div class="row align-items-start mb-2 col-5" style="margin-left: 50px;">
                 <div class="col-2">
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="contenedor">
-                        <div class="img">
-                            <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                        </div>
+                    <div class="img">
+                        <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                     </div>
                 </div>
             </div>
@@ -212,31 +199,27 @@
 
                         <div class="row align-items-start mb-2">
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                         </div>
@@ -257,31 +240,27 @@
 
                         <div class="row align-items-start mb-2">
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                         </div>
@@ -296,7 +275,7 @@
                     <div class="contenedores">
                         <div class="card" style="width: 14rem;height:200px;" id="tercera">
                             <div class="card-body">
-                            <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
+                                <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
                             </div>
                         </div>
 
@@ -306,31 +285,27 @@
 
                         <div class="row align-items-start mb-2">
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
+
                                 </div>
                             </div>
                         </div>
@@ -341,7 +316,7 @@
                     <div class="contenedores">
                         <div class="card" style="width: 14rem;height:200px;" id="cuarta">
                             <div class="card-body">
-                            <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
+                                <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
                             </div>
                         </div>
 
@@ -352,31 +327,23 @@
 
                         <div class="row align-items-start mb-2">
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                         </div>
@@ -387,7 +354,7 @@
                     <div class="contenedores">
                         <div class="card" style="width: 14rem;height:200px;" id="quinta">
                             <div class="card-body">
-                            <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
+                                <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
                             </div>
                         </div>
 
@@ -397,31 +364,23 @@
 
                         <div class="row align-items-start mb-2">
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                         </div>
@@ -435,7 +394,7 @@
                     <div class="contenedores">
                         <div class="card" style="width: 14rem;height:200px;" id="sexta">
                             <div class="card-body">
-                            <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
+                                <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
                             </div>
                         </div>
 
@@ -445,31 +404,23 @@
 
                         <div class="row align-items-start mb-2">
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                         </div>
@@ -480,7 +431,7 @@
                     <div class="contenedores">
                         <div class="card" style="width: 14rem;height:200px;" id="septima">
                             <div class="card-body">
-                            <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
+                                <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
                             </div>
                         </div>
 
@@ -492,31 +443,23 @@
 
                         <div class="row align-items-start mb-2">
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                         </div>
@@ -527,7 +470,7 @@
                     <div class="contenedores">
                         <div class="card" style="width: 14rem;height:200px; " id="octava">
                             <div class="card-body">
-                            <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
+                                <a class="Activar btn">Agendar Cita <i class="fa-solid fa-angle-right"></i></a>
                             </div>
                         </div>
 
@@ -537,31 +480,23 @@
 
                         <div class="row align-items-start mb-2">
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <div class="contenedor">
-                                    <div class="img">
-                                        <i class="fa-solid fa-dollar-sign" style="margin-top:5px;"></i>
-                                    </div>
+                                <div class="img">
+                                    <img src="{{asset('images/zoe/svg/dolar.svg')}}" width="35" height="35" alt="">
                                 </div>
                             </div>
                         </div>
@@ -576,64 +511,75 @@
 
 
 <style>
+    body{
+        background:radial-gradient(50% 50% at 50% 50%, #05457D 0%, #032D52 100%)  !important;
+    }
     .Activar {
         display: flex;
+        border-radius: 10px;
         margin-top: 120px;
         background-color: rgba(253, 73, 92, 1);
         width: 150px;
     }
 
     #primera {
-        background-image: url("../images/auth/primera.png");
+        background-image: url("../images/Dashboard/primera.png");
         height: 120px;
+        background-size: cover;
         border-radius: 10%;
         border: none;
         width: 100%;
     }
 
     #segunda {
-        background-image: url("../images/auth/segunda.png");
+        background-image: url("../images/Dashboard/bata.svg");
         height: 120px;
+        background-size: cover;
         border: none;
         border-radius: 10%;
         width: 100%;
     }
 
     #tercera {
-        background-image: url("../images/auth/tercera.png");
+        background-image: url("../images/Dashboard/post.svg");
         height: 120px;
+        background-size: cover;
         border-radius: 10%;
         border: none;
         width: 100%;
     }
 
     #cuarta {
-        background-image: url("../images/auth/protocolo.png");
+        background-image: url("../images/Dashboard/protocolo.svg");
         border: none;
+        background-size: cover;
         height: 120px;
         border-radius: 10%;
         width: 100%;
     }
 
     #quinta {
-        background-image: url("../images/auth/cuarta.png");
+        background-image: url("../images/Dashboard/silla.svg");
         border: none;
         height: 120px;
+        background-size: cover;
         border-radius: 10%;
         width: 100%;
     }
 
     #sexta {
-        background-image: url("../images/auth/sexta.png");
+        background-image: url("../images/Dashboard/silla2.svg");
         border: none;
+        background-size: cover;
         height: 120px;
         border-radius: 10%;
         width: 100%;
     }
 
     #septima {
-        background-image: url("../images/auth/protocolo2.png");
+        background-image: url("../images/Dashboard/the.svg");
         border: none;
+        background-size: cover;
         height: 120px;
         border-radius: 10%;
         width: 100%;
@@ -641,8 +587,9 @@
 
 
     #octava {
-        background-image: url("../images/auth/octava.png");
+        background-image: url("../images/Dashboard/frent.png");
         border: none;
+        background-size: cover;
         height: 120px;
         border-radius: 10%;
         width: 100%;
@@ -729,6 +676,21 @@
         border-radius: 50%;
         cursor: pointer;
         z-index: 1001;
+    }
+
+    .float {
+        position: absolute;
+        top: 80%;
+        width: auto;
+        background-color: rgba(253, 73, 92, 1);
+        transform: translateY(-90%);
+        display: flex;
+        border-radius: 10px;
+        z-index: 1001;
+    }
+
+    .float {
+        left: 80px;
     }
 
     .carousel__button--prev {

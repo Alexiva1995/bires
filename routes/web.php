@@ -75,15 +75,23 @@ Route::middleware('auth')->group(function () {
         Route::post('/process', [IntercambiosController::class, 'procesarLiquidacion'])->name('settlement.process');
 
         Route::get('universo', [universoController::class, 'universo'])->name('universo.zoe');
+        Route::get('universo-zoe', [universoController::class, 'universos'])->name('universo.zoeCategories');
+        Route::get('select', [universoController::class, 'selects'])->name('universo.Select');
+
 
         //PASARELA
         //STRIPE
         Route::GET('stripe', [StripeCtrl::class, 'stripe'])->name('stripe');
+
         Route::post('intercambios/method-stripe', [StripeCtrl::class, 'method_stripe'])->name('intercambios.methods.stripe');
         Route::POST('stripe',[StripeCtrl::class, 'stripePost'])->name('stripe.post');
+
+        Route::POST('stripe', [StripeCtrl::class, 'stripePost'])->name('stripe.post');
+
         //payU
-        Route::POST('payu',[IntercambiosController::class, 'payu'])->name('payu.post');
+        Route::POST('payu', [IntercambiosController::class, 'payu'])->name('payu.post');
         Route::post('/notificacionesLeidas', [NotificationController::class, 'notificacionesLeidas'])->name('user.notificacionesLeidas');
+
         //PAYPAL
         Route::post('intercambios/method-paypal', [PaymentController::class, 'method_paypal'])->name('intercambios.methods.paypal');
         Route::post('/paypal/pay', [PaymentController::class, 'payWithPayPal'])->name('paypal.pay');
@@ -91,7 +99,6 @@ Route::middleware('auth')->group(function () {
         //BANK-TRANSFER
         Route::post('/bank', [IntercambiosController::class, 'bank_post'])->name('bank.post');
         
-
     });
 });
 
@@ -293,3 +300,4 @@ Route::post('intercambios/method-coinpayments', [IntercambiosController::class, 
 Route::post('intercambios/method-coinbase', [IntercambiosController::class, 'method_coinbase'])->name('intercambios.methods.coinbase');
 Route::post('intercambios/method-bank', [IntercambiosController::class, 'method_bank'])->name('intercambios.methods.bank');
 Route::post('intercambios/method-zelle', [IntercambiosController::class, 'method_zelle'])->name('intercambios.methods.zelle');
+
