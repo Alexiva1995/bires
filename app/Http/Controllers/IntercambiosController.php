@@ -437,7 +437,7 @@ class IntercambiosController extends Controller
             $order->status = '0';
             $order->payment_gateway = 'bankTransfer';
             
-            //Guardamos foto frontal
+            //Guardamos foto 
             $archivo = $request->file('archivo');
             $name = time() . "." . $archivo->extension();
             $archivo->move(public_path('storage') . '/photo-bank-transfer', $name);
